@@ -2,6 +2,7 @@ import streamlit as st
 import logging
 import time
 import pandas as pd
+from google.cloud import bigquery
 from utils.kaggle_utils import fetch_data
 from utils.mysql_fetch_utils import fetch_table
 from utils.convert_mysql_dtypes import convert_mysql_dtypes 
@@ -10,30 +11,32 @@ from utils.cleaner_utils import clean
 from utils.convert_dtypes import convert_dtypes
 from utils.bigquery_upload_utils import upload_to_bigquery
 from utils.schema_utils import generate_star_schema
+from utils.aggregate_utils import create_aggregation_tables, fetch_aggregation_table, get_aggregation_tables
 
 st.set_page_config(page_title="ETL Dashboard", layout="wide")
 
 # Sidebar Navigation
 st.sidebar.title("Navigation")
-page = st.sidebar.radio("Go to", ["Home", "Star Schema", "Upload to BigQuery"])
+page = st.sidebar.radio("Go to", ["Home", "Star Schema", "Upload to BigQuery", "Aggregated Metrics"])
 
 def show_loader(message):
     with st.spinner(message):
         time.sleep(1)
 
-# Initialize session state if not exists
+# Initialize session state variables
 if 'converted_df' not in st.session_state:
     st.session_state.converted_df = None
 if 'star_schema_generated' not in st.session_state:
     st.session_state.star_schema_generated = False
+if 'aggregated_metrics_generated' not in st.session_state:
+    st.session_state.aggregated_metrics_generated = False
 
 def main():
     if page == "Home":
         st.title("ETL Pipeline Dashboard")
-        
+
         if st.button("Start Extraction"):
             show_loader("Fetching data from Kaggle...")
-            # fetch_data()
             st.success("Data fetched successfully!")
             
             show_loader("Fetching tables from MySQL and converting data types...")
@@ -63,15 +66,16 @@ def main():
             show_loader("Converting data types...")
             st.session_state.converted_df = convert_dtypes(cleaned_df)
             st.success("Data types converted successfully!")
-        
+
         if st.session_state.converted_df is not None:
             if st.button("Generate Star Schema"):
                 show_loader("Generating star schema tables...")
-                st.session_state.dim_customers, st.session_state.dim_sellers, st.session_state.dim_products, st.session_state.dim_payment_types, st.session_state.dim_reviews, st.session_state.fact_orders = generate_star_schema(st.session_state.converted_df)
+                st.session_state.dim_customers, st.session_state.dim_sellers, st.session_state.dim_products, \
+                st.session_state.dim_payment_types, st.session_state.dim_reviews, st.session_state.fact_orders = generate_star_schema(st.session_state.converted_df)
                 st.session_state.star_schema_generated = True
                 st.sidebar.success("Star Schema Generated!")
                 st.success("Star schema tables generated successfully!")
-    
+
     elif page == "Star Schema":
         st.title("Star Schema Tables")
         if st.session_state.star_schema_generated:
@@ -89,7 +93,7 @@ def main():
             st.write(st.session_state.fact_orders.head())
         else:
             st.warning("Please generate the star schema first.")
-    
+
     elif page == "Upload to BigQuery":
         st.title("Upload to BigQuery")
         project_id = st.text_input("Enter Google Cloud Project ID:")
@@ -106,10 +110,51 @@ def main():
                     upload_to_bigquery(st.session_state.dim_payment_types, "dim_payment_types", project_id, dataset_id)
                     upload_to_bigquery(st.session_state.dim_reviews, "dim_reviews", project_id, dataset_id)
                     st.success("All tables uploaded successfully!")
+                    
+                    show_loader("Executing Aggregated Metrics...")
+                    create_aggregation_tables(project_id, dataset_id)
+                    st.session_state.aggregated_metrics_generated = True
+                    st.sidebar.success("Aggregated Metrics Generated!")
+                    st.success("Aggregated Metrics tables generated successfully!")
                 else:
                     st.error("Please provide valid Project ID and Dataset ID.")
         else:
             st.warning("Please generate the star schema before uploading.")
+
+    elif page == "Aggregated Metrics":
+        st.title("Aggregated Metrics Tables")
+
+        project_id = st.text_input("Enter Google Cloud Project ID:", key="project_id_input")
+        dataset_id = st.text_input("Enter BigQuery Dataset ID:", key="dataset_id_input")
+
+        if st.button("Fetch Aggregation Tables"):
+            if project_id and dataset_id:
+                show_loader("Fetching available aggregation tables...")
+                tables = get_aggregation_tables(project_id, dataset_id)
+
+                if tables:
+                    st.session_state["aggregation_tables"] = tables
+                    st.success("Aggregation tables fetched successfully!")
+                else:
+                    st.error("No aggregation tables found or an error occurred.")
+            else:
+                st.error("Please enter Project ID and Dataset ID.")
+
+        if "aggregation_tables" in st.session_state:
+            selected_table = st.selectbox("Select an Aggregation Table:", st.session_state["aggregation_tables"])
+
+            if selected_table:
+                if st.button("Fetch Table Data"):
+                    show_loader(f"Fetching data from {selected_table}...")
+                    df = fetch_aggregation_table(project_id, dataset_id, selected_table)
+
+                    if df is not None and not df.empty:
+                        st.write(f"### {selected_table} Data")
+                        st.dataframe(df)
+                    else:
+                        st.error(f"Error fetching data from {selected_table} or table is empty.")
+        else:
+            st.warning("Click 'Fetch Aggregation Tables' to load available tables.")
 
 if __name__ == "__main__":
     main()
