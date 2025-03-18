@@ -1,0 +1,539 @@
+2025-03-18 20:44:26,461 - INFO - Fetching data from Kaggle and MySQL
+2025-03-18 20:46:02,191 - INFO - Fetching data from Kaggle and MySQL
+2025-03-18 20:46:05,316 - INFO - Data fetched successfully
+2025-03-18 20:46:33,032 - INFO - Fetching data from Kaggle and MySQL
+2025-03-18 20:46:35,826 - INFO - Data fetched successfully
+2025-03-18 20:48:10,229 - INFO - Fetching data from MySQL
+2025-03-18 20:48:13,043 - INFO - Data fetched successfully
+2025-03-18 20:48:14,748 - INFO - Cleaning merged dataset
+2025-03-18 20:48:17,529 - INFO - Data cleaned successfully
+2025-03-18 20:48:19,318 - INFO - Converting data types
+2025-03-18 20:48:19,621 - INFO - Data types converted successfully
+2025-03-18 20:48:21,415 - INFO - Generating star schema
+2025-03-18 20:48:22,479 - INFO - Star schema generated successfully
+2025-03-18 20:49:28,957 - INFO - Uploading tables to BigQuery
+2025-03-18 20:50:44,928 - INFO - Fetching data from MySQL
+2025-03-18 20:50:47,747 - INFO - Data fetched successfully
+2025-03-18 20:50:49,093 - INFO - Cleaning merged dataset
+2025-03-18 20:50:51,787 - INFO - Data cleaned successfully
+2025-03-18 20:50:53,209 - INFO - Converting data types
+2025-03-18 20:50:53,513 - INFO - Data types converted successfully
+2025-03-18 20:50:55,320 - INFO - Generating star schema
+2025-03-18 20:50:56,349 - INFO - Star schema generated successfully
+2025-03-18 20:51:03,419 - INFO - Uploading tables to BigQuery
+2025-03-18 20:51:06,666 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 20:52:20,221 - INFO - Fetching data from MySQL
+2025-03-18 20:52:23,084 - INFO - Data fetched successfully
+2025-03-18 20:52:25,270 - INFO - Cleaning merged dataset
+2025-03-18 20:52:28,051 - INFO - Data cleaned successfully
+2025-03-18 20:52:31,450 - INFO - Converting data types
+2025-03-18 20:52:31,748 - INFO - Data types converted successfully
+2025-03-18 20:52:33,452 - INFO - Generating star schema
+2025-03-18 20:52:34,501 - INFO - Star schema generated successfully
+2025-03-18 20:52:47,036 - INFO - Uploading tables to BigQuery
+2025-03-18 20:52:48,377 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 20:52:51,185 - ERROR - Error converting Pandas column with name: "order_approved_at" and datatype: "datetime64[ns]" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-03-18 20:52:52,548 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 20:52:55,265 - ERROR - Error converting Pandas column with name: "customer_zip_code_prefix" and datatype: "Int32" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-03-18 20:52:56,650 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 20:52:59,283 - ERROR - Error converting Pandas column with name: "seller_zip_code_prefix" and datatype: "Int32" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-03-18 20:53:00,658 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 20:53:04,341 - ERROR - Error converting Pandas column with name: "product_name_length" and datatype: "float32" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-03-18 20:53:05,572 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 20:53:15,033 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 20:53:17,878 - ERROR - Error converting Pandas column with name: "review_score" and datatype: "float32" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-03-18 20:53:17,880 - INFO - Data uploaded successfully
+2025-03-18 21:04:28,206 - INFO - Fetching data from MySQL
+2025-03-18 21:04:31,130 - INFO - Data fetched successfully
+2025-03-18 21:04:32,580 - INFO - Cleaning merged dataset
+2025-03-18 21:04:35,446 - INFO - Data cleaned successfully
+2025-03-18 21:05:09,286 - INFO - Converting data types
+2025-03-18 21:05:09,588 - INFO - Data types converted successfully
+2025-03-18 21:05:11,478 - INFO - Generating star schema
+2025-03-18 21:05:12,541 - INFO - Star schema generated successfully
+2025-03-18 21:05:23,404 - INFO - Uploading tables to BigQuery
+2025-03-18 21:05:24,763 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 21:05:26,361 - ERROR - Error converting Pandas column with name: "order_approved_at" and datatype: "datetime64[ns]" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-03-18 21:05:27,612 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 21:05:29,212 - ERROR - Error converting Pandas column with name: "customer_zip_code_prefix" and datatype: "Int32" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-03-18 21:05:30,579 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 21:05:31,850 - ERROR - Error converting Pandas column with name: "seller_zip_code_prefix" and datatype: "Int32" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-03-18 21:05:33,131 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 21:05:34,594 - ERROR - Error converting Pandas column with name: "product_name_length" and datatype: "float32" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-03-18 21:05:35,949 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 21:05:45,071 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 21:18:14,328 - INFO - Fetching data from MySQL
+2025-03-18 21:18:17,188 - INFO - Data fetched successfully
+2025-03-18 21:18:18,372 - INFO - Cleaning merged dataset
+2025-03-18 21:18:21,165 - INFO - Data cleaned successfully
+2025-03-18 21:18:22,453 - INFO - Converting data types
+2025-03-18 21:18:22,750 - INFO - Data types converted successfully
+2025-03-18 21:18:24,056 - INFO - Generating star schema
+2025-03-18 21:18:25,106 - INFO - Star schema generated successfully
+2025-03-18 21:18:34,138 - INFO - Uploading tables to BigQuery
+2025-03-18 21:18:35,722 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 21:18:37,167 - ERROR - Error converting Pandas column with name: "order_approved_at" and datatype: "datetime64[ns]" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-03-18 21:18:38,521 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 21:18:39,731 - ERROR - Error converting Pandas column with name: "customer_zip_code_prefix" and datatype: "Int64" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-03-18 21:18:41,139 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 21:18:42,385 - ERROR - Error converting Pandas column with name: "seller_zip_code_prefix" and datatype: "Int64" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-03-18 21:18:43,763 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 21:18:44,923 - ERROR - Error converting Pandas column with name: "product_name_length" and datatype: "float64" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-03-18 21:18:46,282 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 21:18:47,510 - ERROR - Error converting Pandas column with name: "review_score" and datatype: "float64" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-03-18 21:18:47,511 - INFO - Data uploaded successfully
+2025-03-18 21:20:22,084 - INFO - Fetching data from MySQL
+2025-03-18 21:20:24,913 - INFO - Data fetched successfully
+2025-03-18 21:20:26,086 - INFO - Cleaning merged dataset
+2025-03-18 21:20:28,770 - INFO - Data cleaned successfully
+2025-03-18 21:20:29,958 - INFO - Converting data types
+2025-03-18 21:20:30,259 - INFO - Data types converted successfully
+2025-03-18 21:20:31,623 - INFO - Generating star schema
+2025-03-18 21:20:32,665 - INFO - Star schema generated successfully
+2025-03-18 21:20:43,467 - INFO - Uploading tables to BigQuery
+2025-03-18 21:20:45,729 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 21:20:47,085 - ERROR - Error converting Pandas column with name: "order_purchase_timestamp" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-03-18 21:20:48,501 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 21:20:49,827 - ERROR - Error converting Pandas column with name: "customer_zip_code_prefix" and datatype: "Int64" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-03-18 21:20:51,188 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 21:20:52,766 - ERROR - Error converting Pandas column with name: "seller_zip_code_prefix" and datatype: "Int64" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-03-18 21:20:54,160 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 21:20:55,381 - ERROR - Error converting Pandas column with name: "product_name_length" and datatype: "float64" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-03-18 21:20:56,741 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 21:20:58,049 - ERROR - Error converting Pandas column with name: "review_score" and datatype: "float64" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-03-18 21:20:58,050 - INFO - Data uploaded successfully
+2025-03-18 21:22:02,920 - INFO - Fetching data from MySQL
+2025-03-18 21:22:05,695 - INFO - Data fetched successfully
+2025-03-18 21:22:06,940 - INFO - Cleaning merged dataset
+2025-03-18 21:22:09,547 - INFO - Data cleaned successfully
+2025-03-18 21:22:10,783 - INFO - Converting data types
+2025-03-18 21:22:11,083 - INFO - Data types converted successfully
+2025-03-18 21:22:13,082 - INFO - Generating star schema
+2025-03-18 21:22:14,141 - INFO - Star schema generated successfully
+2025-03-18 21:22:20,258 - INFO - Uploading tables to BigQuery
+2025-03-18 21:22:21,648 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 21:22:23,132 - ERROR - Error converting Pandas column with name: "order_approved_at" and datatype: "datetime64[ns]" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-03-18 21:22:24,510 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 21:22:26,426 - ERROR - Error converting Pandas column with name: "customer_zip_code_prefix" and datatype: "int64" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-03-18 21:22:27,813 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 21:22:29,106 - ERROR - Error converting Pandas column with name: "seller_zip_code_prefix" and datatype: "int64" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-03-18 21:22:30,454 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 21:22:31,634 - ERROR - Error converting Pandas column with name: "product_name_length" and datatype: "float64" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-03-18 21:22:33,025 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 21:22:34,517 - ERROR - Error converting Pandas column with name: "review_score" and datatype: "float64" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-03-18 21:22:34,519 - INFO - Data uploaded successfully
+2025-03-18 21:23:52,142 - INFO - Fetching data from MySQL
+2025-03-18 21:23:54,929 - INFO - Data fetched successfully
+2025-03-18 21:23:56,085 - INFO - Cleaning merged dataset
+2025-03-18 21:23:58,765 - INFO - Data cleaned successfully
+2025-03-18 21:24:00,473 - INFO - Converting data types
+2025-03-18 21:24:00,768 - INFO - Data types converted successfully
+2025-03-18 21:24:02,121 - INFO - Generating star schema
+2025-03-18 21:24:03,161 - INFO - Star schema generated successfully
+2025-03-18 21:27:13,173 - INFO - Uploading tables to BigQuery
+2025-03-18 21:27:15,192 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 21:42:25,448 - INFO - Fetching data from MySQL
+2025-03-18 21:42:28,290 - INFO - Data fetched successfully
+2025-03-18 21:42:30,631 - INFO - Cleaning merged dataset
+2025-03-18 21:42:33,314 - INFO - Data cleaned successfully
+2025-03-18 21:42:44,632 - INFO - Converting data types
+2025-03-18 21:42:44,934 - INFO - Data types converted successfully
+2025-03-18 21:42:46,201 - INFO - Generating star schema
+2025-03-18 21:42:47,257 - INFO - Star schema generated successfully
+2025-03-18 21:42:53,317 - INFO - Uploading tables to BigQuery
+2025-03-18 21:42:54,855 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 21:44:45,514 - INFO - Fetching data from MySQL
+2025-03-18 21:44:48,335 - INFO - Data fetched successfully
+2025-03-18 21:44:49,702 - INFO - Cleaning merged dataset
+2025-03-18 21:44:52,521 - INFO - Data cleaned successfully
+2025-03-18 21:44:53,951 - INFO - Converting data types
+2025-03-18 21:44:54,262 - INFO - Data types converted successfully
+2025-03-18 21:44:55,842 - INFO - Generating star schema
+2025-03-18 21:44:56,848 - INFO - Star schema generated successfully
+2025-03-18 21:45:11,185 - INFO - Uploading tables to BigQuery
+2025-03-18 21:45:12,591 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 21:45:14,469 - ERROR - Error converting Pandas column with name: "order_approved_at" and datatype: "datetime64[ns]" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-03-18 21:45:15,874 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 21:45:17,843 - ERROR - Error converting Pandas column with name: "customer_zip_code_prefix" and datatype: "Int64" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-03-18 21:45:19,288 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 21:45:21,037 - ERROR - Error converting Pandas column with name: "seller_zip_code_prefix" and datatype: "Int64" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-03-18 21:45:22,415 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 21:45:30,702 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 21:45:38,748 - INFO - Data uploaded successfully
+2025-03-18 21:48:47,258 - INFO - Fetching data from MySQL
+2025-03-18 21:48:50,087 - INFO - Data fetched successfully
+2025-03-18 21:48:51,337 - INFO - Cleaning merged dataset
+2025-03-18 21:48:54,118 - INFO - Data cleaned successfully
+2025-03-18 21:48:57,910 - INFO - Converting data types
+2025-03-18 21:48:58,224 - INFO - Data types converted successfully
+2025-03-18 21:49:23,846 - INFO - Generating star schema
+2025-03-18 21:49:24,889 - INFO - Star schema generated successfully
+2025-03-18 21:49:31,248 - INFO - Uploading tables to BigQuery
+2025-03-18 21:49:32,712 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 21:49:34,060 - ERROR - Error converting Pandas column with name: "order_approved_at" and datatype: "datetime64[ns, UTC]" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-03-18 21:49:35,442 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 21:49:36,707 - ERROR - Error converting Pandas column with name: "customer_zip_code_prefix" and datatype: "int64" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-03-18 21:49:38,069 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 21:49:39,350 - ERROR - Error converting Pandas column with name: "seller_zip_code_prefix" and datatype: "int64" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-03-18 21:49:40,705 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 21:49:45,635 - INFO - Uploading tables to BigQuery
+2025-03-18 21:49:46,151 - INFO - Uploading tables to BigQuery
+2025-03-18 21:49:46,187 - INFO - Uploading tables to BigQuery
+2025-03-18 21:49:46,248 - INFO - Uploading tables to BigQuery
+2025-03-18 21:49:46,307 - INFO - Uploading tables to BigQuery
+2025-03-18 21:49:47,484 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 21:49:48,397 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 21:49:48,398 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 21:49:49,448 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 21:49:49,564 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 21:49:49,715 - INFO - Uploading tables to BigQuery
+2025-03-18 21:49:50,501 - INFO - Uploading tables to BigQuery
+2025-03-18 21:49:51,185 - INFO - Uploading tables to BigQuery
+2025-03-18 21:49:51,579 - INFO - Uploading tables to BigQuery
+2025-03-18 21:49:53,098 - INFO - Uploading tables to BigQuery
+2025-03-18 21:49:54,587 - INFO - Uploading tables to BigQuery
+2025-03-18 21:49:55,544 - INFO - Uploading tables to BigQuery
+2025-03-18 21:49:56,659 - INFO - Uploading tables to BigQuery
+2025-03-18 21:49:58,054 - INFO - Uploading tables to BigQuery
+2025-03-18 21:50:00,942 - INFO - Uploading tables to BigQuery
+2025-03-18 21:50:01,908 - INFO - Uploading tables to BigQuery
+2025-03-18 21:50:02,077 - INFO - Uploading tables to BigQuery
+2025-03-18 21:50:03,430 - INFO - Uploading tables to BigQuery
+2025-03-18 21:50:07,276 - INFO - Uploading tables to BigQuery
+2025-03-18 21:50:07,503 - INFO - Uploading tables to BigQuery
+2025-03-18 21:50:10,834 - INFO - Uploading tables to BigQuery
+2025-03-18 21:50:11,665 - INFO - Uploading tables to BigQuery
+2025-03-18 21:50:12,015 - INFO - Uploading tables to BigQuery
+2025-03-18 21:50:12,307 - INFO - Uploading tables to BigQuery
+2025-03-18 21:50:16,484 - INFO - Uploading tables to BigQuery
+2025-03-18 21:50:21,022 - INFO - Uploading tables to BigQuery
+2025-03-18 21:50:21,451 - INFO - Uploading tables to BigQuery
+2025-03-18 21:50:23,317 - INFO - Uploading tables to BigQuery
+2025-03-18 21:50:24,008 - INFO - Uploading tables to BigQuery
+2025-03-18 21:50:24,319 - INFO - Uploading tables to BigQuery
+2025-03-18 21:50:24,763 - INFO - Uploading tables to BigQuery
+2025-03-18 21:50:25,588 - INFO - Uploading tables to BigQuery
+2025-03-18 21:50:30,601 - INFO - Uploading tables to BigQuery
+2025-03-18 21:50:32,301 - INFO - Uploading tables to BigQuery
+2025-03-18 21:50:34,419 - INFO - Uploading tables to BigQuery
+2025-03-18 21:50:35,889 - INFO - Uploading tables to BigQuery
+2025-03-18 21:50:38,727 - INFO - Uploading tables to BigQuery
+2025-03-18 21:50:39,409 - INFO - Uploading tables to BigQuery
+2025-03-18 21:50:44,584 - INFO - Uploading tables to BigQuery
+2025-03-18 21:50:44,936 - INFO - Uploading tables to BigQuery
+2025-03-18 21:50:50,508 - INFO - Uploading tables to BigQuery
+2025-03-18 21:50:50,729 - INFO - Uploading tables to BigQuery
+2025-03-18 21:50:54,082 - INFO - Uploading tables to BigQuery
+2025-03-18 21:50:54,450 - INFO - Uploading tables to BigQuery
+2025-03-18 21:50:54,744 - INFO - Uploading tables to BigQuery
+2025-03-18 21:50:54,972 - INFO - Uploading tables to BigQuery
+2025-03-18 21:50:56,678 - INFO - Uploading tables to BigQuery
+2025-03-18 21:50:59,072 - INFO - Uploading tables to BigQuery
+2025-03-18 21:50:59,974 - INFO - Uploading tables to BigQuery
+2025-03-18 21:51:01,577 - INFO - Uploading tables to BigQuery
+2025-03-18 21:51:01,657 - INFO - Uploading tables to BigQuery
+2025-03-18 21:51:05,340 - INFO - Uploading tables to BigQuery
+2025-03-18 21:51:07,503 - INFO - Uploading tables to BigQuery
+2025-03-18 21:51:07,739 - INFO - Uploading tables to BigQuery
+2025-03-18 21:51:10,716 - INFO - Uploading tables to BigQuery
+2025-03-18 21:51:11,766 - INFO - Uploading tables to BigQuery
+2025-03-18 21:51:13,194 - INFO - Uploading tables to BigQuery
+2025-03-18 21:51:14,949 - INFO - Uploading tables to BigQuery
+2025-03-18 21:51:15,193 - INFO - Uploading tables to BigQuery
+2025-03-18 21:51:19,645 - INFO - Uploading tables to BigQuery
+2025-03-18 21:51:21,862 - INFO - Uploading tables to BigQuery
+2025-03-18 21:51:23,882 - INFO - Uploading tables to BigQuery
+2025-03-18 21:51:25,050 - INFO - Uploading tables to BigQuery
+2025-03-18 21:51:25,885 - INFO - Uploading tables to BigQuery
+2025-03-18 21:51:27,308 - INFO - Uploading tables to BigQuery
+2025-03-18 21:51:28,905 - INFO - Uploading tables to BigQuery
+2025-03-18 21:51:31,629 - INFO - Uploading tables to BigQuery
+2025-03-18 21:51:34,043 - INFO - Uploading tables to BigQuery
+2025-03-18 21:51:35,733 - INFO - Uploading tables to BigQuery
+2025-03-18 21:51:36,168 - INFO - Uploading tables to BigQuery
+2025-03-18 21:51:40,331 - INFO - Uploading tables to BigQuery
+2025-03-18 21:51:40,862 - INFO - Uploading tables to BigQuery
+2025-03-18 21:51:41,042 - INFO - Uploading tables to BigQuery
+2025-03-18 21:51:43,155 - INFO - Uploading tables to BigQuery
+2025-03-18 21:51:43,423 - INFO - Uploading tables to BigQuery
+2025-03-18 21:51:43,867 - INFO - Uploading tables to BigQuery
+2025-03-18 21:51:44,753 - INFO - Uploading tables to BigQuery
+2025-03-18 21:51:45,928 - INFO - Uploading tables to BigQuery
+2025-03-18 21:51:46,113 - INFO - Uploading tables to BigQuery
+2025-03-18 21:51:46,114 - INFO - Uploading tables to BigQuery
+2025-03-18 21:51:52,150 - INFO - Uploading tables to BigQuery
+2025-03-18 21:51:52,426 - INFO - Uploading tables to BigQuery
+2025-03-18 21:51:54,347 - INFO - Uploading tables to BigQuery
+2025-03-18 21:51:54,982 - INFO - Uploading tables to BigQuery
+2025-03-18 21:51:58,849 - INFO - Uploading tables to BigQuery
+2025-03-18 21:52:06,016 - INFO - Uploading tables to BigQuery
+2025-03-18 21:52:07,407 - INFO - Uploading tables to BigQuery
+2025-03-18 21:52:12,293 - INFO - Uploading tables to BigQuery
+2025-03-18 21:52:15,323 - INFO - Uploading tables to BigQuery
+2025-03-18 21:52:20,675 - INFO - Uploading tables to BigQuery
+2025-03-18 21:52:21,833 - INFO - Uploading tables to BigQuery
+2025-03-18 21:52:22,224 - INFO - Uploading tables to BigQuery
+2025-03-18 21:52:24,261 - INFO - Uploading tables to BigQuery
+2025-03-18 21:52:24,948 - INFO - Uploading tables to BigQuery
+2025-03-18 21:52:26,896 - INFO - Uploading tables to BigQuery
+2025-03-18 21:52:33,904 - INFO - Uploading tables to BigQuery
+2025-03-18 21:52:34,402 - INFO - Uploading tables to BigQuery
+2025-03-18 21:52:35,201 - INFO - Uploading tables to BigQuery
+2025-03-18 21:52:41,125 - INFO - Uploading tables to BigQuery
+2025-03-18 21:52:41,330 - INFO - Uploading tables to BigQuery
+2025-03-18 21:52:42,350 - INFO - Uploading tables to BigQuery
+2025-03-18 21:52:43,980 - INFO - Uploading tables to BigQuery
+2025-03-18 21:52:44,186 - INFO - Uploading tables to BigQuery
+2025-03-18 21:52:44,903 - INFO - Uploading tables to BigQuery
+2025-03-18 21:52:45,315 - INFO - Uploading tables to BigQuery
+2025-03-18 21:52:45,826 - INFO - Uploading tables to BigQuery
+2025-03-18 21:52:46,339 - INFO - Uploading tables to BigQuery
+2025-03-18 21:52:47,475 - INFO - Uploading tables to BigQuery
+2025-03-18 21:52:52,022 - INFO - Uploading tables to BigQuery
+2025-03-18 21:52:59,778 - INFO - Uploading tables to BigQuery
+2025-03-18 21:53:06,599 - INFO - Uploading tables to BigQuery
+2025-03-18 21:53:06,924 - INFO - Uploading tables to BigQuery
+2025-03-18 21:53:10,039 - INFO - Uploading tables to BigQuery
+2025-03-18 21:53:13,899 - INFO - Uploading tables to BigQuery
+2025-03-18 21:53:14,445 - INFO - Uploading tables to BigQuery
+2025-03-18 21:53:15,208 - INFO - Uploading tables to BigQuery
+2025-03-18 21:53:16,083 - INFO - Uploading tables to BigQuery
+2025-03-18 21:53:18,823 - INFO - Uploading tables to BigQuery
+2025-03-18 21:53:19,263 - INFO - Uploading tables to BigQuery
+2025-03-18 21:53:24,908 - INFO - Uploading tables to BigQuery
+2025-03-18 21:53:25,247 - INFO - Uploading tables to BigQuery
+2025-03-18 21:53:30,947 - INFO - Uploading tables to BigQuery
+2025-03-18 21:53:33,313 - INFO - Uploading tables to BigQuery
+2025-03-18 21:53:33,879 - INFO - Uploading tables to BigQuery
+2025-03-18 21:53:34,106 - INFO - Uploading tables to BigQuery
+2025-03-18 21:53:36,373 - INFO - Uploading tables to BigQuery
+2025-03-18 21:53:36,603 - INFO - Uploading tables to BigQuery
+2025-03-18 21:53:37,971 - INFO - Uploading tables to BigQuery
+2025-03-18 21:53:39,690 - INFO - Uploading tables to BigQuery
+2025-03-18 21:53:47,296 - INFO - Uploading tables to BigQuery
+2025-03-18 21:53:49,272 - INFO - Uploading tables to BigQuery
+2025-03-18 21:53:52,415 - INFO - Uploading tables to BigQuery
+2025-03-18 21:53:56,405 - INFO - Uploading tables to BigQuery
+2025-03-18 21:53:59,237 - INFO - Uploading tables to BigQuery
+2025-03-18 21:54:15,936 - INFO - Uploading tables to BigQuery
+2025-03-18 21:54:17,593 - INFO - Uploading tables to BigQuery
+2025-03-18 21:54:19,939 - INFO - Uploading tables to BigQuery
+2025-03-18 21:54:24,482 - INFO - Uploading tables to BigQuery
+2025-03-18 21:54:24,756 - INFO - Uploading tables to BigQuery
+2025-03-18 21:54:25,599 - INFO - Uploading tables to BigQuery
+2025-03-18 21:54:27,473 - INFO - Uploading tables to BigQuery
+2025-03-18 21:54:32,976 - INFO - Uploading tables to BigQuery
+2025-03-18 21:54:35,332 - INFO - Uploading tables to BigQuery
+2025-03-18 21:54:39,834 - INFO - Uploading tables to BigQuery
+2025-03-18 21:54:41,550 - INFO - Uploading tables to BigQuery
+2025-03-18 21:54:42,081 - INFO - Uploading tables to BigQuery
+2025-03-18 21:54:43,275 - INFO - Uploading tables to BigQuery
+2025-03-18 21:54:45,259 - INFO - Uploading tables to BigQuery
+2025-03-18 21:54:49,098 - INFO - Uploading tables to BigQuery
+2025-03-18 21:54:52,302 - INFO - Uploading tables to BigQuery
+2025-03-18 21:54:53,508 - INFO - Uploading tables to BigQuery
+2025-03-18 21:54:53,643 - INFO - Uploading tables to BigQuery
+2025-03-18 21:54:54,449 - INFO - Uploading tables to BigQuery
+2025-03-18 21:54:54,721 - INFO - Uploading tables to BigQuery
+2025-03-18 21:55:02,923 - INFO - Uploading tables to BigQuery
+2025-03-18 21:55:05,927 - INFO - Uploading tables to BigQuery
+2025-03-18 21:55:10,727 - INFO - Uploading tables to BigQuery
+2025-03-18 21:55:11,402 - INFO - Uploading tables to BigQuery
+2025-03-18 21:55:13,527 - INFO - Uploading tables to BigQuery
+2025-03-18 21:55:17,341 - INFO - Uploading tables to BigQuery
+2025-03-18 21:55:18,807 - INFO - Uploading tables to BigQuery
+2025-03-18 21:55:19,507 - INFO - Uploading tables to BigQuery
+2025-03-18 21:55:20,621 - INFO - Uploading tables to BigQuery
+2025-03-18 21:55:24,467 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 21:56:57,461 - INFO - Fetching data from MySQL
+2025-03-18 21:57:00,269 - INFO - Data fetched successfully
+2025-03-18 21:57:01,503 - INFO - Cleaning merged dataset
+2025-03-18 21:57:04,221 - INFO - Data cleaned successfully
+2025-03-18 21:57:05,415 - INFO - Converting data types
+2025-03-18 21:57:05,716 - INFO - Data types converted successfully
+2025-03-18 21:57:07,090 - INFO - Generating star schema
+2025-03-18 21:57:08,120 - INFO - Star schema generated successfully
+2025-03-18 21:57:14,603 - INFO - Uploading tables to BigQuery
+2025-03-18 21:57:15,919 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 21:57:17,238 - ERROR - Error converting Pandas column with name: "order_approved_at" and datatype: "datetime64[ns]" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-03-18 21:57:18,476 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 21:57:19,941 - ERROR - Error converting Pandas column with name: "customer_zip_code_prefix" and datatype: "Int64" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-03-18 21:57:21,251 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 21:57:22,424 - ERROR - Error converting Pandas column with name: "seller_zip_code_prefix" and datatype: "Int64" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-03-18 21:57:23,732 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 21:57:31,604 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 21:57:39,986 - INFO - Data uploaded successfully
+2025-03-18 21:59:38,570 - INFO - Fetching data from MySQL
+2025-03-18 21:59:41,392 - INFO - Data fetched successfully
+2025-03-18 21:59:43,105 - INFO - Cleaning merged dataset
+2025-03-18 21:59:45,711 - INFO - Data cleaned successfully
+2025-03-18 21:59:54,585 - INFO - Converting data types
+2025-03-18 21:59:54,886 - INFO - Data types converted successfully
+2025-03-18 21:59:56,332 - INFO - Generating star schema
+2025-03-18 21:59:57,363 - INFO - Star schema generated successfully
+2025-03-18 22:00:04,040 - INFO - Uploading tables to BigQuery
+2025-03-18 22:00:06,060 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 22:00:07,359 - ERROR - Error converting Pandas column with name: "order_purchase_timestamp" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-03-18 22:00:08,719 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 22:00:10,108 - ERROR - Error converting Pandas column with name: "customer_zip_code_prefix" and datatype: "int64" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-03-18 22:00:11,463 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 22:00:13,105 - ERROR - Error converting Pandas column with name: "seller_zip_code_prefix" and datatype: "int64" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-03-18 22:00:19,414 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 22:00:27,898 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 22:00:35,651 - INFO - Data uploaded successfully
+2025-03-18 22:21:01,457 - INFO - Fetching data from MySQL
+2025-03-18 22:21:04,454 - INFO - Data fetched successfully
+2025-03-18 22:21:05,838 - INFO - Cleaning merged dataset
+2025-03-18 22:21:08,976 - INFO - Data cleaned successfully
+2025-03-18 22:21:10,540 - INFO - Converting data types
+2025-03-18 22:21:10,940 - INFO - Data types converted successfully
+2025-03-18 22:21:12,405 - INFO - Generating star schema
+2025-03-18 22:21:13,974 - INFO - Star schema generated successfully
+2025-03-18 22:21:19,238 - INFO - Uploading tables to BigQuery
+2025-03-18 22:21:21,725 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 22:21:23,609 - ERROR - Error converting Pandas column with name: "order_purchase_timestamp" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-03-18 22:21:25,343 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 22:21:26,950 - ERROR - Error converting Pandas column with name: "customer_zip_code_prefix" and datatype: "int64" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-03-18 22:21:28,630 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 22:21:30,362 - ERROR - Error converting Pandas column with name: "seller_zip_code_prefix" and datatype: "int64" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-03-18 22:21:31,986 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 22:21:41,711 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 22:22:30,069 - INFO - Fetching data from MySQL
+2025-03-18 22:22:33,419 - INFO - Data fetched successfully
+2025-03-18 22:22:34,935 - INFO - Cleaning merged dataset
+2025-03-18 22:22:38,195 - INFO - Data cleaned successfully
+2025-03-18 22:22:39,592 - INFO - Converting data types
+2025-03-18 22:22:39,996 - INFO - Data types converted successfully
+2025-03-18 22:22:41,463 - INFO - Generating star schema
+2025-03-18 22:22:43,102 - INFO - Star schema generated successfully
+2025-03-18 22:22:49,397 - INFO - Uploading tables to BigQuery
+2025-03-18 22:22:51,035 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 22:22:53,739 - ERROR - Error converting Pandas column with name: "order_approved_at" and datatype: "datetime64[ns]" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-03-18 22:22:55,485 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 22:22:58,074 - ERROR - Error converting Pandas column with name: "customer_zip_code_prefix" and datatype: "Int32" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-03-18 22:22:59,659 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 22:23:01,278 - ERROR - Error converting Pandas column with name: "seller_zip_code_prefix" and datatype: "Int32" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-03-18 22:23:02,973 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 22:23:11,473 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 22:23:21,638 - INFO - Data uploaded successfully
+2025-03-18 22:28:29,979 - INFO - Fetching data from MySQL
+2025-03-18 22:28:33,159 - INFO - Data fetched successfully
+2025-03-18 22:28:34,599 - INFO - Cleaning merged dataset
+2025-03-18 22:28:37,772 - INFO - Data cleaned successfully
+2025-03-18 22:28:40,369 - INFO - Converting data types
+2025-03-18 22:28:40,762 - INFO - Data types converted successfully
+2025-03-18 22:28:42,253 - INFO - Generating star schema
+2025-03-18 22:28:43,733 - INFO - Star schema generated successfully
+2025-03-18 22:28:49,673 - INFO - Uploading tables to BigQuery
+2025-03-18 22:28:51,283 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 22:28:52,902 - ERROR - Error converting Pandas column with name: "order_approved_at" and datatype: "datetime64[ns]" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-03-18 22:28:54,542 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 22:28:55,802 - ERROR - Error converting Pandas column with name: "customer_zip_code_prefix" and datatype: "Int32" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-03-18 22:28:57,407 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 22:28:58,636 - ERROR - Error converting Pandas column with name: "seller_zip_code_prefix" and datatype: "Int32" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-03-18 22:29:00,213 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 22:29:07,616 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 22:29:17,098 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 22:29:29,572 - INFO - Data uploaded successfully
+2025-03-18 22:56:01,822 - INFO - Fetching data from MySQL
+2025-03-18 22:56:04,973 - INFO - Data fetched successfully
+2025-03-18 22:56:06,343 - INFO - Cleaning merged dataset
+2025-03-18 22:56:09,444 - INFO - Data cleaned successfully
+2025-03-18 22:56:23,261 - INFO - Converting data types
+2025-03-18 22:56:23,670 - INFO - Data types converted successfully
+2025-03-18 22:56:25,035 - INFO - Generating star schema
+2025-03-18 22:56:25,939 - INFO - Star schema generated successfully
+2025-03-18 22:56:59,746 - INFO - Uploading tables to BigQuery
+2025-03-18 22:57:01,594 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 22:57:35,307 - INFO - Fetching data from MySQL
+2025-03-18 22:57:38,339 - INFO - Data fetched successfully
+2025-03-18 22:57:39,644 - INFO - Cleaning merged dataset
+2025-03-18 22:57:42,792 - INFO - Data cleaned successfully
+2025-03-18 22:57:43,970 - INFO - Converting data types
+2025-03-18 22:57:44,371 - INFO - Data types converted successfully
+2025-03-18 22:57:46,119 - INFO - Generating star schema
+2025-03-18 22:57:46,990 - INFO - Star schema generated successfully
+2025-03-18 22:57:52,666 - INFO - Uploading tables to BigQuery
+2025-03-18 22:57:54,529 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 23:01:51,187 - INFO - Fetching data from MySQL
+2025-03-18 23:01:54,333 - INFO - Data fetched successfully
+2025-03-18 23:01:55,710 - INFO - Cleaning merged dataset
+2025-03-18 23:01:58,876 - INFO - Data cleaned successfully
+2025-03-18 23:02:00,197 - INFO - Converting data types
+2025-03-18 23:02:00,599 - INFO - Data types converted successfully
+2025-03-18 23:02:02,188 - INFO - Generating star schema
+2025-03-18 23:02:03,820 - INFO - Star schema generated successfully
+2025-03-18 23:02:13,002 - INFO - Uploading tables to BigQuery
+2025-03-18 23:02:14,685 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 23:02:16,614 - ERROR - Error converting Pandas column with name: "order_approved_at" and datatype: "datetime64[ns]" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-03-18 23:02:18,296 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 23:02:19,998 - ERROR - Error converting Pandas column with name: "customer_zip_code_prefix" and datatype: "Int32" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-03-18 23:02:21,900 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 23:02:23,521 - ERROR - Error converting Pandas column with name: "seller_zip_code_prefix" and datatype: "Int32" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-03-18 23:02:25,308 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 23:02:27,371 - ERROR - Error converting Pandas column with name: "product_name_length" and datatype: "float32" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-03-18 23:02:28,943 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 23:02:36,184 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 23:02:37,884 - ERROR - Error converting Pandas column with name: "review_score" and datatype: "float32" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-03-18 23:02:37,885 - INFO - Data uploaded successfully
+2025-03-18 23:04:06,312 - INFO - Fetching data from MySQL
+2025-03-18 23:04:09,395 - INFO - Data fetched successfully
+2025-03-18 23:04:10,726 - INFO - Cleaning merged dataset
+2025-03-18 23:04:13,850 - INFO - Data cleaned successfully
+2025-03-18 23:04:15,086 - INFO - Converting data types
+2025-03-18 23:04:15,493 - INFO - Data types converted successfully
+2025-03-18 23:04:16,712 - INFO - Generating star schema
+2025-03-18 23:04:19,216 - INFO - Star schema generated successfully
+2025-03-18 23:04:28,582 - INFO - Uploading tables to BigQuery
+2025-03-18 23:04:30,448 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 23:04:31,710 - ERROR - Error converting Pandas column with name: "order_purchase_timestamp" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-03-18 23:04:33,403 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 23:04:34,648 - ERROR - Error converting Pandas column with name: "customer_zip_code_prefix" and datatype: "Int64" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-03-18 23:04:36,463 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 23:04:37,659 - ERROR - Error converting Pandas column with name: "seller_zip_code_prefix" and datatype: "Int64" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-03-18 23:04:39,335 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 23:04:40,539 - ERROR - Error converting Pandas column with name: "product_name_length" and datatype: "float64" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-03-18 23:04:42,311 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 23:04:49,677 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 23:04:51,115 - ERROR - Error converting Pandas column with name: "review_score" and datatype: "float64" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-03-18 23:04:51,117 - INFO - Data uploaded successfully
+2025-03-18 23:06:45,811 - INFO - Fetching data from MySQL
+2025-03-18 23:06:49,058 - INFO - Data fetched successfully
+2025-03-18 23:06:50,461 - INFO - Cleaning merged dataset
+2025-03-18 23:06:53,660 - INFO - Data cleaned successfully
+2025-03-18 23:06:54,939 - INFO - Converting data types
+2025-03-18 23:06:55,339 - INFO - Data types converted successfully
+2025-03-18 23:06:56,584 - INFO - Generating star schema
+2025-03-18 23:06:58,358 - INFO - Star schema generated successfully
+2025-03-18 23:07:03,974 - INFO - Uploading tables to BigQuery
+2025-03-18 23:07:05,743 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 23:07:06,882 - ERROR - Error converting Pandas column with name: "order_approved_at" and datatype: "datetime64[ns]" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-03-18 23:07:08,446 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 23:07:18,788 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 23:07:29,754 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 23:07:31,426 - ERROR - Error converting Pandas column with name: "product_name_length" and datatype: "float64" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-03-18 23:07:33,049 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 23:07:39,925 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 23:07:41,137 - ERROR - Error converting Pandas column with name: "review_score" and datatype: "float64" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-03-18 23:07:41,138 - INFO - Data uploaded successfully
+2025-03-18 23:08:41,185 - INFO - Fetching data from MySQL
+2025-03-18 23:08:44,298 - INFO - Data fetched successfully
+2025-03-18 23:08:45,453 - INFO - Cleaning merged dataset
+2025-03-18 23:08:48,705 - INFO - Data cleaned successfully
+2025-03-18 23:08:49,839 - INFO - Converting data types
+2025-03-18 23:08:50,249 - INFO - Data types converted successfully
+2025-03-18 23:08:51,546 - INFO - Generating star schema
+2025-03-18 23:08:53,994 - INFO - Star schema generated successfully
+2025-03-18 23:08:59,412 - INFO - Uploading tables to BigQuery
+2025-03-18 23:09:01,093 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 23:09:02,341 - ERROR - Error converting Pandas column with name: "order_purchase_timestamp" and datatype: "object" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-03-18 23:09:03,853 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 23:09:05,114 - ERROR - Error converting Pandas column with name: "customer_zip_code_prefix" and datatype: "Int64" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-03-18 23:09:06,652 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 23:09:08,024 - ERROR - Error converting Pandas column with name: "seller_zip_code_prefix" and datatype: "Int64" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-03-18 23:09:09,546 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 23:09:10,674 - ERROR - Error converting Pandas column with name: "product_name_length" and datatype: "float64" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-03-18 23:09:11,943 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 23:09:19,405 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-18 23:09:20,878 - ERROR - Error converting Pandas column with name: "review_score" and datatype: "float64" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
+2025-03-18 23:09:20,880 - INFO - Data uploaded successfully
