@@ -12,6 +12,7 @@ from utils.convert_dtypes import convert_dtypes
 from utils.bigquery_upload_utils import upload_to_bigquery
 from utils.schema_utils import generate_star_schema
 from utils.aggregate_utils import create_aggregation_tables, fetch_aggregation_table, get_aggregation_tables
+from utils.load_datamart_utils import create_and_push_datamarts,push_to_bigquery,run_datamart_pipeline
 
 st.set_page_config(page_title="ETL Dashboard", layout="wide")
 
@@ -30,6 +31,8 @@ if 'star_schema_generated' not in st.session_state:
     st.session_state.star_schema_generated = False
 if 'aggregated_metrics_generated' not in st.session_state:
     st.session_state.aggregated_metrics_generated = False
+if 'datamarts_generated' not in st.session_state:
+    st.session_state.datamarts_generated = False
 
 def main():
     if page == "Home":
@@ -100,22 +103,29 @@ def main():
         dataset_id = st.text_input("Enter BigQuery Dataset ID:")
         
         if st.session_state.star_schema_generated:
-            if st.button("Upload Star Schema to BigQuery"):
+            if st.button("Upload Star Schema & Generate Data Marts"):
                 if project_id and dataset_id:
-                    show_loader("Uploading tables to BigQuery...")
+                    show_loader("Uploading Star Schema tables to BigQuery...")
                     upload_to_bigquery(st.session_state.fact_orders, "fact_orders", project_id, dataset_id)
                     upload_to_bigquery(st.session_state.dim_customers, "dim_customers", project_id, dataset_id)
                     upload_to_bigquery(st.session_state.dim_sellers, "dim_sellers", project_id, dataset_id)
                     upload_to_bigquery(st.session_state.dim_products, "dim_products", project_id, dataset_id)
                     upload_to_bigquery(st.session_state.dim_payment_types, "dim_payment_types", project_id, dataset_id)
                     upload_to_bigquery(st.session_state.dim_reviews, "dim_reviews", project_id, dataset_id)
-                    st.success("All tables uploaded successfully!")
-                    
+                    st.success("Star Schema tables uploaded successfully!")
+
                     show_loader("Executing Aggregated Metrics...")
                     create_aggregation_tables(project_id, dataset_id)
                     st.session_state.aggregated_metrics_generated = True
                     st.sidebar.success("Aggregated Metrics Generated!")
-                    st.success("Aggregated Metrics tables generated successfully!")
+                    st.success("Aggregated Metrics tables created successfully!")
+
+                    show_loader("Creating Data Marts...")
+                    run_datamart_pipeline(st.session_state.converted_df, project_id, dataset_id)
+                    st.session_state.datamarts_generated = True
+                    st.sidebar.success("Data Marts Created!")
+                    st.success("Data Marts successfully created and uploaded!")
+
                 else:
                     st.error("Please provide valid Project ID and Dataset ID.")
         else:
