@@ -12,7 +12,7 @@ from utils.convert_dtypes import convert_dtypes
 from utils.bigquery_upload_utils import upload_to_bigquery
 from utils.schema_utils import generate_star_schema
 from utils.aggregate_utils import create_aggregation_tables, fetch_aggregation_table, get_aggregation_tables
-from utils.load_datamart_utils import create_and_push_datamarts,push_to_bigquery,run_datamart_pipeline
+from utils.load_datamart_utils import run_datamart_pipeline
 
 st.set_page_config(page_title="ETL Dashboard", layout="wide")
 
@@ -41,7 +41,7 @@ def main():
         if st.button("Start Extraction"):
             show_loader("Fetching data from Kaggle...")
             st.success("Data fetched successfully!")
-            
+
             show_loader("Fetching tables from MySQL and converting data types...")
             try:
                 orders = convert_mysql_dtypes(fetch_table("olist_orders_dataset"))
@@ -61,11 +61,11 @@ def main():
             show_loader("Merging data...")
             merged_df = merge_ecommerce_data(orders, customers, order_payments, order_reviews, order_items, products, category_translation, sellers)
             st.success("Data merged successfully!")
-            
+
             show_loader("Cleaning data...")
             cleaned_df = clean(merged_df)
             st.success("Data cleaned successfully!")
-            
+
             show_loader("Converting data types...")
             st.session_state.converted_df = convert_dtypes(cleaned_df)
             st.success("Data types converted successfully!")
@@ -101,18 +101,23 @@ def main():
         st.title("Upload to BigQuery")
         project_id = st.text_input("Enter Google Cloud Project ID:")
         dataset_id = st.text_input("Enter BigQuery Dataset ID:")
-        
+
         if st.session_state.star_schema_generated:
             if st.button("Upload Star Schema & Generate Data Marts"):
                 if project_id and dataset_id:
-                    show_loader("Uploading Star Schema tables to BigQuery...")
-                    upload_to_bigquery(st.session_state.fact_orders, "fact_orders", project_id, dataset_id)
-                    upload_to_bigquery(st.session_state.dim_customers, "dim_customers", project_id, dataset_id)
-                    upload_to_bigquery(st.session_state.dim_sellers, "dim_sellers", project_id, dataset_id)
-                    upload_to_bigquery(st.session_state.dim_products, "dim_products", project_id, dataset_id)
-                    upload_to_bigquery(st.session_state.dim_payment_types, "dim_payment_types", project_id, dataset_id)
-                    upload_to_bigquery(st.session_state.dim_reviews, "dim_reviews", project_id, dataset_id)
-                    st.success("Star Schema tables uploaded successfully!")
+                    tables_to_upload = {
+                        "fact_orders": st.session_state.fact_orders,
+                        "dim_customers": st.session_state.dim_customers,
+                        "dim_sellers": st.session_state.dim_sellers,
+                        "dim_products": st.session_state.dim_products,
+                        "dim_payment_types": st.session_state.dim_payment_types,
+                        "dim_reviews": st.session_state.dim_reviews,
+                    }
+
+                    for table_name, table_data in tables_to_upload.items():
+                        show_loader(f"Uploading {table_name} to BigQuery...")
+                        upload_to_bigquery(table_data, table_name, project_id, dataset_id)
+                        st.success(f"{table_name} uploaded successfully!")
 
                     show_loader("Executing Aggregated Metrics...")
                     create_aggregation_tables(project_id, dataset_id)
@@ -168,3 +173,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

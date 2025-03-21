@@ -24,5 +24,6 @@ def merge_ecommerce_data(orders, customers, order_payments, order_reviews, order
     df = df.merge(products, on="product_id", how="left")
     df = df.merge(category_translation, on="product_category_name", how="left")
     df = df.merge(sellers, on="seller_id", how="left")
+    df.to_csv("./data/merged.csv")
     
     return df
