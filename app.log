@@ -1715,3 +1715,83 @@ Job ID: 617e2aa2-3df8-4acd-ae05-9251b47a9867
         SUM(r.total_reviews) as total_reviews,
         SAFE_DIVIDE(...
 2025-03-23 13:55:50,151 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 14:40:44,865 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 14:42:38,148 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 14:42:41,561 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 14:45:01,181 - INFO - \u2705 Uploaded dim_customers successfully.
+2025-03-23 14:45:05,359 - INFO - \u2705 Uploaded dim_sellers successfully.
+2025-03-23 14:45:10,367 - INFO - \u2705 Uploaded dim_products successfully.
+2025-03-23 14:45:15,072 - INFO - \u2705 Uploaded dim_payment_types successfully.
+2025-03-23 14:45:22,230 - INFO - \u2705 Uploaded dim_reviews successfully.
+2025-03-23 14:45:38,281 - INFO - \u2705 Uploaded fact_orders_partitioned_clustered successfully.
+2025-03-23 14:45:44,395 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 14:45:47,948 - INFO - \u2705 Created dm_sales_by_category successfully.
+2025-03-23 14:45:51,539 - INFO - \u2705 Created dm_sales_by_customer_state successfully.
+2025-03-23 14:45:54,997 - INFO - \u2705 Created dm_sales_by_seller successfully.
+2025-03-23 14:45:58,406 - INFO - \u2705 Created dm_monthly_sales_trend successfully.
+2025-03-23 14:46:01,882 - INFO - \u2705 Created dm_avg_review_score successfully.
+2025-03-23 14:46:11,648 - INFO - \u2705 Created Agg_sales_by_category successfully.
+2025-03-23 14:46:15,373 - INFO - \u2705 Created Agg_sales_by_customer_state successfully.
+2025-03-23 14:46:18,590 - INFO - \u2705 Created Agg_sales_by_seller successfully.
+2025-03-23 14:46:21,969 - INFO - \u2705 Created Agg_monthly_sales_trend successfully.
+2025-03-23 14:47:34,069 - INFO - \u2705 Created Agg_avg_review_score successfully.
+2025-03-23 14:47:37,908 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 14:48:51,133 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 14:48:51,154 - INFO - Executing query: 
+    SELECT 
+        SUM(total_sales) AS total_revenue,
+        SUM(total_orders) AS total_orders,
+ ...
+2025-03-23 14:48:53,115 - INFO - Executing query: 
+    WITH ranked_months AS (
+        SELECT 
+            month,
+            total_sales,
+           ...
+2025-03-23 14:48:54,959 - INFO - Executing query: 
+    SELECT 
+        month,
+        total_sales,
+        total_orders
+    FROM `brazilian-ecom.t6.Ag...
+2025-03-23 14:48:56,849 - INFO - Executing query: 
+    SELECT 
+        category,
+        SUM(total_sales) AS total_sales,
+        SUM(total_orders) AS...
+2025-03-23 14:48:58,568 - INFO - Executing query: 
+    SELECT 
+        customer_state,
+        SUM(total_sales) AS total_sales,
+        SUM(total_orde...
+2025-03-23 14:49:00,537 - INFO - Executing query: 
+    SELECT 
+        seller_id,
+        seller_state,
+        SUM(total_sales) AS total_sales,
+     ...
+2025-03-23 14:49:02,210 - INFO - Executing query: 
+    SELECT 
+        seller_state,
+        SUM(total_sales) AS total_sales,
+        COUNT(DISTINCT s...
+2025-03-23 14:49:03,961 - INFO - Executing query: 
+    SELECT 
+        seller_id,
+        seller_state,
+        SUM(total_sales) AS total_sales,
+     ...
+2025-03-23 14:49:05,730 - INFO - Executing query: 
+    SELECT 
+        category,
+        SUM(total_reviews) as total_reviews,
+        SAFE_DIVIDE(SUM(...
+2025-03-23 14:49:07,436 - INFO - Executing query: 
+    SELECT 
+        r.category,
+        SUM(r.total_reviews) as total_reviews,
+        SAFE_DIVIDE(...
+2025-03-23 14:50:23,749 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 15:11:13,391 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 15:11:19,484 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 15:12:08,360 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable

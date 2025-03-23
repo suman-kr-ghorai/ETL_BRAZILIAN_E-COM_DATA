@@ -50,7 +50,7 @@ if page == "ETL -Manual":
     
     if st.button("Start Extraction"):
         show_loader("Fetching data from Kaggle...")
-        # fetch_data()
+        fetch_data()
 
         show_loader("Fetching MySQL tables...")
         st.session_state.orders = convert_mysql_dtypes(fetch_table("olist_orders_dataset"))
