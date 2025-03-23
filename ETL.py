@@ -14,7 +14,7 @@ from utils.bigquery_upload_utils import upload_fact_table, upload_dimension_tabl
 from utils.schema_utils import generate_star_schema
 from utils.aggregate_utils import create_aggregation_tables
 from utils.load_datamart_utils import create_datamart_tables
-from utils.kpi_upload import create_kpi_tables
+from utils.kpi_upload import create_and_populate_kpi_tables
 from config import PROJECT_ID, DATASET_ID
 
 st.set_page_config(page_title="ETL Dashboard", layout="wide")
@@ -113,7 +113,8 @@ if page == "ETL -Manual":
     if st.button("Create Aggregation Tables and KPI's"):
         show_loader("Creating Aggregation Tables...")
         create_aggregation_tables(PROJECT_ID, DATASET_ID)
-        create_kpi_tables(PROJECT_ID,DATASET_ID)
+        create_and_populate_kpi_tables(PROJECT_ID,DATASET_ID)
+        
         st.success("Aggregation tables created successfully!")
 
     
@@ -161,7 +162,10 @@ elif page == "ETL - Automated":
         create_datamart_tables(PROJECT_ID, DATASET_ID)
 
         show_loader("Creating KPI's...")
-        create_kpi_tables(PROJECT_ID, DATASET_ID)
+        create_and_populate_kpi_tables(PROJECT_ID,DATASET_ID)
+        
+
+
 
         st.success("ETL Pipeline Completed Successfully!")
 

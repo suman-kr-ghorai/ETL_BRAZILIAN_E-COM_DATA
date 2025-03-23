@@ -1795,3 +1795,54 @@ Job ID: 617e2aa2-3df8-4acd-ae05-9251b47a9867
 2025-03-23 15:11:13,391 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
 2025-03-23 15:11:19,484 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
 2025-03-23 15:12:08,360 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 18:44:12,882 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 18:44:13,918 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 18:44:15,371 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 18:54:25,699 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 18:54:27,229 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 19:06:28,471 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 19:06:29,782 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 19:08:22,258 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 19:12:42,180 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 19:12:43,399 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 19:13:29,247 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 19:14:11,403 - INFO - \u2705 Uploaded dim_customers successfully.
+2025-03-23 19:14:16,043 - INFO - \u2705 Uploaded dim_sellers successfully.
+2025-03-23 19:14:21,272 - INFO - \u2705 Uploaded dim_products successfully.
+2025-03-23 19:14:26,196 - INFO - \u2705 Uploaded dim_payment_types successfully.
+2025-03-23 19:14:32,100 - INFO - \u2705 Uploaded dim_reviews successfully.
+2025-03-23 19:14:51,361 - INFO - \u2705 Uploaded fact_orders_partitioned_clustered successfully.
+2025-03-23 19:14:58,201 - INFO - \u2705 Created Agg_sales_by_category successfully.
+2025-03-23 19:15:01,632 - INFO - \u2705 Created Agg_sales_by_customer_state successfully.
+2025-03-23 19:15:04,784 - INFO - \u2705 Created Agg_sales_by_seller successfully.
+2025-03-23 19:15:11,865 - INFO - \u2705 Created Agg_monthly_sales_trend successfully.
+2025-03-23 19:15:15,398 - INFO - \u2705 Created Agg_avg_review_score successfully.
+2025-03-23 19:15:20,266 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 19:15:23,757 - INFO - \u2705 Created dm_sales_by_category successfully.
+2025-03-23 19:15:27,484 - INFO - \u2705 Created dm_sales_by_customer_state successfully.
+2025-03-23 19:15:30,656 - INFO - \u2705 Created dm_sales_by_seller successfully.
+2025-03-23 19:15:34,107 - INFO - \u2705 Created dm_monthly_sales_trend successfully.
+2025-03-23 19:15:37,916 - INFO - \u2705 Created dm_avg_review_score successfully.
+2025-03-23 19:15:42,645 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 19:43:48,413 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 19:43:49,796 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 19:44:33,530 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 19:47:39,744 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 19:53:13,492 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 19:57:44,730 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 20:41:57,738 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 20:42:00,693 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 20:47:32,045 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 20:59:10,639 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 20:59:12,044 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 21:01:28,694 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 21:01:30,022 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 21:01:33,645 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 21:04:31,508 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 21:04:32,838 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 21:05:05,790 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 21:05:07,168 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 21:05:07,385 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 21:06:04,161 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 21:06:05,470 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 21:20:37,062 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
