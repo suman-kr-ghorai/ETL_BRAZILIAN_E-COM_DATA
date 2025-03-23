@@ -14,15 +14,15 @@ from utils.bigquery_upload_utils import upload_fact_table, upload_dimension_tabl
 from utils.schema_utils import generate_star_schema
 from utils.aggregate_utils import create_aggregation_tables
 from utils.load_datamart_utils import create_datamart_tables
+from utils.kpi_upload import create_kpi_tables
 from config import PROJECT_ID, DATASET_ID
 
 st.set_page_config(page_title="ETL Dashboard", layout="wide")
 
 st.sidebar.title("ETL Dashboard")
-page = st.sidebar.radio(" /", [
-    "ETL - PIPELINE MANUAL",
-    "ETL - AUTOMATED",
-   
+page = st.sidebar.radio("Select an option:", [
+    "ETL -Manual",
+    "ETL - Automated"
 ])
 
 def show_loader(message, duration=3):
@@ -45,8 +45,8 @@ def display_data_insights(df, title="Data Insights"):
     # st.dataframe(null_summary)
 
 
-if page == "ETL - PIPELINE MANUAL":
-    st.title("ETL - PIPELINE MANUAL")
+if page == "ETL -Manual":
+    st.title("ETL -Manual")
     
     if st.button("Start Extraction"):
         show_loader("Fetching data from Kaggle...")
@@ -110,13 +110,16 @@ if page == "ETL - PIPELINE MANUAL":
             create_datamart_tables(PROJECT_ID, DATASET_ID)
             st.success("Data marts created successfully!")
 
-    if st.button("Create Aggregation Tables"):
+    if st.button("Create Aggregation Tables and KPI's"):
         show_loader("Creating Aggregation Tables...")
         create_aggregation_tables(PROJECT_ID, DATASET_ID)
+        create_kpi_tables(PROJECT_ID,DATASET_ID)
         st.success("Aggregation tables created successfully!")
 
-elif page == "ETL - AUTOMATED":
-    st.title("ETL - AUTOMATED")
+    
+
+elif page == "ETL - Automated":
+    st.title("ETL - Automated")
     if st.button("Run ETL Pipeline Automatically"):
         show_loader("Running Full ETL Pipeline...")
         fetch_data()
@@ -156,6 +159,9 @@ elif page == "ETL - AUTOMATED":
 
         show_loader("Creating Data Marts...")
         create_datamart_tables(PROJECT_ID, DATASET_ID)
+
+        show_loader("Creating KPI's...")
+        create_kpi_tables(PROJECT_ID, DATASET_ID)
 
         st.success("ETL Pipeline Completed Successfully!")
 

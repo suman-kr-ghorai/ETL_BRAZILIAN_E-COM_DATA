@@ -26,7 +26,7 @@ def get_client():
 client = get_client()
 
 # Set up logging
-log_file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "app.log"))
+log_file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "../app.log"))
 logging.basicConfig(
     filename=log_file_path,
     level=logging.INFO,
