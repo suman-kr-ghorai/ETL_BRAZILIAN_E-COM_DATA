@@ -641,6 +641,8 @@ with tab4:
         # Filter for top cities
         top_cities_data = yoy_city_df[yoy_city_df['seller_city'].isin(top_cities)]
         
+        category_colors = ['#FF4B4B', '#3366FF', '#33CC33', '#FF33CC', '#FFCC00']
+        
         fig = px.line(
             top_cities_data,
             x='year',
@@ -648,13 +650,16 @@ with tab4:
             color='seller_city',
             title='Top 5 Cities - Revenue Trend',
             markers=True,
-            line_shape='linear'
+            line_shape='linear',
+            color_discrete_sequence=category_colors  # Use bright colors
         )
         fig.update_layout(
             xaxis_title="Year",
             yaxis_title="Total Revenue (R$)",
             xaxis=dict(tickmode='linear')
         )
+        fig.update_traces(line=dict(width=3), marker=dict(size=10))  # Make lines thicker for better visibility
+        
         st.plotly_chart(fig, use_container_width=True)
         
         # Save figure
@@ -679,7 +684,6 @@ with tab4:
     except Exception as e:
         st.error(f"Error loading YoY data: {e}")
 
-# Tab 5: Category Analysis
 with tab5:
     st.header("Product Category Analysis")
     
@@ -703,7 +707,7 @@ with tab5:
             y='total_revenue',
             title='Top 10 Categories by Total Revenue',
             color='total_revenue',
-            color_continuous_scale=px.colors.sequential.Viridis
+            color_continuous_scale='Turbo'  # Use Turbo color scale for more vivid colors
         )
         fig.update_layout(
             xaxis_title="Product Category",
@@ -729,6 +733,9 @@ with tab5:
             # Filter for top categories
             top_cats_data = yoy_category_df[yoy_category_df['product_category'].isin(top_cats)]
             
+            # Use a high-contrast color palette for better visibility in PDF
+            category_colors = ['#FF4B4B', '#3366FF', '#33CC33', '#FF33CC', '#FFCC00']
+            
             fig = px.line(
                 top_cats_data,
                 x='year',
@@ -736,13 +743,17 @@ with tab5:
                 color='product_category',
                 title='Top 5 Categories - Revenue Trend',
                 markers=True,
-                line_shape='linear'
+                line_shape='linear',
+                color_discrete_sequence=category_colors  # Use bright colors
             )
             fig.update_layout(
                 xaxis_title="Year",
                 yaxis_title="Total Revenue (R$)",
                 xaxis=dict(tickmode='linear')
             )
+            # Make lines thicker for better visibility
+            fig.update_traces(line=dict(width=3), marker=dict(size=10))
+            
             st.plotly_chart(fig, use_container_width=True)
             
             # Save figure
@@ -755,12 +766,12 @@ with tab5:
         # Insights
         st.subheader("Insights")
         category_insights = """
-        The top categories represent a significant portion of overall revenue, indicating category concentration.
-        Categories show different growth patterns, with some emerging categories showing rapid expansion.
-        Traditional categories maintain stable revenue streams, while trending categories show more volatility.
-        Invest in expanding inventory and seller recruitment in high-growth categories.
-        Consider specialized marketing campaigns for seasonal category performance.
-        Monitor emerging categories for early identification of consumer trends.
+        - The top categories represent a significant portion of overall revenue, indicating category concentration.
+        - Categories show different growth patterns, with some emerging categories showing rapid expansion.
+        - Traditional categories maintain stable revenue streams, while trending categories show more volatility.
+        - Invest in expanding inventory and seller recruitment in high-growth categories.
+        - Consider specialized marketing campaigns for seasonal category performance.
+        - Monitor emerging categories for early identification of consumer trends.
         """
         st.markdown(category_insights)
         
@@ -770,16 +781,16 @@ with tab5:
     except Exception as e:
         st.error(f"Error loading category data: {e}")
 
+
 # Tab 6: Reports & Email
-# Tab 6: Reports & Email
-# Tab 6: Reports & Email
+
 with tab6:
     st.header("Generate and Send Reports")
     
     # Report format selection
     report_format = st.radio(
         "Select Report Format:",
-        ["PDF", "PowerPoint"]
+        ["PDF"]
     )
     
     # Generate Report button

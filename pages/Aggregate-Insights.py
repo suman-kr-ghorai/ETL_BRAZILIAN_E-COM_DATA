@@ -48,14 +48,14 @@ def run_query(query):
         return []
 
 # Header
-st.title("📊 E-commerce Analytics Dashboard")
+st.title(" E-commerce Analytics Dashboard")
 st.markdown("Analyze sales performance, customer distribution, and product reviews")
 
 # Dashboard Tabs
 tab1, tab2, tab3, tab4 = st.tabs(["Sales Overview", "Geographic Analysis", "Seller Performance", "Product Reviews"])
 
 with tab1:
-    st.header("📊 Sales Overview")
+    st.header(" Sales Overview")
 
     # **Query: Total Revenue, Orders & YTD Sales**
     metrics_query = f"""
@@ -108,7 +108,7 @@ with tab1:
             # monthly_growth = growth_results[0]['growth_percentage']
             # col4.metric("📈 Monthly Growth", f"{monthly_growth:.1f}%", delta=f"{monthly_growth:.1f}%")
 
-    # **📌 Chart 1: Monthly Sales & Order Trends**
+    # **Chart 1: Monthly Sales & Order Trends**
     # st.subheader("📆 Monthly Sales & Order Trends")
 
     monthly_trend_query = f"""
@@ -159,7 +159,7 @@ with tab1:
 
             st.plotly_chart(fig, use_container_width=True)
 
-    # **📌 Chart 2: Top Product Categories by Revenue**
+    # **Chart 2: Top Product Categories by Revenue**
     st.subheader("🏆 Best Selling Product Categories")
 
     category_query = f"""
@@ -245,7 +245,7 @@ with tab2:
         state_data = run_query(state_query)
 
         if state_data:
-            st.subheader("📌 Sales Distribution by State")
+            st.subheader(" Sales Distribution by State")
 
             states = [row['customer_state'] for row in state_data]
             sales = [row['total_sales'] for row in state_data]
@@ -270,7 +270,7 @@ with tab2:
 
             st.plotly_chart(fig, use_container_width=True)
 
-            # **📌 Chart 2: State-wise Order Distribution**
+            # ** Chart 2: State-wise Order Distribution**
             st.subheader("📦 Order Volume Across States")
 
             fig = go.Figure(go.Bar(
@@ -290,7 +290,7 @@ with tab2:
 
             st.plotly_chart(fig, use_container_width=True)
 
-            # **📌 Chart 3: Average Order Value Across States**
+            # **Chart 3: Average Order Value Across States**
             st.subheader("💰 Average Order Value by State")
 
             fig = go.Figure(go.Bar(
@@ -317,7 +317,7 @@ with tab2:
 
 
 with tab3:
-    # st.header("🏆 Seller Performance")
+    # st.header(" Seller Performance")
 
     # **Query 1: Top Sellers by Revenue & Orders**
     sellers_query = f"""
@@ -366,7 +366,7 @@ with tab3:
 
         # **📌 Chart 1: Top 10 Sellers by Revenue & Orders**
         if top_sellers:
-            st.subheader("💰 Top 10 Sellers by Revenue & Orders")
+            st.subheader(" Top 10 Sellers by Revenue & Orders")
 
             seller_ids = [row['seller_id'] for row in top_sellers]
             seller_sales = [row['total_sales'] for row in top_sellers]
@@ -404,11 +404,11 @@ with tab3:
 
             # **🔍 Insight:**
             best_seller = seller_ids[0]
-            st.info(f"🚀 **{best_seller}** is the top seller by revenue! But does it have the most orders?")
+            st.info(f"**{best_seller}** is the top seller by revenue! But does it have the most orders?")
 
         # **📌 Chart 2: Seller Distribution by State**
         if seller_by_state:
-            st.subheader("📍 Where Are the Best Sellers Located?")
+            st.subheader("Where Are the Best Sellers Located?")
 
             states = [row['seller_state'] for row in seller_by_state]
             total_sellers = [row['total_sellers'] for row in seller_by_state]
@@ -454,7 +454,7 @@ with tab3:
 
             # **🔍 Insight:**
             top_seller_state = states[0]
-            st.info(f"📍 **{top_seller_state}** has the most sellers! But does it have the highest revenue per seller?")
+            st.info(f" **{top_seller_state}** has the most sellers! But does it have the highest revenue per seller?")
 
         # **📌 Chart 3: Seller Efficiency (AOV Bubble Chart)**
         if efficiency_data:
@@ -490,7 +490,7 @@ with tab3:
 
 
 with tab4:
-    # st.header("📢 Product Reviews Analysis")
+    # st.header("Product Reviews Analysis")
 
     # **Query 1: Get Top 10 Categories by Total Reviews**
     review_count_query = f"""
@@ -563,7 +563,7 @@ with tab4:
 
             # **🔍 Insight:**
             most_reviewed_category = categories[0]
-            st.info(f"🔥 **{most_reviewed_category}** has the highest number of reviews, indicating strong customer engagement!")
+            st.info(f" **{most_reviewed_category}** has the highest number of reviews, indicating strong customer engagement!")
 
         # **📌 Chart 2: Relationship Between Reviews & Sales**
         if review_sales_data:
@@ -598,4 +598,4 @@ with tab4:
             highest_sales_category = max(review_sales_data, key=lambda x: x['total_sales'])['category']
             highest_review_category = max(review_sales_data, key=lambda x: x['total_reviews'])['category']
 
-            st.info(f"💡 **{highest_sales_category}** has the highest sales, but **{highest_review_category}** has the most reviews. More reviews = more sales!")
+            st.info(f" **{highest_sales_category}** has the highest sales, but **{highest_review_category}** has the most reviews. More reviews = more sales!")

@@ -1860,3 +1860,137 @@ Job ID: 617e2aa2-3df8-4acd-ae05-9251b47a9867
 2025-03-23 21:47:23,220 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
 2025-03-23 21:47:23,326 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
 2025-03-23 21:47:24,665 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 21:50:16,170 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 21:50:17,825 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 21:50:20,871 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 21:51:44,636 - INFO - Executing query: 
+    SELECT 
+        SUM(total_sales) AS total_revenue,
+        SUM(total_orders) AS total_orders,
+ ...
+2025-03-23 21:51:46,767 - INFO - Executing query: 
+    WITH ranked_months AS (
+        SELECT 
+            month,
+            total_sales,
+           ...
+2025-03-23 21:51:48,686 - INFO - Executing query: 
+    SELECT 
+        month,
+        total_sales,
+        total_orders
+    FROM `brazilian-ecom.t6.Ag...
+2025-03-23 21:51:50,337 - INFO - Executing query: 
+    SELECT 
+        category,
+        SUM(total_sales) AS total_sales,
+        SUM(total_orders) AS...
+2025-03-23 21:51:52,803 - INFO - Executing query: 
+    SELECT 
+        customer_state,
+        SUM(total_sales) AS total_sales,
+        SUM(total_orde...
+2025-03-23 21:51:54,803 - INFO - Executing query: 
+    SELECT 
+        seller_id,
+        seller_state,
+        SUM(total_sales) AS total_sales,
+     ...
+2025-03-23 21:51:57,539 - INFO - Executing query: 
+    SELECT 
+        seller_state,
+        SUM(total_sales) AS total_sales,
+        COUNT(DISTINCT s...
+2025-03-23 21:51:59,445 - INFO - Executing query: 
+    SELECT 
+        seller_id,
+        seller_state,
+        SUM(total_sales) AS total_sales,
+     ...
+2025-03-23 21:52:01,335 - INFO - Executing query: 
+    SELECT 
+        category,
+        SUM(total_reviews) as total_reviews,
+        SAFE_DIVIDE(SUM(...
+2025-03-23 21:52:03,215 - INFO - Executing query: 
+    SELECT 
+        r.category,
+        SUM(r.total_reviews) as total_reviews,
+        SAFE_DIVIDE(...
+2025-03-23 22:05:32,410 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 22:05:33,637 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 22:05:37,015 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 22:36:08,770 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 22:36:10,095 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 22:36:56,415 - INFO - \u2705 Uploaded dim_customers successfully.
+2025-03-23 22:36:59,922 - INFO - \u2705 Uploaded dim_sellers successfully.
+2025-03-23 22:37:04,572 - INFO - \u2705 Uploaded dim_products successfully.
+2025-03-23 22:37:08,875 - INFO - \u2705 Uploaded dim_payment_types successfully.
+2025-03-23 22:37:15,448 - INFO - \u2705 Uploaded dim_reviews successfully.
+2025-03-23 22:37:31,392 - INFO - \u2705 Uploaded fact_orders_partitioned_clustered successfully.
+2025-03-23 22:37:38,232 - INFO - \u2705 Created Agg_sales_by_category successfully.
+2025-03-23 22:37:41,620 - INFO - \u2705 Created Agg_sales_by_customer_state successfully.
+2025-03-23 22:37:45,156 - INFO - \u2705 Created Agg_sales_by_seller successfully.
+2025-03-23 22:37:50,333 - INFO - \u2705 Created Agg_monthly_sales_trend successfully.
+2025-03-23 22:37:54,338 - INFO - \u2705 Created Agg_avg_review_score successfully.
+2025-03-23 22:37:58,754 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 22:38:02,817 - INFO - \u2705 Created dm_sales_by_category successfully.
+2025-03-23 22:38:06,106 - INFO - \u2705 Created dm_sales_by_customer_state successfully.
+2025-03-23 22:38:09,422 - INFO - \u2705 Created dm_sales_by_seller successfully.
+2025-03-23 22:38:12,618 - INFO - \u2705 Created dm_monthly_sales_trend successfully.
+2025-03-23 22:38:16,018 - INFO - \u2705 Created dm_avg_review_score successfully.
+2025-03-23 22:39:23,819 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 22:39:23,825 - INFO - Executing query: 
+    SELECT 
+        SUM(total_sales) AS total_revenue,
+        SUM(total_orders) AS total_orders,
+ ...
+2025-03-23 22:39:25,847 - INFO - Executing query: 
+    WITH ranked_months AS (
+        SELECT 
+            month,
+            total_sales,
+           ...
+2025-03-23 22:39:27,681 - INFO - Executing query: 
+    SELECT 
+        month,
+        total_sales,
+        total_orders
+    FROM `brazilian-ecom.t6.Ag...
+2025-03-23 22:39:29,333 - INFO - Executing query: 
+    SELECT 
+        category,
+        SUM(total_sales) AS total_sales,
+        SUM(total_orders) AS...
+2025-03-23 22:39:31,065 - INFO - Executing query: 
+    SELECT 
+        customer_state,
+        SUM(total_sales) AS total_sales,
+        SUM(total_orde...
+2025-03-23 22:39:32,829 - INFO - Executing query: 
+    SELECT 
+        seller_id,
+        seller_state,
+        SUM(total_sales) AS total_sales,
+     ...
+2025-03-23 22:39:34,487 - INFO - Executing query: 
+    SELECT 
+        seller_state,
+        SUM(total_sales) AS total_sales,
+        COUNT(DISTINCT s...
+2025-03-23 22:39:36,261 - INFO - Executing query: 
+    SELECT 
+        seller_id,
+        seller_state,
+        SUM(total_sales) AS total_sales,
+     ...
+2025-03-23 22:39:37,982 - INFO - Executing query: 
+    SELECT 
+        category,
+        SUM(total_reviews) as total_reviews,
+        SAFE_DIVIDE(SUM(...
+2025-03-23 22:39:39,571 - INFO - Executing query: 
+    SELECT 
+        r.category,
+        SUM(r.total_reviews) as total_reviews,
+        SAFE_DIVIDE(...
