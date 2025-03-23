@@ -2,6 +2,7 @@ import streamlit as st
 import logging
 import time
 import pandas as pd
+import numpy as np
 from google.cloud import bigquery
 from utils.kaggle_utils import fetch_data
 from utils.mysql_fetch_utils import fetch_table
@@ -9,168 +10,159 @@ from utils.convert_mysql_dtypes import convert_mysql_dtypes
 from utils.merge_df import merge_ecommerce_data
 from utils.cleaner_utils import clean
 from utils.convert_dtypes import convert_dtypes
-from utils.bigquery_upload_utils import upload_to_bigquery
+from utils.bigquery_upload_utils import upload_fact_table, upload_dimension_table
 from utils.schema_utils import generate_star_schema
-from utils.aggregate_utils import create_aggregation_tables, fetch_aggregation_table, get_aggregation_tables
-from utils.load_datamart_utils import run_datamart_pipeline
+from utils.aggregate_utils import create_aggregation_tables
+from utils.load_datamart_utils import create_datamart_tables
+from config import PROJECT_ID, DATASET_ID
 
 st.set_page_config(page_title="ETL Dashboard", layout="wide")
 
-# Sidebar Navigation
-st.sidebar.title("Navigation")
-page = st.sidebar.radio("Go to", ["Home", "Star Schema", "Upload to BigQuery", "Aggregated Metrics"])
+st.sidebar.title("ETL Dashboard")
+page = st.sidebar.radio(" /", [
+    "ETL - PIPELINE MANUAL",
+    "ETL - AUTOMATED",
+   
+])
 
-def show_loader(message):
-    with st.spinner(message):
-        time.sleep(1)
+def show_loader(message, duration=3):
+    """Displays a loading animation while executing tasks."""
+    with st.status(message, expanded=True) as status:
+        time.sleep(duration)
+        status.update(label=f"{message} Completed!", state="complete")
 
-# Initialize session state variables
-if 'converted_df' not in st.session_state:
-    st.session_state.converted_df = None
-if 'star_schema_generated' not in st.session_state:
-    st.session_state.star_schema_generated = False
-if 'aggregated_metrics_generated' not in st.session_state:
-    st.session_state.aggregated_metrics_generated = False
-if 'datamarts_generated' not in st.session_state:
-    st.session_state.datamarts_generated = False
+def display_data_insights(df, title="Data Insights"):
+    """Displays shape, total records, and total null values per column in a DataFrame."""
+    st.subheader(title)
+    st.write(f"**Shape:** {df.shape}")
+    st.write(f"**Total Records:** {len(df)}")
+    
+    # Display total null values for each column
+    null_counts = df.isna().sum().sum()
+    # null_summary = pd.DataFrame({'Column': null_counts.index, 'Total Null Values': null_counts.values})
+    
+    st.write(f"**Total Null Values:**{null_counts}")
+    # st.dataframe(null_summary)
 
-def main():
-    if page == "Home":
-        st.title("ETL Pipeline Dashboard")
 
-        if st.button("Start Extraction"):
-            show_loader("Fetching data from Kaggle...")
-            st.success("Data fetched successfully!")
+if page == "ETL - PIPELINE MANUAL":
+    st.title("ETL - PIPELINE MANUAL")
+    
+    if st.button("Start Extraction"):
+        show_loader("Fetching data from Kaggle...")
+        # fetch_data()
 
-            show_loader("Fetching tables from MySQL and converting data types...")
-            try:
-                orders = convert_mysql_dtypes(fetch_table("olist_orders_dataset"))
-                products = convert_mysql_dtypes(fetch_table("olist_products_dataset"))
-                sellers = convert_mysql_dtypes(fetch_table("olist_sellers_dataset"))
-                category_translation = convert_mysql_dtypes(fetch_table("product_category_name_translation"))
-                customers = pd.read_csv(r"data/olist_customers_dataset.csv")
-                order_items = pd.read_csv(r"data/olist_order_items_dataset.csv")
-                order_payments = pd.read_csv(r"data/olist_order_payments_dataset.csv")
-                order_reviews = pd.read_csv(r"data/olist_order_reviews_dataset.csv")
-                st.success("Data fetched and converted successfully!")
-            except Exception as e:
-                st.error(f"Error fetching data: {e}")
-                logging.error(f"Error fetching data: {e}")
-                return
-            
-            show_loader("Merging data...")
-            merged_df = merge_ecommerce_data(orders, customers, order_payments, order_reviews, order_items, products, category_translation, sellers)
-            st.success("Data merged successfully!")
+        show_loader("Fetching MySQL tables...")
+        st.session_state.orders = convert_mysql_dtypes(fetch_table("olist_orders_dataset"))
+        st.session_state.products = convert_mysql_dtypes(fetch_table("olist_products_dataset"))
+        st.session_state.sellers = convert_mysql_dtypes(fetch_table("olist_sellers_dataset"))
+        st.session_state.category_translation = convert_mysql_dtypes(fetch_table("product_category_name_translation"))
+        st.session_state.customers = pd.read_csv(r"data/olist_customers_dataset.csv")
+        st.session_state.order_items = pd.read_csv(r"data/olist_order_items_dataset.csv")
+        st.session_state.order_payments = pd.read_csv(r"data/olist_order_payments_dataset.csv")
+        st.session_state.order_reviews = pd.read_csv(r"data/olist_order_reviews_dataset.csv")
+        
+        st.success("Data fetched successfully!")
+    
+    if "orders" in st.session_state:
+        if st.button("View Raw Data Insights"):
+            raw_data = merge_ecommerce_data(st.session_state.orders, st.session_state.customers, 
+                                            st.session_state.order_payments, st.session_state.order_reviews, 
+                                            st.session_state.order_items, st.session_state.products, 
+                                            st.session_state.category_translation, st.session_state.sellers)
+            display_data_insights(raw_data, "Insights Before Transformation")
 
-            show_loader("Cleaning data...")
-            cleaned_df = clean(merged_df)
-            st.success("Data cleaned successfully!")
+    if st.button("Do Transformation & Cleaning"):
+        show_loader("Merging and Cleaning Data...")
+        merged_df = merge_ecommerce_data(st.session_state.orders, st.session_state.customers, 
+                                         st.session_state.order_payments, st.session_state.order_reviews, 
+                                         st.session_state.order_items, st.session_state.products, 
+                                         st.session_state.category_translation, st.session_state.sellers)
+        
+        cleaned_df = clean(merged_df)
+        st.session_state.converted_df = convert_dtypes(cleaned_df)
+        st.success("Data transformed successfully!")
 
-            show_loader("Converting data types...")
-            st.session_state.converted_df = convert_dtypes(cleaned_df)
-            st.success("Data types converted successfully!")
+        display_data_insights(st.session_state.converted_df, "Insights After Transformation")
+    
+    if "converted_df" in st.session_state:
+        if st.button("Generate Star Schema"):
+            show_loader("Generating Star Schema...")
+            st.session_state.dim_customers, st.session_state.dim_sellers, st.session_state.dim_products, \
+            st.session_state.dim_payment_types, st.session_state.dim_reviews, st.session_state.fact_orders = generate_star_schema(st.session_state.converted_df)
+            st.success("Star schema tables generated successfully!")
 
-        if st.session_state.converted_df is not None:
-            if st.button("Generate Star Schema"):
-                show_loader("Generating star schema tables...")
-                st.session_state.dim_customers, st.session_state.dim_sellers, st.session_state.dim_products, \
-                st.session_state.dim_payment_types, st.session_state.dim_reviews, st.session_state.fact_orders = generate_star_schema(st.session_state.converted_df)
-                st.session_state.star_schema_generated = True
-                st.sidebar.success("Star Schema Generated!")
-                st.success("Star schema tables generated successfully!")
+    if "fact_orders" in st.session_state:
+        if st.button("Upload to BigQuery & Generate Data Marts"):
+            show_loader("Uploading Tables to BigQuery...")
+            for table_name, table_data in {
+                "dim_customers": st.session_state.dim_customers,
+                "dim_sellers": st.session_state.dim_sellers,
+                "dim_products": st.session_state.dim_products,
+                "dim_payment_types": st.session_state.dim_payment_types,
+                "dim_reviews": st.session_state.dim_reviews
+            }.items():
+                upload_dimension_table(table_data, table_name, PROJECT_ID, DATASET_ID)
 
-    elif page == "Star Schema":
-        st.title("Star Schema Tables")
-        if st.session_state.star_schema_generated:
-            st.write("### Customers Table")
-            st.write(st.session_state.dim_customers.head())
-            st.write("### Sellers Table")
-            st.write(st.session_state.dim_sellers.head())
-            st.write("### Products Table")
-            st.write(st.session_state.dim_products.head())
-            st.write("### Payment Types Table")
-            st.write(st.session_state.dim_payment_types.head())
-            st.write("### Reviews Table")
-            st.write(st.session_state.dim_reviews.head())
-            st.write("### Orders Fact Table")
-            st.write(st.session_state.fact_orders.head())
-        else:
-            st.warning("Please generate the star schema first.")
+            upload_fact_table(st.session_state.fact_orders, PROJECT_ID, DATASET_ID)
 
-    elif page == "Upload to BigQuery":
-        st.title("Upload to BigQuery")
-        project_id = st.text_input("Enter Google Cloud Project ID:")
-        dataset_id = st.text_input("Enter BigQuery Dataset ID:")
+            show_loader("Creating Data Marts...")
+            create_datamart_tables(PROJECT_ID, DATASET_ID)
+            st.success("Data marts created successfully!")
 
-        if st.session_state.star_schema_generated:
-            if st.button("Upload Star Schema & Generate Data Marts"):
-                if project_id and dataset_id:
-                    tables_to_upload = {
-                        "fact_orders": st.session_state.fact_orders,
-                        "dim_customers": st.session_state.dim_customers,
-                        "dim_sellers": st.session_state.dim_sellers,
-                        "dim_products": st.session_state.dim_products,
-                        "dim_payment_types": st.session_state.dim_payment_types,
-                        "dim_reviews": st.session_state.dim_reviews,
-                    }
+    if st.button("Create Aggregation Tables"):
+        show_loader("Creating Aggregation Tables...")
+        create_aggregation_tables(PROJECT_ID, DATASET_ID)
+        st.success("Aggregation tables created successfully!")
 
-                    for table_name, table_data in tables_to_upload.items():
-                        show_loader(f"Uploading {table_name} to BigQuery...")
-                        upload_to_bigquery(table_data, table_name, project_id, dataset_id)
-                        st.success(f"{table_name} uploaded successfully!")
+elif page == "ETL - AUTOMATED":
+    st.title("ETL - AUTOMATED")
+    if st.button("Run ETL Pipeline Automatically"):
+        show_loader("Running Full ETL Pipeline...")
+        fetch_data()
+        orders = convert_mysql_dtypes(fetch_table("olist_orders_dataset"))
+        products = convert_mysql_dtypes(fetch_table("olist_products_dataset"))
+        sellers = convert_mysql_dtypes(fetch_table("olist_sellers_dataset"))
+        category_translation = convert_mysql_dtypes(fetch_table("product_category_name_translation"))
+        customers = pd.read_csv(r"data/olist_customers_dataset.csv")
+        order_items = pd.read_csv(r"data/olist_order_items_dataset.csv")
+        order_payments = pd.read_csv(r"data/olist_order_payments_dataset.csv")
+        order_reviews = pd.read_csv(r"data/olist_order_reviews_dataset.csv")
 
-                    show_loader("Executing Aggregated Metrics...")
-                    create_aggregation_tables(project_id, dataset_id)
-                    st.session_state.aggregated_metrics_generated = True
-                    st.sidebar.success("Aggregated Metrics Generated!")
-                    st.success("Aggregated Metrics tables created successfully!")
+        show_loader("Merging and Cleaning Data...")
+        merged_df = merge_ecommerce_data(orders, customers, order_payments, order_reviews, order_items, products, category_translation, sellers)
+        cleaned_df = clean(merged_df)
+        converted_df = convert_dtypes(cleaned_df)
 
-                    show_loader("Creating Data Marts...")
-                    run_datamart_pipeline(st.session_state.converted_df, project_id, dataset_id)
-                    st.session_state.datamarts_generated = True
-                    st.sidebar.success("Data Marts Created!")
-                    st.success("Data Marts successfully created and uploaded!")
+        display_data_insights(converted_df, "Insights After Transformation")
 
-                else:
-                    st.error("Please provide valid Project ID and Dataset ID.")
-        else:
-            st.warning("Please generate the star schema before uploading.")
+        show_loader("Generating Star Schema...")
+        dim_customers, dim_sellers, dim_products, dim_payment_types, dim_reviews, fact_orders = generate_star_schema(converted_df)
 
-    elif page == "Aggregated Metrics":
-        st.title("Aggregated Metrics Tables")
+        show_loader("Uploading Tables to BigQuery...")
+        for table_name, table_data in {
+            "dim_customers": dim_customers,
+            "dim_sellers": dim_sellers,
+            "dim_products": dim_products,
+            "dim_payment_types": dim_payment_types,
+            "dim_reviews": dim_reviews
+        }.items():
+            upload_dimension_table(table_data, table_name, PROJECT_ID, DATASET_ID)
+        
+        upload_fact_table(fact_orders, PROJECT_ID, DATASET_ID)
 
-        project_id = st.text_input("Enter Google Cloud Project ID:", key="project_id_input")
-        dataset_id = st.text_input("Enter BigQuery Dataset ID:", key="dataset_id_input")
+        show_loader("Creating Aggregation Tables...")
+        create_aggregation_tables(PROJECT_ID, DATASET_ID)
 
-        if st.button("Fetch Aggregation Tables"):
-            if project_id and dataset_id:
-                show_loader("Fetching available aggregation tables...")
-                tables = get_aggregation_tables(project_id, dataset_id)
+        show_loader("Creating Data Marts...")
+        create_datamart_tables(PROJECT_ID, DATASET_ID)
 
-                if tables:
-                    st.session_state["aggregation_tables"] = tables
-                    st.success("Aggregation tables fetched successfully!")
-                else:
-                    st.error("No aggregation tables found or an error occurred.")
-            else:
-                st.error("Please enter Project ID and Dataset ID.")
+        st.success("ETL Pipeline Completed Successfully!")
 
-        if "aggregation_tables" in st.session_state:
-            selected_table = st.selectbox("Select an Aggregation Table:", st.session_state["aggregation_tables"])
+elif page == "Analysis & Visualization":
+    st.title("Analysis & Visualization")
+    st.write("Data visualizations will be implemented here.")
 
-            if selected_table:
-                if st.button("Fetch Table Data"):
-                    show_loader(f"Fetching data from {selected_table}...")
-                    df = fetch_aggregation_table(project_id, dataset_id, selected_table)
-
-                    if df is not None and not df.empty:
-                        st.write(f"### {selected_table} Data")
-                        st.dataframe(df)
-                    else:
-                        st.error(f"Error fetching data from {selected_table} or table is empty.")
-        else:
-            st.warning("Click 'Fetch Aggregation Tables' to load available tables.")
-
-if __name__ == "__main__":
-    main()
-
+elif page == "Conclusion":
+    st.title("Conclusion")
+    st.write("Final insights and summary of the ETL process.")

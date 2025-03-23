@@ -537,3 +537,962 @@
 2025-03-18 23:09:19,405 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
 2025-03-18 23:09:20,878 - ERROR - Error converting Pandas column with name: "review_score" and datatype: "float64" to an appropriate pyarrow datatype: Array, ListArray, or StructArray
 2025-03-18 23:09:20,880 - INFO - Data uploaded successfully
+2025-03-21 17:08:56 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-21 17:08:56 - INFO - Uploading fact_orders to BigQuery...
+2025-03-21 17:09:51 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-21 17:09:51 - INFO - Uploading fact_orders to BigQuery...
+2025-03-21 17:11:19 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-21 17:11:19 - INFO - Uploading fact_orders to BigQuery...
+2025-03-21 17:12:20 - INFO - \u2705 Successfully uploaded fact_orders to BigQuery!
+2025-03-21 17:12:23 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-21 17:12:23 - INFO - Uploading dim_customers to BigQuery...
+2025-03-21 17:13:00 - INFO - \u2705 Successfully uploaded dim_customers to BigQuery!
+2025-03-21 17:13:03 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-21 17:13:03 - INFO - Uploading dim_sellers to BigQuery...
+2025-03-21 17:13:10 - INFO - \u2705 Successfully uploaded dim_sellers to BigQuery!
+2025-03-21 17:13:12 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-21 17:13:12 - INFO - Uploading dim_products to BigQuery...
+2025-03-21 17:13:34 - INFO - \u2705 Successfully uploaded dim_products to BigQuery!
+2025-03-21 17:13:37 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-21 17:13:37 - INFO - Uploading dim_payment_types to BigQuery...
+2025-03-21 17:13:41 - INFO - \u2705 Successfully uploaded dim_payment_types to BigQuery!
+2025-03-21 17:13:43 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-21 17:13:43 - INFO - Uploading dim_reviews to BigQuery...
+2025-03-21 17:14:45 - INFO - \u2705 Successfully uploaded dim_reviews to BigQuery!
+2025-03-21 17:25:35 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-21 17:25:35 - INFO - Uploading dim_customers to BigQuery...
+2025-03-21 17:25:48 - INFO - \u2705 Successfully uploaded dim_customers to BigQuery!
+2025-03-21 17:25:50 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-21 17:25:50 - INFO - Uploading dim_sellers to BigQuery...
+2025-03-21 17:25:56 - INFO - \u2705 Successfully uploaded dim_sellers to BigQuery!
+2025-03-21 17:25:58 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-21 17:25:58 - INFO - Uploading dim_products to BigQuery...
+2025-03-21 17:26:04 - INFO - \u2705 Successfully uploaded dim_products to BigQuery!
+2025-03-21 17:26:07 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-21 17:26:07 - INFO - Uploading dim_payment_types to BigQuery...
+2025-03-21 17:26:11 - INFO - \u2705 Successfully uploaded dim_payment_types to BigQuery!
+2025-03-21 17:26:14 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-21 17:26:14 - INFO - Uploading dim_reviews to BigQuery...
+2025-03-21 17:26:24 - INFO - \u2705 Successfully uploaded dim_reviews to BigQuery!
+2025-03-21 17:26:27 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-21 17:26:28 - ERROR - \u274c Failed to upload fact_orders: 400 POST https://bigquery.googleapis.com/upload/bigquery/v2/projects/brazilian-ecom/jobs?uploadType=resumable: The field specified for clustering cannot be found in the schema. Invalid field: customer_id.
+2025-03-21 17:26:31 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-21 23:12:27,670 - INFO - \u2705 Uploaded dim_customers successfully.
+2025-03-21 23:12:33,987 - INFO - \u2705 Uploaded dim_sellers successfully.
+2025-03-21 23:12:40,421 - INFO - \u2705 Uploaded dim_products successfully.
+2025-03-21 23:12:45,450 - INFO - \u2705 Uploaded dim_payment_types successfully.
+2025-03-21 23:12:52,833 - INFO - \u2705 Uploaded dim_reviews successfully.
+2025-03-21 23:14:18,337 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-21 23:14:26,362 - INFO - \u2705 Uploaded dim_customers successfully.
+2025-03-21 23:14:33,082 - INFO - \u2705 Uploaded dim_sellers successfully.
+2025-03-21 23:14:38,099 - INFO - \u2705 Uploaded dim_products successfully.
+2025-03-21 23:14:43,169 - INFO - \u2705 Uploaded dim_payment_types successfully.
+2025-03-21 23:14:50,158 - INFO - \u2705 Uploaded dim_reviews successfully.
+2025-03-21 23:15:10,479 - INFO - \u2705 Uploaded fact_orders_partitioned_clustered successfully.
+2025-03-21 23:15:12,785 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-21 23:15:34,196 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-21 23:15:41,731 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-21 23:15:47,786 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-21 23:15:54,161 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-21 23:16:00,150 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-21 23:19:08,902 - INFO - \u2705 Uploaded dim_customers successfully.
+2025-03-21 23:19:14,792 - INFO - \u2705 Uploaded dim_sellers successfully.
+2025-03-21 23:19:20,207 - INFO - \u2705 Uploaded dim_products successfully.
+2025-03-21 23:19:24,756 - INFO - \u2705 Uploaded dim_payment_types successfully.
+2025-03-21 23:19:32,033 - INFO - \u2705 Uploaded dim_reviews successfully.
+2025-03-21 23:19:56,791 - INFO - \u2705 Uploaded fact_orders_partitioned_clustered successfully.
+2025-03-21 23:19:59,882 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-21 23:23:27,011 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-21 23:23:35,833 - INFO - \u2705 Uploaded dim_customers successfully.
+2025-03-21 23:23:43,240 - INFO - \u2705 Uploaded dim_sellers successfully.
+2025-03-21 23:23:49,474 - INFO - \u2705 Uploaded dim_products successfully.
+2025-03-21 23:23:54,760 - INFO - \u2705 Uploaded dim_payment_types successfully.
+2025-03-21 23:24:02,365 - INFO - \u2705 Uploaded dim_reviews successfully.
+2025-03-21 23:24:20,882 - INFO - \u2705 Uploaded fact_orders_partitioned_clustered successfully.
+2025-03-21 23:24:23,176 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-21 23:28:29,671 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-21 23:28:30,850 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-21 23:28:39,282 - INFO - \u2705 Uploaded dim_customers successfully.
+2025-03-21 23:28:45,470 - INFO - \u2705 Uploaded dim_sellers successfully.
+2025-03-21 23:28:51,841 - INFO - \u2705 Uploaded dim_products successfully.
+2025-03-21 23:28:57,172 - INFO - \u2705 Uploaded dim_payment_types successfully.
+2025-03-21 23:29:05,173 - INFO - \u2705 Uploaded dim_reviews successfully.
+2025-03-21 23:29:24,053 - INFO - \u2705 Uploaded fact_orders_partitioned_clustered successfully.
+2025-03-21 23:29:26,003 - ERROR - \u274c Error creating Agg_sales_by_category: 404 Not found: Table brazilian-ecom:t6.fact_orders was not found in location US; reason: notFound, message: Not found: Table brazilian-ecom:t6.fact_orders was not found in location US
+
+Location: US
+Job ID: d3c8f05e-0da8-431d-822b-b8230bdedc93
+
+2025-03-21 23:29:26,691 - ERROR - \u274c Error creating Agg_sales_by_customer_state: 404 Not found: Table brazilian-ecom:t6.fact_orders was not found in location US; reason: notFound, message: Not found: Table brazilian-ecom:t6.fact_orders was not found in location US
+
+Location: US
+Job ID: 9d68be0e-5ae4-484a-9089-bf7f717d8af8
+
+2025-03-21 23:29:27,267 - ERROR - \u274c Error creating Agg_sales_by_seller: 404 Not found: Table brazilian-ecom:t6.fact_orders was not found in location US; reason: notFound, message: Not found: Table brazilian-ecom:t6.fact_orders was not found in location US
+
+Location: US
+Job ID: 92c7cf47-1e87-4926-ad30-1e9ef8d8d18c
+
+2025-03-21 23:29:27,894 - ERROR - \u274c Error creating Agg_monthly_sales_trend: 404 Not found: Table brazilian-ecom:t6.fact_orders was not found in location US; reason: notFound, message: Not found: Table brazilian-ecom:t6.fact_orders was not found in location US
+
+Location: US
+Job ID: d9876a3d-b4be-4f6b-b646-7fcff35a6add
+
+2025-03-21 23:29:28,492 - ERROR - \u274c Error creating Agg_avg_review_score: 404 Not found: Table brazilian-ecom:t6.fact_orders was not found in location US; reason: notFound, message: Not found: Table brazilian-ecom:t6.fact_orders was not found in location US
+
+Location: US
+Job ID: b1602254-ccfc-41ec-b45e-d6e38c59b7db
+
+2025-03-21 23:29:31,456 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-21 23:29:39,539 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-21 23:29:45,282 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-21 23:29:52,953 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-21 23:29:59,083 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-21 23:35:54,953 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-21 23:35:56,439 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-21 23:37:28,546 - INFO - \u2705 Uploaded dim_customers successfully.
+2025-03-21 23:37:34,873 - INFO - \u2705 Uploaded dim_sellers successfully.
+2025-03-21 23:37:40,734 - INFO - \u2705 Uploaded dim_products successfully.
+2025-03-21 23:37:46,221 - INFO - \u2705 Uploaded dim_payment_types successfully.
+2025-03-21 23:37:54,384 - INFO - \u2705 Uploaded dim_reviews successfully.
+2025-03-21 23:38:30,858 - INFO - \u2705 Uploaded fact_orders_partitioned_clustered successfully.
+2025-03-21 23:38:35,843 - INFO - \u2705 Created Agg_sales_by_category successfully.
+2025-03-21 23:38:39,637 - INFO - \u2705 Created Agg_sales_by_customer_state successfully.
+2025-03-21 23:38:44,194 - INFO - \u2705 Created Agg_sales_by_seller successfully.
+2025-03-21 23:38:54,845 - INFO - \u2705 Created Agg_monthly_sales_trend successfully.
+2025-03-21 23:39:02,513 - INFO - \u2705 Created Agg_avg_review_score successfully.
+2025-03-21 23:39:05,643 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-21 23:39:12,714 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-21 23:39:18,561 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-21 23:39:27,632 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-21 23:39:34,623 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-21 23:54:01,368 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-21 23:55:28,207 - INFO - \u2705 Uploaded dim_customers successfully.
+2025-03-21 23:55:33,328 - INFO - \u2705 Uploaded dim_sellers successfully.
+2025-03-21 23:55:38,503 - INFO - \u2705 Uploaded dim_products successfully.
+2025-03-21 23:55:43,880 - INFO - \u2705 Uploaded dim_payment_types successfully.
+2025-03-21 23:55:52,007 - INFO - \u2705 Uploaded dim_reviews successfully.
+2025-03-21 23:56:07,074 - INFO - \u2705 Uploaded fact_orders_partitioned_clustered successfully.
+2025-03-21 23:56:11,818 - INFO - \u2705 Created Agg_sales_by_category successfully.
+2025-03-21 23:56:15,199 - INFO - \u2705 Created Agg_sales_by_customer_state successfully.
+2025-03-21 23:56:18,289 - INFO - \u2705 Created Agg_sales_by_seller successfully.
+2025-03-21 23:56:21,368 - INFO - \u2705 Created Agg_monthly_sales_trend successfully.
+2025-03-21 23:56:24,936 - INFO - \u2705 Created Agg_avg_review_score successfully.
+2025-03-21 23:57:02,499 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-21 23:57:03,795 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-21 23:57:11,216 - INFO - \u2705 Uploaded dim_customers successfully.
+2025-03-21 23:57:16,181 - INFO - \u2705 Uploaded dim_sellers successfully.
+2025-03-21 23:57:21,652 - INFO - \u2705 Uploaded dim_products successfully.
+2025-03-21 23:57:27,365 - INFO - \u2705 Uploaded dim_payment_types successfully.
+2025-03-21 23:57:34,896 - INFO - \u2705 Uploaded dim_reviews successfully.
+2025-03-21 23:57:54,731 - INFO - \u2705 Uploaded fact_orders_partitioned_clustered successfully.
+2025-03-21 23:57:59,991 - INFO - \u2705 Created Agg_sales_by_category successfully.
+2025-03-21 23:58:03,478 - INFO - \u2705 Created Agg_sales_by_customer_state successfully.
+2025-03-21 23:58:06,615 - INFO - \u2705 Created Agg_sales_by_seller successfully.
+2025-03-21 23:58:09,736 - INFO - \u2705 Created Agg_monthly_sales_trend successfully.
+2025-03-21 23:58:13,408 - INFO - \u2705 Created Agg_avg_review_score successfully.
+2025-03-21 23:58:15,865 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-21 23:58:16,749 - ERROR - \u274c Error creating dm_sales_by_category: 404 Not found: Table brazilian-ecom:t6.fact_orders was not found in location US; reason: notFound, message: Not found: Table brazilian-ecom:t6.fact_orders was not found in location US
+
+Location: US
+Job ID: 8838440c-e3ab-490e-84bc-2e9932081d84
+
+2025-03-21 23:58:17,290 - ERROR - \u274c Error creating dm_sales_by_customer_state: 404 Not found: Table brazilian-ecom:t6.fact_orders was not found in location US; reason: notFound, message: Not found: Table brazilian-ecom:t6.fact_orders was not found in location US
+
+Location: US
+Job ID: 2e7a6c0a-ca57-4757-8d7b-6f51fb78686d
+
+2025-03-21 23:58:17,897 - ERROR - \u274c Error creating dm_sales_by_seller: 404 Not found: Table brazilian-ecom:t6.fact_orders was not found in location US; reason: notFound, message: Not found: Table brazilian-ecom:t6.fact_orders was not found in location US
+
+Location: US
+Job ID: 04dfb133-ef5d-4737-8539-656497202cf3
+
+2025-03-21 23:58:18,461 - ERROR - \u274c Error creating dm_monthly_sales_trend: 404 Not found: Table brazilian-ecom:t6.fact_orders was not found in location US; reason: notFound, message: Not found: Table brazilian-ecom:t6.fact_orders was not found in location US
+
+Location: US
+Job ID: 98d61ad5-dc5d-49bc-a70f-fbcb2e9377c1
+
+2025-03-21 23:58:19,027 - ERROR - \u274c Error creating dm_avg_review_score: 404 Not found: Table brazilian-ecom:t6.fact_orders was not found in location US; reason: notFound, message: Not found: Table brazilian-ecom:t6.fact_orders was not found in location US
+
+Location: US
+Job ID: e7b136ae-6956-4008-a324-d395dd0cc942
+
+2025-03-21 23:59:30,366 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-21 23:59:31,726 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-21 23:59:39,140 - INFO - \u2705 Uploaded dim_customers successfully.
+2025-03-21 23:59:44,368 - INFO - \u2705 Uploaded dim_sellers successfully.
+2025-03-21 23:59:50,870 - INFO - \u2705 Uploaded dim_products successfully.
+2025-03-21 23:59:56,535 - INFO - \u2705 Uploaded dim_payment_types successfully.
+2025-03-22 00:00:04,673 - INFO - \u2705 Uploaded dim_reviews successfully.
+2025-03-22 00:00:24,568 - INFO - \u2705 Uploaded fact_orders_partitioned_clustered successfully.
+2025-03-22 00:00:30,112 - INFO - \u2705 Created Agg_sales_by_category successfully.
+2025-03-22 00:00:33,842 - INFO - \u2705 Created Agg_sales_by_customer_state successfully.
+2025-03-22 00:00:37,224 - INFO - \u2705 Created Agg_sales_by_seller successfully.
+2025-03-22 00:00:40,622 - INFO - \u2705 Created Agg_monthly_sales_trend successfully.
+2025-03-22 00:00:45,052 - INFO - \u2705 Created Agg_avg_review_score successfully.
+2025-03-22 00:00:47,315 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 00:00:51,079 - INFO - \u2705 Created dm_sales_by_category successfully.
+2025-03-22 00:00:54,972 - INFO - \u2705 Created dm_sales_by_customer_state successfully.
+2025-03-22 00:00:58,538 - INFO - \u2705 Created dm_sales_by_seller successfully.
+2025-03-22 00:01:02,348 - INFO - \u2705 Created dm_monthly_sales_trend successfully.
+2025-03-22 00:01:06,070 - INFO - \u2705 Created dm_avg_review_score successfully.
+2025-03-22 00:04:33,948 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 00:12:39,496 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 00:13:21,354 - INFO - \u2705 Uploaded dim_customers successfully.
+2025-03-22 00:13:25,712 - INFO - \u2705 Uploaded dim_customers successfully.
+2025-03-22 00:13:30,803 - INFO - \u2705 Uploaded dim_sellers successfully.
+2025-03-22 00:13:37,053 - INFO - \u2705 Uploaded dim_products successfully.
+2025-03-22 00:13:42,649 - INFO - \u2705 Uploaded dim_payment_types successfully.
+2025-03-22 00:13:52,710 - INFO - \u2705 Uploaded dim_reviews successfully.
+2025-03-22 00:14:10,115 - INFO - \u2705 Uploaded fact_orders_partitioned_clustered successfully.
+2025-03-22 00:14:14,774 - INFO - \u2705 Created Agg_sales_by_category successfully.
+2025-03-22 00:14:17,882 - INFO - \u2705 Created Agg_sales_by_customer_state successfully.
+2025-03-22 00:14:20,725 - INFO - \u2705 Created Agg_sales_by_seller successfully.
+2025-03-22 00:14:23,865 - INFO - \u2705 Created Agg_monthly_sales_trend successfully.
+2025-03-22 00:14:27,302 - INFO - \u2705 Created Agg_avg_review_score successfully.
+2025-03-22 00:14:29,694 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 00:14:39,538 - INFO - \u2705 Created dm_sales_by_category successfully.
+2025-03-22 00:14:42,899 - INFO - \u2705 Created dm_sales_by_customer_state successfully.
+2025-03-22 00:14:46,096 - INFO - \u2705 Created dm_sales_by_seller successfully.
+2025-03-22 00:14:49,136 - INFO - \u2705 Created dm_monthly_sales_trend successfully.
+2025-03-22 00:14:52,862 - INFO - \u2705 Created dm_avg_review_score successfully.
+2025-03-22 00:16:24,366 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 00:16:25,644 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 00:18:02,268 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 00:18:03,649 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 00:22:31,655 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 00:22:32,863 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 00:23:09,214 - INFO - \u2705 Uploaded dim_customers successfully.
+2025-03-22 00:23:12,812 - INFO - \u2705 Uploaded dim_sellers successfully.
+2025-03-22 00:23:18,073 - INFO - \u2705 Uploaded dim_products successfully.
+2025-03-22 00:23:21,674 - INFO - \u2705 Uploaded dim_payment_types successfully.
+2025-03-22 00:23:30,422 - INFO - \u2705 Uploaded dim_reviews successfully.
+2025-03-22 00:23:49,366 - INFO - \u2705 Uploaded fact_orders_partitioned_clustered successfully.
+2025-03-22 00:23:54,074 - INFO - \u2705 Created Agg_sales_by_category successfully.
+2025-03-22 00:23:57,831 - INFO - \u2705 Created Agg_sales_by_customer_state successfully.
+2025-03-22 00:24:01,271 - INFO - \u2705 Created Agg_sales_by_seller successfully.
+2025-03-22 00:24:04,890 - INFO - \u2705 Created Agg_monthly_sales_trend successfully.
+2025-03-22 00:24:08,852 - INFO - \u2705 Created Agg_avg_review_score successfully.
+2025-03-22 00:24:11,054 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 00:24:14,711 - INFO - \u2705 Created dm_sales_by_category successfully.
+2025-03-22 00:24:18,148 - INFO - \u2705 Created dm_sales_by_customer_state successfully.
+2025-03-22 00:24:22,735 - INFO - \u2705 Created dm_sales_by_seller successfully.
+2025-03-22 00:24:25,959 - INFO - \u2705 Created dm_monthly_sales_trend successfully.
+2025-03-22 00:24:29,932 - INFO - \u2705 Created dm_avg_review_score successfully.
+2025-03-22 00:29:53,274 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 00:32:38,346 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 00:42:23,798 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 00:43:37,518 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 00:43:38,864 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 00:44:14,848 - INFO - \u2705 Uploaded dim_customers successfully.
+2025-03-22 00:44:19,313 - INFO - \u2705 Uploaded dim_sellers successfully.
+2025-03-22 00:44:25,660 - INFO - \u2705 Uploaded dim_products successfully.
+2025-03-22 00:44:29,535 - INFO - \u2705 Uploaded dim_payment_types successfully.
+2025-03-22 00:44:35,467 - INFO - \u2705 Uploaded dim_reviews successfully.
+2025-03-22 00:45:00,417 - INFO - \u2705 Uploaded fact_orders_partitioned_clustered successfully.
+2025-03-22 00:45:01,778 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 00:45:05,817 - INFO - \u2705 Created dm_sales_by_category successfully.
+2025-03-22 00:45:10,153 - INFO - \u2705 Created dm_sales_by_customer_state successfully.
+2025-03-22 00:45:13,843 - INFO - \u2705 Created dm_sales_by_seller successfully.
+2025-03-22 00:45:16,925 - INFO - \u2705 Created dm_monthly_sales_trend successfully.
+2025-03-22 00:45:21,034 - INFO - \u2705 Created dm_avg_review_score successfully.
+2025-03-22 00:47:48,574 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 00:47:49,797 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 00:49:08,336 - INFO - \u2705 Uploaded dim_customers successfully.
+2025-03-22 00:49:13,402 - INFO - \u2705 Uploaded dim_sellers successfully.
+2025-03-22 00:49:17,862 - INFO - \u2705 Uploaded dim_products successfully.
+2025-03-22 00:49:23,050 - INFO - \u2705 Uploaded dim_payment_types successfully.
+2025-03-22 00:49:29,271 - INFO - \u2705 Uploaded dim_reviews successfully.
+2025-03-22 00:49:43,405 - INFO - \u2705 Uploaded fact_orders_partitioned_clustered successfully.
+2025-03-22 00:49:47,982 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 00:49:51,740 - INFO - \u2705 Created dm_sales_by_category successfully.
+2025-03-22 00:49:55,193 - INFO - \u2705 Created dm_sales_by_customer_state successfully.
+2025-03-22 00:49:58,491 - INFO - \u2705 Created dm_sales_by_seller successfully.
+2025-03-22 00:50:02,078 - INFO - \u2705 Created dm_monthly_sales_trend successfully.
+2025-03-22 00:50:06,719 - INFO - \u2705 Created dm_avg_review_score successfully.
+2025-03-22 00:50:16,354 - INFO - \u2705 Created Agg_sales_by_category successfully.
+2025-03-22 00:50:19,765 - INFO - \u2705 Created Agg_sales_by_customer_state successfully.
+2025-03-22 00:50:23,231 - INFO - \u2705 Created Agg_sales_by_seller successfully.
+2025-03-22 00:50:26,411 - INFO - \u2705 Created Agg_monthly_sales_trend successfully.
+2025-03-22 00:50:30,260 - INFO - \u2705 Created Agg_avg_review_score successfully.
+2025-03-22 00:51:08,115 - INFO - \u2705 Uploaded dim_customers successfully.
+2025-03-22 00:51:13,079 - INFO - \u2705 Uploaded dim_sellers successfully.
+2025-03-22 00:51:18,186 - INFO - \u2705 Uploaded dim_products successfully.
+2025-03-22 00:51:22,091 - INFO - \u2705 Uploaded dim_payment_types successfully.
+2025-03-22 00:51:29,956 - INFO - \u2705 Uploaded dim_reviews successfully.
+2025-03-22 00:51:46,904 - INFO - \u2705 Uploaded fact_orders_partitioned_clustered successfully.
+2025-03-22 00:51:53,714 - INFO - \u2705 Created Agg_sales_by_category successfully.
+2025-03-22 00:51:57,531 - INFO - \u2705 Created Agg_sales_by_customer_state successfully.
+2025-03-22 00:52:00,938 - INFO - \u2705 Created Agg_sales_by_seller successfully.
+2025-03-22 00:52:04,092 - INFO - \u2705 Created Agg_monthly_sales_trend successfully.
+2025-03-22 00:52:07,954 - INFO - \u2705 Created Agg_avg_review_score successfully.
+2025-03-22 00:52:12,223 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 00:52:15,899 - INFO - \u2705 Created dm_sales_by_category successfully.
+2025-03-22 00:52:19,412 - INFO - \u2705 Created dm_sales_by_customer_state successfully.
+2025-03-22 00:52:22,605 - INFO - \u2705 Created dm_sales_by_seller successfully.
+2025-03-22 00:52:25,789 - INFO - \u2705 Created dm_monthly_sales_trend successfully.
+2025-03-22 00:52:29,252 - INFO - \u2705 Created dm_avg_review_score successfully.
+2025-03-22 00:54:03,998 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 00:54:05,213 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 00:55:08,651 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 00:55:09,882 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 00:58:08,831 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 00:58:10,183 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 00:59:15,190 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 00:59:16,512 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 01:00:34,974 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 01:00:36,236 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 01:01:04,683 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 01:01:05,863 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 01:02:27,085 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 01:02:28,329 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 01:04:07,596 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 01:04:08,798 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 01:05:05,838 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 01:05:07,186 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 01:07:05,430 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 01:07:06,653 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 01:08:00,900 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 01:08:02,234 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 01:10:16,811 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 01:10:17,961 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 01:11:18,805 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 01:11:19,969 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 01:11:57,633 - INFO - \u2705 Uploaded dim_customers successfully.
+2025-03-22 01:12:01,498 - INFO - \u2705 Uploaded dim_sellers successfully.
+2025-03-22 01:12:05,702 - INFO - \u2705 Uploaded dim_products successfully.
+2025-03-22 01:12:10,206 - INFO - \u2705 Uploaded dim_payment_types successfully.
+2025-03-22 01:12:16,510 - INFO - \u2705 Uploaded dim_reviews successfully.
+2025-03-22 01:12:37,937 - INFO - \u2705 Uploaded fact_orders_partitioned_clustered successfully.
+2025-03-22 01:12:42,185 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 01:12:46,258 - INFO - \u2705 Created dm_sales_by_category successfully.
+2025-03-22 01:12:50,244 - INFO - \u2705 Created dm_sales_by_customer_state successfully.
+2025-03-22 01:12:53,644 - INFO - \u2705 Created dm_sales_by_seller successfully.
+2025-03-22 01:12:57,357 - INFO - \u2705 Created dm_monthly_sales_trend successfully.
+2025-03-22 01:13:00,818 - INFO - \u2705 Created dm_avg_review_score successfully.
+2025-03-22 01:13:42,666 - INFO - \u2705 Created Agg_sales_by_category successfully.
+2025-03-22 01:13:46,113 - INFO - \u2705 Created Agg_sales_by_customer_state successfully.
+2025-03-22 01:13:49,268 - INFO - \u2705 Created Agg_sales_by_seller successfully.
+2025-03-22 01:13:52,258 - INFO - \u2705 Created Agg_monthly_sales_trend successfully.
+2025-03-22 01:13:55,970 - INFO - \u2705 Created Agg_avg_review_score successfully.
+2025-03-22 01:28:23,616 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 01:28:24,880 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 01:28:29,605 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 01:28:32,025 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 01:28:59,594 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 01:29:00,944 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 01:30:47,315 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 01:30:48,658 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 01:31:02,087 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 01:31:03,427 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 01:34:45,754 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 01:35:48,212 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 01:37:01,201 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 01:37:03,782 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 01:37:06,375 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 01:37:08,957 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 01:37:11,494 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 01:37:26,362 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 01:37:29,714 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 01:38:29,885 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 01:38:30,223 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 01:39:19,647 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 01:40:07,637 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-03-22 01:40:07,638 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-03-22 01:40:27,882 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-03-22 01:40:27,882 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-03-22 01:42:50,172 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 01:42:50,378 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-22 02:09:41,615 - ERROR - \u274c Error executing query: 404 Not found: Table brazilian-ecom:t6.Agg_Sales was not found in location US; reason: notFound, message: Not found: Table brazilian-ecom:t6.Agg_Sales was not found in location US
+
+Location: US
+Job ID: 7d92238e-7824-4b1f-b78b-b6bca4ba5d14
+
+2025-03-22 02:09:42,123 - ERROR - \u274c Error executing query: 404 Not found: Table brazilian-ecom:t6.Agg_Customers was not found in location US; reason: notFound, message: Not found: Table brazilian-ecom:t6.Agg_Customers was not found in location US
+
+Location: US
+Job ID: 2e31fc7f-0708-4836-8747-46f8fb50f028
+
+2025-03-22 02:09:42,633 - ERROR - \u274c Error executing query: 404 Not found: Table brazilian-ecom:t6.Agg_Sales was not found in location US; reason: notFound, message: Not found: Table brazilian-ecom:t6.Agg_Sales was not found in location US
+
+Location: US
+Job ID: fb53c6b5-85e3-4966-9cc4-ce164fa345d2
+
+2025-03-22 02:09:43,162 - ERROR - \u274c Error executing query: 404 Not found: Table brazilian-ecom:t6.Agg_Reviews was not found in location US; reason: notFound, message: Not found: Table brazilian-ecom:t6.Agg_Reviews was not found in location US
+
+Location: US
+Job ID: b1691255-4901-4747-ab30-9f96d6963bab
+
+2025-03-22 02:09:43,631 - ERROR - \u274c Error executing query: 404 Not found: Table brazilian-ecom:t6.Agg_Sellers was not found in location US; reason: notFound, message: Not found: Table brazilian-ecom:t6.Agg_Sellers was not found in location US
+
+Location: US
+Job ID: 8401c5ce-9194-4ccf-8c67-a2080f97ee20
+
+2025-03-22 02:09:44,146 - ERROR - \u274c Error executing query: 404 Not found: Table brazilian-ecom:t6.Agg_Sales was not found in location US; reason: notFound, message: Not found: Table brazilian-ecom:t6.Agg_Sales was not found in location US
+
+Location: US
+Job ID: 8c23b76d-bb34-43bb-a5d4-279256c243f7
+
+2025-03-22 02:09:44,649 - ERROR - \u274c Error executing query: 404 Not found: Table brazilian-ecom:t6.Agg_Sales was not found in location US; reason: notFound, message: Not found: Table brazilian-ecom:t6.Agg_Sales was not found in location US
+
+Location: US
+Job ID: 2fe91cff-3195-4257-853f-07daf3800829
+
+2025-03-22 02:09:45,203 - ERROR - \u274c Error executing query: 404 Not found: Table brazilian-ecom:t6.Agg_Customers was not found in location US; reason: notFound, message: Not found: Table brazilian-ecom:t6.Agg_Customers was not found in location US
+
+Location: US
+Job ID: ad56d723-7244-4ad6-8ef1-3ef67e9084e3
+
+2025-03-22 02:09:45,737 - ERROR - \u274c Error executing query: 404 Not found: Table brazilian-ecom:t6.Agg_Sellers was not found in location US; reason: notFound, message: Not found: Table brazilian-ecom:t6.Agg_Sellers was not found in location US
+
+Location: US
+Job ID: 4f8a9b8b-9388-497c-93e4-985813a4ea35
+
+2025-03-22 02:10:46,494 - ERROR - \u274c Error executing query: 404 Not found: Table brazilian-ecom:t6.Agg_Sales was not found in location US; reason: notFound, message: Not found: Table brazilian-ecom:t6.Agg_Sales was not found in location US
+
+Location: US
+Job ID: 7cda7ac6-85b0-4870-b773-5ce65e195d5f
+
+2025-03-22 02:10:47,030 - ERROR - \u274c Error executing query: 404 Not found: Table brazilian-ecom:t6.Agg_Customers was not found in location US; reason: notFound, message: Not found: Table brazilian-ecom:t6.Agg_Customers was not found in location US
+
+Location: US
+Job ID: b0f201c3-5223-46d7-b965-9d55e168e7fe
+
+2025-03-22 02:10:47,508 - ERROR - \u274c Error executing query: 404 Not found: Table brazilian-ecom:t6.Agg_Sales was not found in location US; reason: notFound, message: Not found: Table brazilian-ecom:t6.Agg_Sales was not found in location US
+
+Location: US
+Job ID: c0ceb76a-71c5-4882-9fcd-89d1a01fab99
+
+2025-03-22 02:10:48,103 - ERROR - \u274c Error executing query: 404 Not found: Table brazilian-ecom:t6.Agg_Reviews was not found in location US; reason: notFound, message: Not found: Table brazilian-ecom:t6.Agg_Reviews was not found in location US
+
+Location: US
+Job ID: a14409b7-57ab-441a-8453-cf3637553571
+
+2025-03-22 02:10:48,632 - ERROR - \u274c Error executing query: 404 Not found: Table brazilian-ecom:t6.Agg_Sellers was not found in location US; reason: notFound, message: Not found: Table brazilian-ecom:t6.Agg_Sellers was not found in location US
+
+Location: US
+Job ID: 1da046ef-bc16-4933-af39-803aa909c4d6
+
+2025-03-22 02:10:49,163 - ERROR - \u274c Error executing query: 404 Not found: Table brazilian-ecom:t6.Agg_Sales was not found in location US; reason: notFound, message: Not found: Table brazilian-ecom:t6.Agg_Sales was not found in location US
+
+Location: US
+Job ID: 89aeafc0-2978-44fa-a761-9868310a71bc
+
+2025-03-22 02:10:49,680 - ERROR - \u274c Error executing query: 404 Not found: Table brazilian-ecom:t6.Agg_Sales was not found in location US; reason: notFound, message: Not found: Table brazilian-ecom:t6.Agg_Sales was not found in location US
+
+Location: US
+Job ID: d7f973e8-1b3c-4b05-9d1c-8d642a415d42
+
+2025-03-22 02:10:50,155 - ERROR - \u274c Error executing query: 404 Not found: Table brazilian-ecom:t6.Agg_Customers was not found in location US; reason: notFound, message: Not found: Table brazilian-ecom:t6.Agg_Customers was not found in location US
+
+Location: US
+Job ID: b570f0de-0262-4f4e-a631-1557a919dde9
+
+2025-03-22 02:10:50,680 - ERROR - \u274c Error executing query: 404 Not found: Table brazilian-ecom:t6.Agg_Sellers was not found in location US; reason: notFound, message: Not found: Table brazilian-ecom:t6.Agg_Sellers was not found in location US
+
+Location: US
+Job ID: 1bd87e5d-6595-45eb-bbad-6459f1fe55c7
+
+2025-03-22 02:20:18,747 - INFO - Executing query: 
+    SELECT 
+        SUM(total_sales) as total_revenue,
+        SUM(total_orders) as total_orders
+  ...
+2025-03-22 02:20:21,012 - INFO - Executing query: 
+    WITH ranked_months AS (
+        SELECT 
+            month,
+            total_sales,
+           ...
+2025-03-22 02:20:23,206 - INFO - Executing query: 
+    SELECT 
+        month,
+        total_sales,
+        total_orders
+    FROM brazilian-ecom.t6.Agg...
+2025-03-22 02:20:24,847 - INFO - Executing query: 
+    SELECT 
+        category,
+        total_sales,
+        total_orders
+    FROM brazilian-ecom.t6....
+2025-03-22 02:20:26,549 - INFO - Executing query: 
+    SELECT 
+        customer_state,
+        total_sales,
+        unique_customers,
+        total_or...
+2025-03-22 02:20:28,517 - INFO - Executing query: 
+    SELECT 
+        seller_id,
+        seller_state,
+        total_sales,
+        total_orders,
+   ...
+2025-03-22 02:20:30,261 - INFO - Executing query: 
+    SELECT 
+        seller_state,
+        SUM(total_sales) as total_sales,
+        COUNT(DISTINCT s...
+2025-03-22 02:20:32,063 - INFO - Executing query: 
+    SELECT 
+        seller_id,
+        seller_state,
+        total_sales,
+        total_orders,
+   ...
+2025-03-22 02:27:18,612 - INFO - Executing query: 
+    SELECT 
+        category,
+        AVG(avg_review_score) as avg_score,
+        SUM(total_reviews...
+2025-03-22 02:27:19,555 - ERROR - Error executing query: 400 Aggregations of aggregations are not allowed at [8:16]; reason: invalidQuery, location: query, message: Aggregations of aggregations are not allowed at [8:16]
+
+Location: US
+Job ID: abab5f5c-cdcf-4b3f-ab80-9157ecfaa1c9
+
+2025-03-22 02:27:19,571 - INFO - Executing query: 
+    SELECT 
+        r.category,
+        AVG(r.avg_review_score) as avg_review,
+        SUM(s.total_...
+2025-03-22 02:37:27,033 - INFO - Executing query: SELECT * FROM brazilian-ecom.t6.Agg_sales_by_category...
+2025-03-22 02:40:41,754 - ERROR - \u274c Error executing query: 404 Not found: Table brazilian-ecom:t6.Agg_Sales was not found in location US; reason: notFound, message: Not found: Table brazilian-ecom:t6.Agg_Sales was not found in location US
+
+Location: US
+Job ID: da1cc490-8568-4230-97b4-9c54c5c0dba1
+
+2025-03-22 02:40:42,314 - ERROR - \u274c Error executing query: 404 Not found: Table brazilian-ecom:t6.Agg_Customers was not found in location US; reason: notFound, message: Not found: Table brazilian-ecom:t6.Agg_Customers was not found in location US
+
+Location: US
+Job ID: 704126e9-15d2-4bc3-a746-0212865e4b5b
+
+2025-03-22 02:40:42,840 - ERROR - \u274c Error executing query: 404 Not found: Table brazilian-ecom:t6.Agg_Sales was not found in location US; reason: notFound, message: Not found: Table brazilian-ecom:t6.Agg_Sales was not found in location US
+
+Location: US
+Job ID: abd8a0e6-1797-4825-976a-b2096ec764fd
+
+2025-03-22 02:40:43,454 - ERROR - \u274c Error executing query: 404 Not found: Table brazilian-ecom:t6.Agg_Reviews was not found in location US; reason: notFound, message: Not found: Table brazilian-ecom:t6.Agg_Reviews was not found in location US
+
+Location: US
+Job ID: ac05d693-8946-495f-8f06-e50e1b38fac6
+
+2025-03-22 02:40:43,988 - ERROR - \u274c Error executing query: 404 Not found: Table brazilian-ecom:t6.Agg_Sellers was not found in location US; reason: notFound, message: Not found: Table brazilian-ecom:t6.Agg_Sellers was not found in location US
+
+Location: US
+Job ID: c87deff0-b9c4-4d29-8270-aa8237164a04
+
+2025-03-22 02:40:44,497 - ERROR - \u274c Error executing query: 404 Not found: Table brazilian-ecom:t6.Agg_Sales was not found in location US; reason: notFound, message: Not found: Table brazilian-ecom:t6.Agg_Sales was not found in location US
+
+Location: US
+Job ID: 9d684b0e-a43e-4a8d-a4fe-c320fc549f19
+
+2025-03-22 02:40:45,146 - ERROR - \u274c Error executing query: 404 Not found: Table brazilian-ecom:t6.Agg_Sales was not found in location US; reason: notFound, message: Not found: Table brazilian-ecom:t6.Agg_Sales was not found in location US
+
+Location: US
+Job ID: 918bf088-d900-482c-ba8a-6371d07f8f60
+
+2025-03-22 02:40:45,633 - ERROR - \u274c Error executing query: 404 Not found: Table brazilian-ecom:t6.Agg_Customers was not found in location US; reason: notFound, message: Not found: Table brazilian-ecom:t6.Agg_Customers was not found in location US
+
+Location: US
+Job ID: 7b7c129a-b231-4add-a1b9-f613351475e7
+
+2025-03-22 02:40:46,138 - ERROR - \u274c Error executing query: 404 Not found: Table brazilian-ecom:t6.Agg_Sellers was not found in location US; reason: notFound, message: Not found: Table brazilian-ecom:t6.Agg_Sellers was not found in location US
+
+Location: US
+Job ID: 7ee9e5c4-4b4f-4cf4-9f7f-ab34ffbf2898
+
+2025-03-23 09:41:58,360 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 09:42:05,653 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 09:42:08,818 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 09:42:10,832 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 09:42:16,133 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 09:42:16,140 - INFO - Executing query: 
+    SELECT 
+        SUM(total_sales) as total_revenue,
+        SUM(total_orders) as total_orders
+  ...
+2025-03-23 09:42:18,369 - INFO - Executing query: 
+    WITH ranked_months AS (
+        SELECT 
+            month,
+            total_sales,
+           ...
+2025-03-23 09:42:20,750 - INFO - Executing query: 
+    SELECT 
+        month,
+        total_sales,
+        total_orders
+    FROM brazilian-ecom.t6.Agg...
+2025-03-23 09:42:22,854 - INFO - Executing query: 
+    SELECT 
+        category,
+        total_sales,
+        total_orders
+    FROM brazilian-ecom.t6....
+2025-03-23 09:42:24,631 - INFO - Executing query: 
+    SELECT 
+        customer_state,
+        total_sales,
+        unique_customers,
+        total_or...
+2025-03-23 09:42:26,401 - INFO - Executing query: 
+    SELECT 
+        seller_id,
+        seller_state,
+        total_sales,
+        total_orders,
+   ...
+2025-03-23 09:42:28,014 - INFO - Executing query: 
+    SELECT 
+        seller_state,
+        SUM(total_sales) as total_sales,
+        COUNT(DISTINCT s...
+2025-03-23 09:42:30,103 - INFO - Executing query: 
+    SELECT 
+        seller_id,
+        seller_state,
+        total_sales,
+        total_orders,
+   ...
+2025-03-23 09:48:33,141 - INFO - Executing query: 
+    SELECT 
+        category,
+        AVG(avg_review_score) as avg_score,
+        SUM(total_reviews...
+2025-03-23 09:48:33,980 - ERROR - Error executing query: 400 Aggregations of aggregations are not allowed at [8:16]; reason: invalidQuery, location: query, message: Aggregations of aggregations are not allowed at [8:16]
+
+Location: US
+Job ID: 0db4e923-5c22-401b-b0e7-f05b5d890f5e
+
+2025-03-23 09:48:33,983 - INFO - Executing query: 
+    SELECT 
+        r.category,
+        AVG(r.avg_review_score) as avg_review,
+        SUM(s.total_...
+2025-03-23 10:00:58,379 - INFO - Executing query: 
+    SELECT 
+        category,
+        SAFE_DIVIDE(SUM(total_reviews * avg_review_score), NULLIF(SUM...
+2025-03-23 10:00:59,248 - ERROR - Error executing query: 400 Aggregations of aggregations are not allowed at [8:16]; reason: invalidQuery, location: query, message: Aggregations of aggregations are not allowed at [8:16]
+
+Location: US
+Job ID: 6d40cd10-c579-40cd-9b8f-3446261011d8
+
+2025-03-23 10:00:59,251 - INFO - Executing query: 
+    SELECT 
+        r.category,
+        SAFE_DIVIDE(SUM(r.total_reviews * r.avg_review_score), NULL...
+2025-03-23 10:02:20,013 - INFO - Executing query: 
+    SELECT 
+        category,
+        SUM(total_reviews) as total_reviews,
+        SAFE_DIVIDE(SUM(...
+2025-03-23 10:02:21,812 - INFO - Executing query: 
+    SELECT 
+        r.category,
+        SUM(r.total_reviews) as total_reviews,
+        SAFE_DIVIDE(...
+2025-03-23 10:06:43,183 - INFO - Executing query: 
+    SELECT 
+        seller_id,
+        seller_state,
+        SUM(total_sales) AS total_sales,
+     ...
+2025-03-23 10:06:45,109 - INFO - Executing query: 
+    SELECT 
+        seller_state,
+        SUM(total_sales) AS total_sales,
+        COUNT(DISTINCT s...
+2025-03-23 10:06:46,973 - INFO - Executing query: 
+    SELECT 
+        seller_id,
+        seller_state,
+        SUM(total_sales) AS total_sales,
+     ...
+2025-03-23 10:09:46,710 - INFO - Executing query: 
+    SELECT 
+        customer_state,
+        SUM(total_sales) AS total_sales,
+        SUM(total_orde...
+2025-03-23 10:15:04,049 - INFO - Executing query: 
+    SELECT 
+        SUM(total_sales) AS total_revenue,
+        SUM(total_orders) AS total_orders,
+ ...
+2025-03-23 10:15:05,961 - INFO - Executing query: 
+    WITH ranked_months AS (
+        SELECT 
+            month,
+            total_sales,
+           ...
+2025-03-23 10:15:07,955 - INFO - Executing query: 
+    SELECT 
+        month,
+        total_sales,
+        total_orders
+    FROM `brazilian-ecom.t6.Ag...
+2025-03-23 10:15:09,839 - INFO - Executing query: 
+    SELECT 
+        category,
+        SUM(total_sales) AS total_sales,
+        SUM(total_orders) AS...
+2025-03-23 10:21:08,384 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 10:21:12,609 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 10:21:12,618 - INFO - Executing query: 
+    SELECT 
+        SUM(total_sales) AS total_revenue,
+        SUM(total_orders) AS total_orders,
+ ...
+2025-03-23 10:21:14,779 - INFO - Executing query: 
+    WITH ranked_months AS (
+        SELECT 
+            month,
+            total_sales,
+           ...
+2025-03-23 10:21:16,471 - INFO - Executing query: 
+    SELECT 
+        month,
+        total_sales,
+        total_orders
+    FROM `brazilian-ecom.t6.Ag...
+2025-03-23 10:21:18,109 - INFO - Executing query: 
+    SELECT 
+        category,
+        SUM(total_sales) AS total_sales,
+        SUM(total_orders) AS...
+2025-03-23 10:21:19,618 - INFO - Executing query: 
+    SELECT 
+        customer_state,
+        SUM(total_sales) AS total_sales,
+        SUM(total_orde...
+2025-03-23 10:21:21,077 - INFO - Executing query: 
+    SELECT 
+        seller_id,
+        seller_state,
+        SUM(total_sales) AS total_sales,
+     ...
+2025-03-23 10:21:22,543 - INFO - Executing query: 
+    SELECT 
+        seller_state,
+        SUM(total_sales) AS total_sales,
+        COUNT(DISTINCT s...
+2025-03-23 10:21:23,823 - INFO - Executing query: 
+    SELECT 
+        seller_id,
+        seller_state,
+        SUM(total_sales) AS total_sales,
+     ...
+2025-03-23 10:21:25,421 - INFO - Executing query: 
+    SELECT 
+        category,
+        SUM(total_reviews) as total_reviews,
+        SAFE_DIVIDE(SUM(...
+2025-03-23 10:21:26,878 - INFO - Executing query: 
+    SELECT 
+        r.category,
+        SUM(r.total_reviews) as total_reviews,
+        SAFE_DIVIDE(...
+2025-03-23 10:23:48,631 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 10:24:00,903 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 10:24:06,070 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 10:24:33,170 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-03-23 10:24:33,171 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-03-23 10:24:44,657 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-03-23 10:24:44,658 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-03-23 10:29:47,589 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 10:29:52,767 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 10:36:19,748 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 10:37:01,113 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 10:39:02,484 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 10:39:03,250 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 10:46:23,124 - INFO - Initializing BigQuery client for project 'brazilian-ecom'
+2025-03-23 10:46:25,491 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-23 10:46:25,495 - INFO - Executing query: SELECT 'Connection successful' as message,             CURRENT_TIMESTAMP() as timestamp,            ...
+2025-03-23 10:46:26,293 - ERROR - Query error (attempt 1/3): 400 Syntax error: Expected end of input but got "-" at [4:41]; reason: invalidQuery, location: query, message: Syntax error: Expected end of input but got "-" at [4:41]
+
+Location: US
+Job ID: 63e32849-7a02-4b17-9eda-99fa8930b3cd
+
+2025-03-23 10:46:27,761 - ERROR - Query error (attempt 2/3): 400 Syntax error: Expected end of input but got "-" at [4:41]; reason: invalidQuery, location: query, message: Syntax error: Expected end of input but got "-" at [4:41]
+
+Location: US
+Job ID: 8852f232-dd23-4e32-a38a-65551ccf4a2c
+
+2025-03-23 10:46:30,292 - ERROR - Query error (attempt 3/3): 400 Syntax error: Expected end of input but got "-" at [4:41]; reason: invalidQuery, location: query, message: Syntax error: Expected end of input but got "-" at [4:41]
+
+Location: US
+Job ID: 617e2aa2-3df8-4acd-ae05-9251b47a9867
+
+2025-03-23 10:46:30,316 - INFO - Executing query: SELECT * FROM `project_id.dataset_id.dm_sales_by_category`             ORDER BY total_sales DESC
+2025-03-23 10:46:33,447 - INFO - Query completed in 3.13s, returned 72 rows
+2025-03-23 10:46:34,139 - INFO - Executing query: SELECT * FROM `project_id.dataset_id.dm_sales_by_customer_state`             ORDER BY total_sales DE...
+2025-03-23 10:46:36,888 - INFO - Query completed in 2.75s, returned 27 rows
+2025-03-23 10:46:36,890 - INFO - Executing query: SELECT * FROM `project_id.dataset_id.dm_sales_by_seller`
+2025-03-23 10:46:39,704 - INFO - Query completed in 2.81s, returned 3030 rows
+2025-03-23 10:46:39,819 - INFO - Executing query: SELECT * FROM `project_id.dataset_id.dm_monthly_sales_trend`             ORDER BY month
+2025-03-23 10:46:42,668 - INFO - Query completed in 2.85s, returned 24 rows
+2025-03-23 10:46:42,814 - INFO - Executing query: SELECT * FROM `project_id.dataset_id.dm_sales_by_seller`             ORDER BY total_sales DESC
+2025-03-23 10:46:45,491 - INFO - Query completed in 2.68s, returned 3030 rows
+2025-03-23 10:46:45,663 - INFO - Executing query: SELECT * FROM `project_id.dataset_id.dm_avg_review_score`             ORDER BY avg_review_score DESC
+2025-03-23 10:46:48,946 - INFO - Query completed in 3.28s, returned 32184 rows
+2025-03-23 11:29:36,880 - INFO - Executing query: 
+    SELECT 
+        SUM(total_sales) AS total_revenue,
+        SUM(total_orders) AS total_orders,
+ ...
+2025-03-23 11:29:38,657 - INFO - Executing query: 
+    WITH ranked_months AS (
+        SELECT 
+            month,
+            total_sales,
+           ...
+2025-03-23 11:29:40,176 - INFO - Executing query: 
+    SELECT 
+        month,
+        total_sales,
+        total_orders
+    FROM `brazilian-ecom.t6.Ag...
+2025-03-23 11:29:41,946 - INFO - Executing query: 
+    SELECT 
+        category,
+        SUM(total_sales) AS total_sales,
+        SUM(total_orders) AS...
+2025-03-23 11:36:08,111 - INFO - Executing query: 
+    SELECT 
+        SUM(total_sales) AS total_revenue,
+        SUM(total_orders) AS total_orders,
+ ...
+2025-03-23 11:36:10,130 - INFO - Executing query: 
+    WITH ranked_months AS (
+        SELECT 
+            month,
+            total_sales,
+           ...
+2025-03-23 11:36:12,187 - INFO - Executing query: 
+    SELECT 
+        month,
+        total_sales,
+        total_orders
+    FROM `brazilian-ecom.t6.dm...
+2025-03-23 11:36:13,803 - INFO - Executing query: 
+    SELECT 
+        category,
+        total_sales,
+        total_orders,
+        total_freight
+    ...
+2025-03-23 11:36:15,540 - INFO - Executing query: 
+    SELECT 
+        customer_state,
+        total_sales,
+        unique_customers,
+        total_or...
+2025-03-23 11:36:17,152 - INFO - Executing query: 
+    SELECT 
+        seller_id,
+        seller_state,
+        total_sales,
+        total_orders,
+   ...
+2025-03-23 11:36:18,752 - INFO - Executing query: 
+    SELECT 
+        seller_state,
+        SUM(total_sales) AS total_sales,
+        COUNT(DISTINCT s...
+2025-03-23 11:36:20,600 - INFO - Executing query: 
+    SELECT 
+        category,
+        AVG(avg_review_score) AS avg_review_score,
+        SUM(total_...
+2025-03-23 11:36:22,306 - INFO - Executing query: 
+    SELECT 
+        r.category,
+        AVG(r.avg_review_score) AS avg_review_score,
+        SUM(r....
+2025-03-23 11:44:00,145 - INFO - Executing query: 
+    SELECT 
+        customer_state,
+        SUM(total_sales) AS total_sales,
+        SUM(total_orde...
+2025-03-23 11:44:01,917 - INFO - Executing query: 
+    SELECT 
+        seller_id,
+        seller_state,
+        SUM(total_sales) AS total_sales,
+     ...
+2025-03-23 11:44:03,538 - INFO - Executing query: 
+    SELECT 
+        seller_state,
+        SUM(total_sales) AS total_sales,
+        COUNT(DISTINCT s...
+2025-03-23 11:44:05,046 - INFO - Executing query: 
+    SELECT 
+        seller_id,
+        seller_state,
+        SUM(total_sales) AS total_sales,
+     ...
+2025-03-23 11:44:08,743 - INFO - Executing query: 
+    SELECT 
+        category,
+        SUM(total_reviews) as total_reviews,
+        SAFE_DIVIDE(SUM(...
+2025-03-23 11:44:10,267 - INFO - Executing query: 
+    SELECT 
+        r.category,
+        SUM(r.total_reviews) as total_reviews,
+        SAFE_DIVIDE(...
+2025-03-23 13:19:39,287 - INFO - Executing query: 
+    SELECT 
+        SUM(total_sales) AS total_revenue,
+        SUM(total_orders) AS total_orders,
+ ...
+2025-03-23 13:19:41,115 - INFO - Executing query: 
+    WITH ranked_months AS (
+        SELECT 
+            month,
+            total_sales,
+           ...
+2025-03-23 13:19:43,008 - INFO - Executing query: 
+    SELECT 
+        month,
+        total_sales,
+        total_orders
+    FROM `brazilian-ecom.t6.Ag...
+2025-03-23 13:19:44,448 - INFO - Executing query: 
+    SELECT 
+        category,
+        SUM(total_sales) AS total_sales,
+        SUM(total_orders) AS...
+2025-03-23 13:19:45,948 - INFO - Executing query: 
+    SELECT 
+        customer_state,
+        SUM(total_sales) AS total_sales,
+        SUM(total_orde...
+2025-03-23 13:19:47,484 - INFO - Executing query: 
+    SELECT 
+        seller_id,
+        seller_state,
+        SUM(total_sales) AS total_sales,
+     ...
+2025-03-23 13:19:48,929 - INFO - Executing query: 
+    SELECT 
+        seller_state,
+        SUM(total_sales) AS total_sales,
+        COUNT(DISTINCT s...
+2025-03-23 13:19:50,366 - INFO - Executing query: 
+    SELECT 
+        seller_id,
+        seller_state,
+        SUM(total_sales) AS total_sales,
+     ...
+2025-03-23 13:19:51,763 - INFO - Executing query: 
+    SELECT 
+        category,
+        SUM(total_reviews) as total_reviews,
+        SAFE_DIVIDE(SUM(...
+2025-03-23 13:19:53,152 - INFO - Executing query: 
+    SELECT 
+        r.category,
+        SUM(r.total_reviews) as total_reviews,
+        SAFE_DIVIDE(...

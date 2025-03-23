@@ -3,10 +3,8 @@ import pandas as pd
 def clean(df):
     """
     Cleans the merged e-commerce DataFrame by handling missing values, renaming columns, and filling timestamps.
-    
     Parameters:
     - df: Merged DataFrame
-    
     Returns:
     - Cleaned DataFrame
     """
