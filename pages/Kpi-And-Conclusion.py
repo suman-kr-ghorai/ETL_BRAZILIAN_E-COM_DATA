@@ -6,6 +6,24 @@ from google.cloud import bigquery
 import os
 from datetime import datetime
 import altair as alt
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+from email.mime.application import MIMEApplication
+from pathlib import Path
+import pptx
+from pptx import Presentation
+from pptx.util import Inches, Pt
+from reportlab.lib.pagesizes import letter
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Image
+from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+from reportlab.lib.units import inch
+import base64
+import io
+
+# Create output directories if they don't exist
+os.makedirs("visualizations", exist_ok=True)
+os.makedirs("reports", exist_ok=True)
 
 # Page configuration
 st.set_page_config(
@@ -96,18 +114,172 @@ def load_top_categories():
     """
     return client.query(query).to_dataframe()
 
+# Function to save Plotly figure as image
+def save_figure(fig, filename):
+    """Save a Plotly figure as an image file"""
+    path = os.path.join("visualizations", filename)
+    fig.write_image(path, scale=2)
+    return path
+
+# Create PowerPoint presentation
+def create_powerpoint(visualizations, insights):
+    """Create a PowerPoint presentation with visualizations and insights"""
+    prs = Presentation()
+    
+    # Add title slide
+    title_slide_layout = prs.slide_layouts[0]
+    slide = prs.slides.add_slide(title_slide_layout)
+    title = slide.shapes.title
+    subtitle = slide.placeholders[1]
+    title.text = "Brazilian E-commerce Analytics Report"
+    subtitle.text = f"Generated on {datetime.now().strftime('%Y-%m-%d')}"
+    
+    # Define layouts
+    content_slide_layout = prs.slide_layouts[1]
+    blank_slide_layout = prs.slide_layouts[6]
+    
+    # Add overview slide
+    slide = prs.slides.add_slide(content_slide_layout)
+    title = slide.shapes.title
+    title.text = "Executive Summary"
+    content = slide.placeholders[1]
+    content.text = """
+    • The Brazilian e-commerce platform demonstrates strong revenue growth
+    • Customer segmentation reveals high-value customers drive disproportionate revenue
+    • Seller distribution shows concentration in major urban centers
+    • Product category performance varies significantly by region and time
+    • Geographic performance indicates opportunities for targeted strategies
+    """
+    
+    # Add visualization slides
+    for viz_name, viz_path in visualizations.items():
+        slide = prs.slides.add_slide(blank_slide_layout)
+        title = slide.shapes.title
+        title.text = viz_name
+        
+        # Add image
+        left = Inches(1)
+        top = Inches(1.5)
+        height = Inches(5)
+        slide.shapes.add_picture(viz_path, left, top, height=height)
+    
+    # Add insights slides
+    for section, section_insights in insights.items():
+        slide = prs.slides.add_slide(content_slide_layout)
+        title = slide.shapes.title
+        title.text = f"{section} - Key Insights"
+        content = slide.placeholders[1]
+        content.text = section_insights
+    
+    # Save the presentation
+    report_path = os.path.join("reports", f"ecommerce_report_{datetime.now().strftime('%Y%m%d_%H%M%S')}.pptx")
+    prs.save(report_path)
+    return report_path
+
+# Create PDF report
+def create_pdf(visualizations, insights):
+    """Create a PDF report with visualizations and insights"""
+    report_path = os.path.join("reports", f"ecommerce_report_{datetime.now().strftime('%Y%m%d_%H%M%S')}.pdf")
+    doc = SimpleDocTemplate(report_path, pagesize=letter)
+    styles = getSampleStyleSheet()
+    elements = []
+    
+    # Title
+    title_style = styles["Title"]
+    elements.append(Paragraph("Brazilian E-commerce Analytics Report", title_style))
+    elements.append(Paragraph(f"Generated on {datetime.now().strftime('%Y-%m-%d')}", styles["Heading2"]))
+    elements.append(Spacer(1, 0.25*inch))
+    
+    # Executive Summary
+    elements.append(Paragraph("Executive Summary", styles["Heading1"]))
+    summary_text = """
+    The Brazilian e-commerce platform demonstrates strong revenue growth and high order fulfillment rates.
+    Customer segmentation reveals that a small percentage of high-value customers drive a disproportionate share of revenue.
+    Seller distribution shows concentration in major urban centers, with São Paulo dominating the market.
+    Product category performance varies significantly, indicating opportunities for targeted strategies.
+    Geographic performance suggests potential for regional expansion initiatives.
+    """
+    elements.append(Paragraph(summary_text, styles["Normal"]))
+    elements.append(Spacer(1, 0.25*inch))
+    
+    # Add visualizations and insights
+    for viz_name, viz_path in visualizations.items():
+        elements.append(Paragraph(viz_name, styles["Heading2"]))
+        elements.append(Spacer(1, 0.1*inch))
+        elements.append(Image(viz_path, width=6*inch, height=4*inch))
+        elements.append(Spacer(1, 0.1*inch))
+        
+        # Find matching insights
+        for section, section_insights in insights.items():
+            if section.lower() in viz_name.lower() or viz_name.lower() in section.lower():
+                elements.append(Paragraph("Key Insights:", styles["Heading3"]))
+                elements.append(Paragraph(section_insights, styles["Normal"]))
+                elements.append(Spacer(1, 0.25*inch))
+                break
+    
+    # Build PDF
+    doc.build(elements)
+    return report_path
+
+# Function to send email with report attachment
+def send_email(recipients, subject, body, attachment_path):
+    """Send an email with the report attached to multiple recipients"""
+
+    sender_email = os.environ.get("EMAIL_SENDER", "")  # Get from environment variable
+    password = os.environ.get("EMAIL_PASSWORD", "")    # Get from environment variable
+    
+    if not sender_email or not password:
+        return False, "Email configuration missing. Please set EMAIL_SENDER and EMAIL_PASSWORD environment variables."
+    
+    # Convert recipients string into a list
+    recipient_list = [email.strip() for email in recipients.split(",") if email.strip()]
+
+    # Create message
+    msg = MIMEMultipart()
+    msg["From"] = sender_email
+    msg["To"] = ", ".join(recipient_list)  # Set multiple recipients
+    msg["Subject"] = subject
+    
+    # Attach body text
+    msg.attach(MIMEText(body, "plain"))
+    
+    # Attach file
+    with open(attachment_path, "rb") as file:
+        attachment = MIMEApplication(file.read(), Name=os.path.basename(attachment_path))
+        attachment["Content-Disposition"] = f'attachment; filename="{os.path.basename(attachment_path)}"'
+        msg.attach(attachment)
+    
+    try:
+        # Connect to Gmail SMTP server
+        server = smtplib.SMTP("smtp.gmail.com", 587)
+        server.starttls()
+        server.login(sender_email, password)
+        
+        # Send email
+        server.sendmail(sender_email, recipient_list, msg.as_string())
+        server.quit()
+        return True, "Email sent successfully!"
+    except Exception as e:
+        return False, f"Failed to send email: {str(e)}"
+
+
 # Dashboard title
 st.title("🛍️ Brazilian E-commerce Analytics Dashboard")
 st.markdown("This dashboard presents key performance indicators from the Brazilian e-commerce dataset.")
 
 # Create tabs for different analysis sections
-tab1, tab2, tab3, tab4, tab5 = st.tabs([
+tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
     "Orders & Revenue", 
     "Customer Analysis", 
     "Seller Analysis",
     "Year-over-Year Trends",
-    "Category Analysis"
+    "Category Analysis",
+    "Reports & Email"
 ])
+
+# Dictionary to store all visualizations and insights
+all_visualizations = {}
+all_insights = {}
 
 # Tab 1: Orders & Revenue
 with tab1:
@@ -146,6 +318,10 @@ with tab1:
             )
             st.plotly_chart(fig, use_container_width=True)
             
+            # Save figure
+            fig_path = save_figure(fig, "orders_by_status.png")
+            all_visualizations["Orders by Status"] = fig_path
+            
         with col2:
             fig = px.bar(
                 orders_df, 
@@ -157,19 +333,24 @@ with tab1:
             )
             fig.update_layout(xaxis_title="Order Status", yaxis_title="Revenue (R$)")
             st.plotly_chart(fig, use_container_width=True)
+            
+            # Save figure
+            fig_path = save_figure(fig, "revenue_by_status.png")
+            all_visualizations["Revenue by Order Status"] = fig_path
         
         # Insights
         st.subheader("Insights")
-        st.markdown("""
-        **Order Status Analysis:**
-        - The majority of orders are in 'delivered' status, indicating a healthy fulfillment rate.
-        - Cancelled orders represent a small percentage of total orders, suggesting good order qualification.
-        - The average order value varies by status, with 'processing' orders showing higher values, possibly indicating larger purchases take longer to process.
+        orders_insights = """
+        The majority of orders are in 'delivered' status, indicating a healthy fulfillment rate.
+        Cancelled orders represent a small percentage of total orders, suggesting good order qualification.
+        The average order value varies by status, with 'processing' orders showing higher values, possibly indicating larger purchases take longer to process.
+        Delivered orders generate the bulk of revenue, as expected.
+        The revenue lost from cancelled orders represents an opportunity for recovery strategies.
+        """
+        st.markdown(orders_insights)
         
-        **Revenue Impact:**
-        - Delivered orders generate the bulk of revenue, as expected.
-        - The revenue lost from cancelled orders represents an opportunity for recovery strategies.
-        """)
+        # Store insights
+        all_insights["Orders and Revenue"] = orders_insights
         
     except Exception as e:
         st.error(f"Error loading order summary data: {e}")
@@ -222,6 +403,10 @@ with tab2:
             )
             st.plotly_chart(fig, use_container_width=True)
             
+            # Save figure
+            fig_path = save_figure(fig, "customer_segmentation.png")
+            all_visualizations["Customer Segmentation"] = fig_path
+            
         with col2:
             segment_revenue = customer_df.groupby('ltv_segment')['total_spent'].sum().reset_index()
             
@@ -235,6 +420,10 @@ with tab2:
             )
             fig.update_layout(xaxis_title="Customer Segment", yaxis_title="Total Revenue (R$)")
             st.plotly_chart(fig, use_container_width=True)
+            
+            # Save figure
+            fig_path = save_figure(fig, "revenue_by_customer_segment.png")
+            all_visualizations["Revenue by Customer Segment"] = fig_path
         
         # Order frequency
         st.subheader("Order Frequency Analysis")
@@ -253,19 +442,24 @@ with tab2:
         )
         st.plotly_chart(fig, use_container_width=True)
         
+        # Save figure
+        fig_path = save_figure(fig, "order_frequency.png")
+        all_visualizations["Order Frequency Analysis"] = fig_path
+        
         # Insights
         st.subheader("Insights")
-        st.markdown("""
-        **Customer Lifetime Value Analysis:**
-        - The majority of customers make only 1-2 purchases, indicating an opportunity for retention strategies.
-        - Premium customers (top 25% by spending) contribute disproportionately to total revenue.
-        - There's significant potential to move customers from Medium to High Value segments with targeted marketing.
+        customer_insights = """
+        The majority of customers make only 1-2 purchases, indicating an opportunity for retention strategies.
+        Premium customers (top 25% by spending) contribute disproportionately to total revenue.
+        There's significant potential to move customers from Medium to High Value segments with targeted marketing.
+        Implementing a loyalty program could increase repeat purchases.
+        Targeted offers for Medium Value customers could increase their average order value.
+        Specialized retention campaigns for High Value and Premium customers are recommended.
+        """
+        st.markdown(customer_insights)
         
-        **Recommendations:**
-        - Implement a loyalty program to increase repeat purchases.
-        - Create targeted offers for Medium Value customers to increase their average order value.
-        - Develop specialized retention campaigns for High Value and Premium customers.
-        """)
+        # Store insights
+        all_insights["Customer Analysis"] = customer_insights
         
     except Exception as e:
         st.error(f"Error loading customer data: {e}")
@@ -314,6 +508,10 @@ with tab3:
         fig.update_traces(texttemplate='%{text} sellers', textposition='outside')
         st.plotly_chart(fig, use_container_width=True)
         
+        # Save figure
+        fig_path = save_figure(fig, "top_cities_revenue.png")
+        all_visualizations["Top Cities by Revenue"] = fig_path
+        
         # Revenue distribution
         st.subheader("Seller Revenue Distribution")
         
@@ -339,6 +537,10 @@ with tab3:
             )
             st.plotly_chart(fig, use_container_width=True)
             
+            # Save figure
+            fig_path = save_figure(fig, "seller_segmentation.png")
+            all_visualizations["Seller Segmentation"] = fig_path
+            
         with col2:
             segment_revenue = seller_df.groupby('revenue_segment')['total_revenue'].sum().reset_index()
             
@@ -352,20 +554,25 @@ with tab3:
             )
             fig.update_layout(xaxis_title="Seller Segment", yaxis_title="Total Revenue (R$)")
             st.plotly_chart(fig, use_container_width=True)
+            
+            # Save figure
+            fig_path = save_figure(fig, "revenue_by_seller_segment.png")
+            all_visualizations["Revenue by Seller Segment"] = fig_path
         
         # Insights
         st.subheader("Insights")
-        st.markdown("""
-        **Seller Distribution Analysis:**
-        - A small number of Enterprise sellers (top 5%) generate a substantial portion of total revenue.
-        - Sellers are concentrated in major urban centers, with São Paulo being the dominant market.
-        - The long tail of Small sellers represents an opportunity for targeted growth programs.
+        seller_insights = """
+        A small number of Enterprise sellers (top 5%) generate a substantial portion of total revenue.
+        Sellers are concentrated in major urban centers, with São Paulo being the dominant market.
+        The long tail of Small sellers represents an opportunity for targeted growth programs.
+        Major cities have a higher seller-to-revenue ratio, indicating stronger market efficiency.
+        Smaller cities show potential for expansion with the right support and incentives.
+        Regional differences in seller performance suggest the need for localized strategies.
+        """
+        st.markdown(seller_insights)
         
-        **Geographic Insights:**
-        - Major cities have a higher seller-to-revenue ratio, indicating stronger market efficiency.
-        - Smaller cities show potential for expansion with the right support and incentives.
-        - Regional differences in seller performance suggest the need for localized strategies.
-        """)
+        # Store insights
+        all_insights["Seller Analysis"] = seller_insights
         
     except Exception as e:
         st.error(f"Error loading seller data: {e}")
@@ -378,7 +585,6 @@ with tab4:
         # Load data
         yoy_revenue_df = load_yoy_revenue()
         yoy_city_df = load_yoy_seller_city()
-        yoy_category_df = load_yoy_product_category()
         
         # YoY Revenue Trend
         st.subheader("Year-over-Year Revenue Trend")
@@ -397,6 +603,10 @@ with tab4:
             xaxis=dict(tickmode='linear')
         )
         st.plotly_chart(fig, use_container_width=True)
+        
+        # Save figure
+        fig_path = save_figure(fig, "annual_revenue_trend.png")
+        all_visualizations["Annual Revenue Trend"] = fig_path
         
         # Calculate YoY growth
         yoy_revenue_df['growth'] = yoy_revenue_df['total_revenue'].pct_change() * 100
@@ -447,19 +657,24 @@ with tab4:
         )
         st.plotly_chart(fig, use_container_width=True)
         
+        # Save figure
+        fig_path = save_figure(fig, "city_performance_by_year.png")
+        all_visualizations["City Performance by Year"] = fig_path
+        
         # Insights
         st.subheader("Insights")
-        st.markdown("""
-        **Year-over-Year Trends:**
-        - The platform shows consistent revenue growth year over year, indicating market expansion.
-        - Growth rates vary by year, with more recent periods showing accelerated growth.
-        - Major cities maintain their dominant position, but some secondary markets are growing faster.
+        yoy_insights = """
+        The platform shows consistent revenue growth year over year, indicating market expansion.
+        Growth rates vary by year, with more recent periods showing accelerated growth.
+        Major cities maintain their dominant position, but some secondary markets are growing faster.
+        The growth trajectory suggests a maturing market with increasing e-commerce adoption.
+        Year-over-year variations highlight the impact of economic factors and platform developments.
+        City-specific trends reveal opportunities for targeted regional expansion strategies.
+        """
+        st.markdown(yoy_insights)
         
-        **Strategic Implications:**
-        - The growth trajectory suggests a maturing market with increasing e-commerce adoption.
-        - Year-over-year variations highlight the impact of economic factors and platform developments.
-        - City-specific trends reveal opportunities for targeted regional expansion strategies.
-        """)
+        # Store insights
+        all_insights["Year-over-Year Trends"] = yoy_insights
         
     except Exception as e:
         st.error(f"Error loading YoY data: {e}")
@@ -497,6 +712,10 @@ with tab5:
         )
         st.plotly_chart(fig, use_container_width=True)
         
+        # Save figure
+        fig_path = save_figure(fig, "top_categories_revenue.png")
+        all_visualizations["Top Categories by Revenue"] = fig_path
+        
         # YoY Category Trends
         st.subheader("Category Trends Over Time")
         
@@ -525,70 +744,90 @@ with tab5:
                 xaxis=dict(tickmode='linear')
             )
             st.plotly_chart(fig, use_container_width=True)
+            
+            # Save figure
+            fig_path = save_figure(fig, "category_trends_over_time.png")
+            all_visualizations["Category Trends Over Time"] = fig_path
+            
         except Exception as e:
             st.warning(f"Unable to load category trend data: {e}")
         
         # Insights
         st.subheader("Insights")
-        st.markdown("""
-        **Category Performance Analysis:**
-        - The top categories represent a significant portion of overall revenue, indicating category concentration.
-        - Categories show different growth patterns, with some emerging categories showing rapid expansion.
-        - Traditional categories maintain stable revenue streams, while trending categories show more volatility.
+        category_insights = """
+        The top categories represent a significant portion of overall revenue, indicating category concentration.
+        Categories show different growth patterns, with some emerging categories showing rapid expansion.
+        Traditional categories maintain stable revenue streams, while trending categories show more volatility.
+        Invest in expanding inventory and seller recruitment in high-growth categories.
+        Consider specialized marketing campaigns for seasonal category performance.
+        Monitor emerging categories for early identification of consumer trends.
+        """
+        st.markdown(category_insights)
         
-        **Category Strategy Recommendations:**
-        - Invest in expanding inventory and seller recruitment in high-growth categories.
-        - Consider specialized marketing campaigns for seasonal category performance.
-        - Monitor emerging categories for early identification of consumer trends.
-        """)
+        # Store insights
+        all_insights["Category Analysis"] = category_insights
         
     except Exception as e:
         st.error(f"Error loading category data: {e}")
 
-# Executive Summary
-st.header("Executive Summary")
-st.markdown("""
-### Key Business Insights
+# Tab 6: Reports & Email
+# Tab 6: Reports & Email
+# Tab 6: Reports & Email
+with tab6:
+    st.header("Generate and Send Reports")
+    
+    # Report format selection
+    report_format = st.radio(
+        "Select Report Format:",
+        ["PDF", "PowerPoint"]
+    )
+    
+    # Generate Report button
+    if st.button("Generate Report"):
+        with st.spinner("Generating report..."):
+            try:
+                if report_format == "PDF":
+                    report_path = create_pdf(all_visualizations, all_insights)
+                else:  # PowerPoint
+                    report_path = create_powerpoint(all_visualizations, all_insights)
+                
+                st.success(f"{report_format} report generated successfully!")
 
-1. **Overall Performance**
-   - The Brazilian e-commerce platform demonstrates strong revenue growth and high order fulfillment rates.
-   - Customer acquisition appears effective, but retention metrics suggest opportunities for improvement.
+                # Create download link
+                with open(report_path, "rb") as file:
+                    report_data = file.read()
+                    b64_report = base64.b64encode(report_data).decode()
+                
+                filename = os.path.basename(report_path)
+                href = f'<a href="data:application/octet-stream;base64,{b64_report}" download="{filename}">Download {report_format} Report</a>'
+                st.markdown(href, unsafe_allow_html=True)
+                
+                # Store the path in session state so it's available outside this button click
+                st.session_state.report_path = report_path
+                
+            except Exception as e:
+                st.error(f"Error generating report: {str(e)}")
 
-2. **Customer Dynamics**
-   - Customer segmentation reveals that a small percentage of high-value customers drive a disproportionate share of revenue.
-   - Most customers are one-time purchasers, indicating significant potential for retention strategies.
+    # Email form - only show after a report has been generated
+    if 'report_path' in st.session_state:
+        st.subheader("Send Report via Email")
 
-3. **Seller Ecosystem**
-   - Seller distribution shows concentration in major urban centers, with São Paulo dominating the market.
-   - Enterprise sellers (top 5%) generate the majority of platform revenue, while the long tail of small sellers represents growth potential.
-
-4. **Product Categories**
-   - Certain product categories consistently outperform others, suggesting potential for category-specific strategies.
-   - Year-over-year category trends show shifting consumer preferences and opportunities for inventory optimization.
-
-5. **Regional Analysis**
-   - Geographic performance varies significantly, with major cities showing stronger seller performance metrics.
-   - Regional growth rates differ, indicating opportunities for targeted expansion strategies.
-
-### Strategic Recommendations
-
-1. **Customer Retention Focus**
-   - Implement a loyalty program to convert one-time buyers into repeat customers.
-   - Develop personalized marketing campaigns for medium-value customers to increase their lifetime value.
-
-2. **Seller Development**
-   - Create specialized support programs for small and medium sellers to improve their performance.
-   - Expand seller recruitment in high-potential secondary markets.
-
-3. **Category Optimization**
-   - Increase inventory and marketing for high-growth categories.
-   - Develop category-specific promotional strategies based on seasonal performance data.
-
-4. **Regional Expansion**
-   - Target underserved regions with focused marketing and seller incentives.
-   - Develop localized strategies for different regions based on performance data.
-""")
-
-# Footer
-st.markdown("---")
-st.markdown(f"Brazilian E-commerce Analytics Dashboard | Project: {client.project} | Dataset: {dataset_id}")
+        # Input multiple email addresses (comma-separated)
+        recipient_emails = st.text_input("Recipient Email Addresses (comma-separated)")
+        email_subject = st.text_input("Email Subject", f"Brazilian E-commerce Analytics Report - {datetime.now().strftime('%Y-%m-%d')}")
+        email_body = st.text_area("Email Message", 
+                                f"Hello,\n\nPlease find attached the Brazilian E-commerce Analytics Report generated on {datetime.now().strftime('%Y-%m-%d')}.\n\nRegards,\nE-commerce Analytics Team")
+        
+        # Send email button
+        if st.button("Send Email"):
+            if not recipient_emails:
+                st.error("Please enter at least one recipient email address.")
+            else:
+                with st.spinner("Sending email..."):
+                    success, message = send_email(recipient_emails, email_subject, email_body, st.session_state.report_path)
+                    if success:
+                        st.success(message)
+                    else:
+                        st.error(message)
+    else:
+        st.info("Please generate a report first before sending an email.")
