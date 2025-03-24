@@ -2270,3 +2270,230 @@ Job ID: 617e2aa2-3df8-4acd-ae05-9251b47a9867
 2025-03-24 10:23:21,497 - INFO - \u2705 Uploaded dim_payment_types successfully.
 2025-03-24 10:23:28,635 - INFO - \u2705 Uploaded dim_reviews successfully.
 2025-03-24 10:24:12,055 - INFO - \u2705 Uploaded fact_orders_partitioned_clustered successfully.
+2025-03-24 10:24:56,618 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-24 10:24:58,166 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-24 10:25:43,696 - INFO - \u2705 Uploaded dim_customers successfully.
+2025-03-24 10:26:03,759 - INFO - \u2705 Uploaded dim_sellers successfully.
+2025-03-24 10:26:08,905 - INFO - \u2705 Uploaded dim_products successfully.
+2025-03-24 10:26:13,978 - INFO - \u2705 Uploaded dim_payment_types successfully.
+2025-03-24 10:26:20,679 - INFO - \u2705 Uploaded dim_reviews successfully.
+2025-03-24 10:26:45,657 - INFO - \u2705 Uploaded fact_orders_partitioned_clustered successfully.
+2025-03-24 10:26:49,928 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-24 10:26:53,578 - INFO - \u2705 Created dm_sales_by_category successfully.
+2025-03-24 10:26:56,967 - INFO - \u2705 Created dm_sales_by_customer_state successfully.
+2025-03-24 10:27:00,213 - INFO - \u2705 Created dm_sales_by_seller successfully.
+2025-03-24 10:27:03,160 - INFO - \u2705 Created dm_monthly_sales_trend successfully.
+2025-03-24 10:27:06,521 - INFO - \u2705 Created dm_avg_review_score successfully.
+2025-03-24 10:27:11,764 - INFO - \u2705 Created Agg_sales_by_category successfully.
+2025-03-24 10:27:15,241 - INFO - \u2705 Created Agg_sales_by_customer_state successfully.
+2025-03-24 10:27:18,187 - INFO - \u2705 Created Agg_sales_by_seller successfully.
+2025-03-24 10:27:21,395 - INFO - \u2705 Created Agg_monthly_sales_trend successfully.
+2025-03-24 10:27:25,065 - INFO - \u2705 Created Agg_avg_review_score successfully.
+2025-03-24 10:28:48,827 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-24 10:28:48,832 - INFO - Executing query: 
+    SELECT 
+        SUM(total_sales) AS total_revenue,
+        SUM(total_orders) AS total_orders,
+ ...
+2025-03-24 10:28:51,124 - INFO - Executing query: 
+    WITH ranked_months AS (
+        SELECT 
+            month,
+            total_sales,
+           ...
+2025-03-24 10:28:52,952 - INFO - Executing query: 
+    SELECT 
+        month,
+        total_sales,
+        total_orders
+    FROM `brazilian-ecom.t6.Ag...
+2025-03-24 10:28:54,688 - INFO - Executing query: 
+    SELECT 
+        category,
+        SUM(total_sales) AS total_sales,
+        SUM(total_orders) AS...
+2025-03-24 10:28:56,430 - INFO - Executing query: 
+    SELECT 
+        customer_state,
+        SUM(total_sales) AS total_sales,
+        SUM(total_orde...
+2025-03-24 10:28:58,209 - INFO - Executing query: 
+    SELECT 
+        seller_id,
+        seller_state,
+        SUM(total_sales) AS total_sales,
+     ...
+2025-03-24 10:28:59,882 - INFO - Executing query: 
+    SELECT 
+        seller_state,
+        SUM(total_sales) AS total_sales,
+        COUNT(DISTINCT s...
+2025-03-24 10:29:01,744 - INFO - Executing query: 
+    SELECT 
+        seller_id,
+        seller_state,
+        SUM(total_sales) AS total_sales,
+     ...
+2025-03-24 10:29:03,407 - INFO - Executing query: 
+    SELECT 
+        category,
+        SUM(total_reviews) as total_reviews,
+        SAFE_DIVIDE(SUM(...
+2025-03-24 10:29:05,168 - INFO - Executing query: 
+    SELECT 
+        r.category,
+        SUM(r.total_reviews) as total_reviews,
+        SAFE_DIVIDE(...
+2025-03-24 10:30:35,868 - INFO - \u2705 Uploaded dim_customers successfully.
+2025-03-24 10:30:41,459 - INFO - \u2705 Uploaded dim_sellers successfully.
+2025-03-24 10:30:47,356 - INFO - \u2705 Uploaded dim_products successfully.
+2025-03-24 10:30:54,124 - INFO - \u2705 Uploaded dim_payment_types successfully.
+2025-03-24 10:31:02,040 - INFO - \u2705 Uploaded dim_reviews successfully.
+2025-03-24 10:31:19,678 - INFO - \u2705 Uploaded fact_orders_partitioned_clustered successfully.
+2025-03-24 10:31:23,836 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-24 10:31:27,767 - INFO - \u2705 Created dm_sales_by_category successfully.
+2025-03-24 10:31:31,453 - INFO - \u2705 Created dm_sales_by_customer_state successfully.
+2025-03-24 10:31:34,978 - INFO - \u2705 Created dm_sales_by_seller successfully.
+2025-03-24 10:31:38,450 - INFO - \u2705 Created dm_monthly_sales_trend successfully.
+2025-03-24 10:31:41,908 - INFO - \u2705 Created dm_avg_review_score successfully.
+2025-03-24 10:31:47,803 - INFO - \u2705 Created Agg_sales_by_category successfully.
+2025-03-24 10:31:53,478 - INFO - \u2705 Created Agg_sales_by_customer_state successfully.
+2025-03-24 10:31:56,720 - INFO - \u2705 Created Agg_sales_by_seller successfully.
+2025-03-24 10:32:00,270 - INFO - \u2705 Created Agg_monthly_sales_trend successfully.
+2025-03-24 10:32:04,530 - INFO - \u2705 Created Agg_avg_review_score successfully.
+2025-03-24 10:33:07,799 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-24 11:21:49,904 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-24 11:21:51,348 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-24 11:22:02,276 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-24 11:22:02,288 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001E14398D550>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)")': /token
+2025-03-24 11:22:02,289 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001E14398D760>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)")': /token
+2025-03-24 11:22:02,291 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001E14398D940>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)")': /token
+2025-03-24 11:22:03,248 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001E14398DFD0>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)")': /token
+2025-03-24 11:22:03,249 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001E14398E0C0>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)")': /token
+2025-03-24 11:22:03,250 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001E14398E2A0>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)")': /token
+2025-03-24 11:22:04,481 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001E14398EA50>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)")': /token
+2025-03-24 11:22:04,482 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001E14398EB40>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)")': /token
+2025-03-24 11:22:04,483 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001E14398ED50>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)")': /token
+2025-03-24 11:22:04,988 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001E14398F4D0>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)")': /token
+2025-03-24 11:22:04,989 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001E14398F740>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)")': /token
+2025-03-24 11:22:04,990 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001E14398F9B0>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)")': /token
+2025-03-24 11:22:12,926 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001E1439BC1A0>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)")': /token
+2025-03-24 11:22:12,927 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001E1439BC410>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)")': /token
+2025-03-24 11:22:12,928 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001E1439BC650>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)")': /token
+2025-03-24 11:22:18,796 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001E11C259B80>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)")': /token
+2025-03-24 11:22:18,797 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001E11C259D30>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)")': /token
+2025-03-24 11:22:18,798 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001E11C259BE0>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)")': /token
+2025-03-24 11:22:39,094 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001E11C259C10>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)")': /token
+2025-03-24 11:22:39,095 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001E1439BCC50>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)")': /token
+2025-03-24 11:22:39,096 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001E1439BCE60>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)")': /token
+2025-03-24 11:26:11,255 - INFO - Executing query: 
+    SELECT 
+        SUM(total_sales) AS total_revenue,
+        SUM(total_orders) AS total_orders,
+ ...
+2025-03-24 11:26:14,164 - INFO - Executing query: 
+    WITH ranked_months AS (
+        SELECT 
+            month,
+            total_sales,
+           ...
+2025-03-24 11:26:16,431 - INFO - Executing query: 
+    SELECT 
+        month,
+        total_sales,
+        total_orders
+    FROM `brazilian-ecom.t6.Ag...
+2025-03-24 11:26:18,656 - INFO - Executing query: 
+    SELECT 
+        category,
+        SUM(total_sales) AS total_sales,
+        SUM(total_orders) AS...
+2025-03-24 11:26:20,893 - INFO - Executing query: 
+    SELECT 
+        customer_state,
+        SUM(total_sales) AS total_sales,
+        SUM(total_orde...
+2025-03-24 11:26:23,460 - INFO - Executing query: 
+    SELECT 
+        seller_id,
+        seller_state,
+        SUM(total_sales) AS total_sales,
+     ...
+2025-03-24 11:26:25,523 - INFO - Executing query: 
+    SELECT 
+        seller_state,
+        SUM(total_sales) AS total_sales,
+        COUNT(DISTINCT s...
+2025-03-24 11:26:27,920 - INFO - Executing query: 
+    SELECT 
+        seller_id,
+        seller_state,
+        SUM(total_sales) AS total_sales,
+     ...
+2025-03-24 11:26:30,179 - INFO - Executing query: 
+    SELECT 
+        category,
+        SUM(total_reviews) as total_reviews,
+        SAFE_DIVIDE(SUM(...
+2025-03-24 11:26:32,403 - INFO - Executing query: 
+    SELECT 
+        r.category,
+        SUM(r.total_reviews) as total_reviews,
+        SAFE_DIVIDE(...
+2025-03-24 14:02:39,400 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-24 14:02:40,695 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-24 14:06:31,674 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-24 14:37:58,843 - INFO - Executing query: 
+    SELECT 
+        SUM(total_sales) AS total_revenue,
+        SUM(total_orders) AS total_orders,
+ ...
+2025-03-24 14:38:01,074 - INFO - Executing query: 
+    WITH ranked_months AS (
+        SELECT 
+            month,
+            total_sales,
+           ...
+2025-03-24 14:38:02,906 - INFO - Executing query: 
+    SELECT 
+        month,
+        total_sales,
+        total_orders
+    FROM `brazilian-ecom.t6.Ag...
+2025-03-24 14:38:04,811 - INFO - Executing query: 
+    SELECT 
+        category,
+        SUM(total_sales) AS total_sales,
+        SUM(total_orders) AS...
+2025-03-24 14:38:06,586 - INFO - Executing query: 
+    SELECT 
+        customer_state,
+        SUM(total_sales) AS total_sales,
+        SUM(total_orde...
+2025-03-24 14:38:08,470 - INFO - Executing query: 
+    SELECT 
+        seller_id,
+        seller_state,
+        SUM(total_sales) AS total_sales,
+     ...
+2025-03-24 14:38:10,133 - INFO - Executing query: 
+    SELECT 
+        seller_state,
+        SUM(total_sales) AS total_sales,
+        COUNT(DISTINCT s...
+2025-03-24 14:38:11,768 - INFO - Executing query: 
+    SELECT 
+        seller_id,
+        seller_state,
+        SUM(total_sales) AS total_sales,
+     ...
+2025-03-24 14:38:13,519 - INFO - Executing query: 
+    SELECT 
+        category,
+        SUM(total_reviews) as total_reviews,
+        SAFE_DIVIDE(SUM(...
+2025-03-24 14:38:15,170 - INFO - Executing query: 
+    SELECT 
+        r.category,
+        SUM(r.total_reviews) as total_reviews,
+        SAFE_DIVIDE(...

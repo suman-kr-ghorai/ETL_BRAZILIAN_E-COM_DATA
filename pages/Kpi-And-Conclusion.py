@@ -303,7 +303,7 @@ with tab1:
 
 # Tab 2: Customer Analysis
 with tab2:
-    st.header("Customer Lifetime Value Analysis")
+    st.header("Customer Analysis")
     
     try:
         # Load data

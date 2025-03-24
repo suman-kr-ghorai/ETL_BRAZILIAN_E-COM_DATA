@@ -9,7 +9,7 @@ def fetch_table(table_name):
     db_url = URL.create(
         drivername="mysql+pymysql",
         username="root",
-        password="Suman@2717",  # Consider using environment variables for security
+        password="Suman@2717", 
         host="localhost",
         database="e-com"
     )
