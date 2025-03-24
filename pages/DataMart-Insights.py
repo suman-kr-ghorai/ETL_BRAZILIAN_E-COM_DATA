@@ -438,17 +438,17 @@ elif selected_page == "Customer Insights":
             st.plotly_chart(fig, use_container_width=True)
             
             # Correlation analysis
-            st.subheader("Correlation Between Metrics")
-            corr_df = customer_df[['total_sales', 'unique_customers', 'total_orders', 'orders_per_customer']]
-            corr_matrix = corr_df.corr()
+            # st.subheader("Correlation Between Metrics")
+            # corr_df = customer_df[['total_sales', 'unique_customers', 'total_orders', 'orders_per_customer']]
+            # corr_matrix = corr_df.corr()
             
-            fig = px.imshow(
-                corr_matrix,
-                text_auto=True,
-                color_continuous_scale='RdBu_r',
-                title='Correlation Matrix of Customer Metrics'
-            )
-            st.plotly_chart(fig, use_container_width=True)
+            # fig = px.imshow(
+            #     corr_matrix,
+            #     text_auto=True,
+            #     color_continuous_scale='RdBu_r',
+            #     title='Correlation Matrix of Customer Metrics'
+            # )
+            # st.plotly_chart(fig, use_container_width=True)
         
         with tab3:
             st.markdown("<h3 class='section-header'>Customer Value Analysis</h3>", unsafe_allow_html=True)
@@ -487,28 +487,28 @@ elif selected_page == "Customer Insights":
             st.plotly_chart(fig, use_container_width=True)
             
             # Scatter plot comparing metrics
-            fig = px.scatter(
-                customer_df,
-                x='unique_customers',
-                y='revenue_per_customer',
-                size='total_sales',
-                color='orders_per_customer',
-                hover_name='customer_state',
-                title='Customer Value vs. Customer Base Size',
-                labels={
-                    'unique_customers': 'Number of Customers',
-                    'revenue_per_customer': 'Revenue per Customer ($)',
-                    'orders_per_customer': 'Orders per Customer'
-                },
-                template='plotly_white',
-                color_continuous_scale=px.colors.sequential.Viridis
-            )
-            fig.update_layout(
-                height=600,
-                xaxis_title='Number of Customers',
-                yaxis_title='Revenue per Customer ($)'
-            )
-            st.plotly_chart(fig, use_container_width=True)
+            # fig = px.scatter(
+            #     customer_df,
+            #     x='unique_customers',
+            #     y='revenue_per_customer',
+            #     size='total_sales',
+            #     color='orders_per_customer',
+            #     hover_name='customer_state',
+            #     title='Customer Value vs. Customer Base Size',
+            #     labels={
+            #         'unique_customers': 'Number of Customers',
+            #         'revenue_per_customer': 'Revenue per Customer ($)',
+            #         'orders_per_customer': 'Orders per Customer'
+            #     },
+            #     template='plotly_white',
+            #     color_continuous_scale=px.colors.sequential.Viridis
+            # )
+            # fig.update_layout(
+            #     height=600,
+            #     xaxis_title='Number of Customers',
+            #     yaxis_title='Revenue per Customer ($)'
+            # )
+            # st.plotly_chart(fig, use_container_width=True)
     else:
         st.error("No customer data available. Please check if the data marts have been created.")
 
@@ -608,6 +608,24 @@ elif selected_page == "Seller Performance":
                     top_sellers.reset_index(drop=True),
                     use_container_width=True
                 )
+
+            st.markdown("""
+                        # Sales Distribution Among Sellers
+                        
+                        - **Minimum Sale:** $3.50 *(the lowest recorded sale)*
+                        - **50th Percentile (Median):** $849.60 *(half of the sellers make less than this, and half make more)*
+                        - **80th Percentile:** $4,759.87 *(top 20% of sellers make more than this)*
+                        - **90th Percentile:** $9,987.21 *(top 10% of sellers make more than this)*
+                        - **95th Percentile:** $17,469.85 *(top 5% of sellers make more than this)*
+                        - **99th Percentile:** $55,620.46 *(only 1% of sellers make more than this)*
+                        - **Maximum Sale:** $242,591.55 *(the highest recorded sale)*
+                        
+                        ---
+                        
+                        This data suggests that the majority of sellers earn relatively modest amounts, while a small percentage of top sellers make significantly more. 
+                        
+                        The large jump between the **95th and 99th percentiles** (and even more so between the **99th percentile and the max**) indicates a highly skewed distribution, where a few sellers dominate the higher earnings.
+                        """)
     else:
         st.error("No seller data available. Please check if the data marts have been created.")
 
@@ -736,7 +754,7 @@ elif selected_page == "Product Reviews":
                 yaxis_title='Total Sales ($)',
                 height=600
             )
-            st.plotly_chart(fig, use_container_width=True)
+            # st.plotly_chart(fig, use_container_width=True)
             
             # Calculate correlation
             correlation = merged_df['avg_review_score'].corr(merged_df['total_sales'])

@@ -456,36 +456,36 @@ with tab3:
             top_seller_state = states[0]
             st.info(f" **{top_seller_state}** has the most sellers! But does it have the highest revenue per seller?")
 
-        # **📌 Chart 3: Seller Efficiency (AOV Bubble Chart)**
-        if efficiency_data:
-            st.subheader("📊 Who Are the Most Efficient Sellers?")
+        # # **📌 Chart 3: Seller Efficiency (AOV Bubble Chart)**
+        # if efficiency_data:
+        #     st.subheader("📊 Who Are the Most Efficient Sellers?")
 
-            fig = go.Figure(go.Scatter(
-                x=[row['total_orders'] for row in efficiency_data],
-                y=[row['total_sales'] for row in efficiency_data],
-                mode='markers',
-                marker=dict(
-                    size=[max(5, min(row['avg_order_value'] / 10, 50)) for row in efficiency_data],  # Adjust marker size
-                    color=[row['avg_order_value'] for row in efficiency_data],
-                    colorscale='Viridis',
-                    showscale=True,
-                    colorbar=dict(title="Avg Order Value ($)")
-                ),
-                text=[f"Seller: {row['seller_id']}<br>State: {row['seller_state']}<br>AOV: ${row['avg_order_value']:.2f}<br>Orders: {row['total_orders']}" for row in efficiency_data]
-            ))
+        #     fig = go.Figure(go.Scatter(
+        #         x=[row['total_orders'] for row in efficiency_data],
+        #         y=[row['total_sales'] for row in efficiency_data],
+        #         mode='markers',
+        #         marker=dict(
+        #             size=[max(5, min(row['avg_order_value'] / 10, 50)) for row in efficiency_data],  # Adjust marker size
+        #             color=[row['avg_order_value'] for row in efficiency_data],
+        #             colorscale='Viridis',
+        #             showscale=True,
+        #             colorbar=dict(title="Avg Order Value ($)")
+        #         ),
+        #         text=[f"Seller: {row['seller_id']}<br>State: {row['seller_state']}<br>AOV: ${row['avg_order_value']:.2f}<br>Orders: {row['total_orders']}" for row in efficiency_data]
+        #     ))
 
-            fig.update_layout(
-                title="Seller Efficiency: Revenue vs Orders",
-                xaxis=dict(title="Number of Orders"),
-                yaxis=dict(title="Total Sales ($)"),
-                height=500
-            )
+        #     fig.update_layout(
+        #         title="Seller Efficiency: Revenue vs Orders",
+        #         xaxis=dict(title="Number of Orders"),
+        #         yaxis=dict(title="Total Sales ($)"),
+        #         height=500
+        #     )
 
-            st.plotly_chart(fig, use_container_width=True)
+        #     st.plotly_chart(fig, use_container_width=True)
 
-            # **🔍 Insight:**
-            most_efficient_seller = max(efficiency_data, key=lambda x: x['avg_order_value'])['seller_id']
-            st.info(f"💎 **{most_efficient_seller}** has the highest AOV! This means fewer orders but high-value sales.")
+        #     # **🔍 Insight:**
+        #     most_efficient_seller = max(efficiency_data, key=lambda x: x['avg_order_value'])['seller_id']
+        #     st.info(f"💎 **{most_efficient_seller}** has the highest AOV! This means fewer orders but high-value sales.")
 
 
 

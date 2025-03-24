@@ -56,7 +56,7 @@ def load_customer_ltv():
     query = f"""
     SELECT * FROM `{client.project}.{dataset_id}.kpi_customer_lifetime_value`
     ORDER BY total_spent DESC
-    LIMIT 1000
+    
     """
     return client.query(query).to_dataframe()
 
