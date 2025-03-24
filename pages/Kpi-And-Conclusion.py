@@ -121,60 +121,6 @@ def save_figure(fig, filename):
     fig.write_image(path, scale=2)
     return path
 
-# Create PowerPoint presentation
-def create_powerpoint(visualizations, insights):
-    """Create a PowerPoint presentation with visualizations and insights"""
-    prs = Presentation()
-    
-    # Add title slide
-    title_slide_layout = prs.slide_layouts[0]
-    slide = prs.slides.add_slide(title_slide_layout)
-    title = slide.shapes.title
-    subtitle = slide.placeholders[1]
-    title.text = "Brazilian E-commerce Analytics Report"
-    subtitle.text = f"Generated on {datetime.now().strftime('%Y-%m-%d')}"
-    
-    # Define layouts
-    content_slide_layout = prs.slide_layouts[1]
-    blank_slide_layout = prs.slide_layouts[6]
-    
-    # Add overview slide
-    slide = prs.slides.add_slide(content_slide_layout)
-    title = slide.shapes.title
-    title.text = "Executive Summary"
-    content = slide.placeholders[1]
-    content.text = """
-    • The Brazilian e-commerce platform demonstrates strong revenue growth
-    • Customer segmentation reveals high-value customers drive disproportionate revenue
-    • Seller distribution shows concentration in major urban centers
-    • Product category performance varies significantly by region and time
-    • Geographic performance indicates opportunities for targeted strategies
-    """
-    
-    # Add visualization slides
-    for viz_name, viz_path in visualizations.items():
-        slide = prs.slides.add_slide(blank_slide_layout)
-        title = slide.shapes.title
-        title.text = viz_name
-        
-        # Add image
-        left = Inches(1)
-        top = Inches(1.5)
-        height = Inches(5)
-        slide.shapes.add_picture(viz_path, left, top, height=height)
-    
-    # Add insights slides
-    for section, section_insights in insights.items():
-        slide = prs.slides.add_slide(content_slide_layout)
-        title = slide.shapes.title
-        title.text = f"{section} - Key Insights"
-        content = slide.placeholders[1]
-        content.text = section_insights
-    
-    # Save the presentation
-    report_path = os.path.join("reports", f"ecommerce_report_{datetime.now().strftime('%Y%m%d_%H%M%S')}.pptx")
-    prs.save(report_path)
-    return report_path
 
 # Create PDF report
 def create_pdf(visualizations, insights):
@@ -800,7 +746,8 @@ with tab6:
                 if report_format == "PDF":
                     report_path = create_pdf(all_visualizations, all_insights)
                 else:  # PowerPoint
-                    report_path = create_powerpoint(all_visualizations, all_insights)
+                    # report_path = create_powerpoint(all_visualizations, all_insights)
+                    pass
                 
                 st.success(f"{report_format} report generated successfully!")
 

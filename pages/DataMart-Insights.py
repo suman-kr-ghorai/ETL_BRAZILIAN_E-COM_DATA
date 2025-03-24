@@ -692,29 +692,29 @@ elif selected_page == "Product Reviews":
         st.plotly_chart(fig, use_container_width=True)
         
         # Bubble chart showing review scores and volume
-        fig = px.scatter(
-            category_reviews,
-            x='total_reviews',
-            y='avg_review_score',
-            size='total_reviews',
-            color='avg_review_score',
-            hover_name='category',
-            title='Review Scores vs. Review Volume by Category',
-            labels={
-                'total_reviews': 'Number of Reviews',
-                'avg_review_score': 'Average Review Score'
-            },
-            template='plotly_white',
-            color_continuous_scale=px.colors.diverging.RdYlGn,
-            range_color=[1, 5],
-            size_max=60
-        )
-        fig.update_layout(
-            xaxis_title='Number of Reviews',
-            yaxis_title='Average Review Score (1-5)',
-            height=600
-        )
-        st.plotly_chart(fig, use_container_width=True)
+        # fig = px.scatter(
+        #     category_reviews,
+        #     x='total_reviews',
+        #     y='avg_review_score',
+        #     size='total_reviews',
+        #     color='avg_review_score',
+        #     hover_name='category',
+        #     title='Review Scores vs. Review Volume by Category',
+        #     labels={
+        #         'total_reviews': 'Number of Reviews',
+        #         'avg_review_score': 'Average Review Score'
+        #     },
+        #     template='plotly_white',
+        #     color_continuous_scale=px.colors.diverging.RdYlGn,
+        #     range_color=[1, 5],
+        #     size_max=60
+        # )
+        # fig.update_layout(
+        #     xaxis_title='Number of Reviews',
+        #     yaxis_title='Average Review Score (1-5)',
+        #     height=600
+        # )
+        # st.plotly_chart(fig, use_container_width=True)
     
     with tab2:
         st.markdown("<h3 class='section-header'>Correlation Between Reviews and Sales</h3>", unsafe_allow_html=True)
