@@ -1,4 +1,4 @@
-# 🛍 ETL + Analytics for Brazilian E-Commerce Data
+#  ETL + Analytics for Brazilian E-Commerce Data
 
 This project is an end-to-end **ETL pipeline and dashboard** for analyzing **Brazilian e-commerce data** using **Streamlit, BigQuery, and Kaggle Olist datasets**.
 
@@ -40,7 +40,7 @@ This project is an end-to-end **ETL pipeline and dashboard** for analyzing **Bra
 
 ---
 
-## 🚀 Setup & Installation
+##  Setup & Installation
 
 ### 1️ Clone the Repository
 
