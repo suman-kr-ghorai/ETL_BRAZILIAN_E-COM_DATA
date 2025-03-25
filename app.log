@@ -2497,3 +2497,268 @@ Job ID: 617e2aa2-3df8-4acd-ae05-9251b47a9867
         r.category,
         SUM(r.total_reviews) as total_reviews,
         SAFE_DIVIDE(...
+2025-03-24 15:54:04,956 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-24 15:54:06,525 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-24 15:54:06,528 - WARNING - Python-dotenv could not parse statement starting at line 6
+2025-03-24 15:54:06,528 - WARNING - Python-dotenv could not parse statement starting at line 7
+2025-03-24 15:54:06,528 - WARNING - Python-dotenv could not parse statement starting at line 8
+2025-03-24 15:55:34,752 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-24 15:55:36,735 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-24 15:55:38,323 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-24 15:55:38,324 - WARNING - Python-dotenv could not parse statement starting at line 6
+2025-03-24 15:55:38,324 - WARNING - Python-dotenv could not parse statement starting at line 7
+2025-03-24 15:55:38,324 - WARNING - Python-dotenv could not parse statement starting at line 8
+2025-03-24 15:57:27,972 - INFO - \u2705 Uploaded dim_customers successfully.
+2025-03-24 15:57:33,961 - INFO - \u2705 Uploaded dim_sellers successfully.
+2025-03-24 15:57:47,759 - INFO - \u2705 Uploaded dim_products successfully.
+2025-03-24 15:57:52,728 - INFO - \u2705 Uploaded dim_payment_types successfully.
+2025-03-24 15:58:27,037 - INFO - \u2705 Uploaded dim_reviews successfully.
+2025-03-24 15:59:44,501 - INFO - \u2705 Uploaded fact_orders_partitioned_clustered successfully.
+2025-03-24 15:59:48,944 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-24 15:59:52,882 - INFO - \u2705 Created dm_sales_by_category successfully.
+2025-03-24 15:59:56,927 - INFO - \u2705 Created dm_sales_by_customer_state successfully.
+2025-03-24 16:00:00,619 - INFO - \u2705 Created dm_sales_by_seller successfully.
+2025-03-24 16:00:04,380 - INFO - \u2705 Created dm_monthly_sales_trend successfully.
+2025-03-24 16:00:09,081 - INFO - \u2705 Created dm_avg_review_score successfully.
+2025-03-24 16:00:14,897 - INFO - \u2705 Created Agg_sales_by_category successfully.
+2025-03-24 16:00:18,677 - INFO - \u2705 Created Agg_sales_by_customer_state successfully.
+2025-03-24 16:00:22,105 - INFO - \u2705 Created Agg_sales_by_seller successfully.
+2025-03-24 16:00:25,541 - INFO - \u2705 Created Agg_monthly_sales_trend successfully.
+2025-03-24 16:00:29,350 - INFO - \u2705 Created Agg_avg_review_score successfully.
+2025-03-24 16:14:21,189 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-24 16:14:21,194 - INFO - Executing query: 
+    SELECT 
+        SUM(total_sales) AS total_revenue,
+        SUM(total_orders) AS total_orders,
+ ...
+2025-03-24 16:14:24,324 - INFO - Executing query: 
+    WITH ranked_months AS (
+        SELECT 
+            month,
+            total_sales,
+           ...
+2025-03-24 16:14:26,881 - INFO - Executing query: 
+    SELECT 
+        month,
+        total_sales,
+        total_orders
+    FROM `brazilian-ecom.t6.Ag...
+2025-03-24 16:14:29,053 - INFO - Executing query: 
+    SELECT 
+        category,
+        SUM(total_sales) AS total_sales,
+        SUM(total_orders) AS...
+2025-03-24 16:14:31,381 - INFO - Executing query: 
+    SELECT 
+        customer_state,
+        SUM(total_sales) AS total_sales,
+        SUM(total_orde...
+2025-03-24 16:14:33,751 - INFO - Executing query: 
+    SELECT 
+        seller_id,
+        seller_state,
+        SUM(total_sales) AS total_sales,
+     ...
+2025-03-24 16:14:35,818 - INFO - Executing query: 
+    SELECT 
+        seller_state,
+        SUM(total_sales) AS total_sales,
+        COUNT(DISTINCT s...
+2025-03-24 16:14:37,480 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-24 16:14:38,177 - INFO - Executing query: 
+    SELECT 
+        seller_id,
+        seller_state,
+        SUM(total_sales) AS total_sales,
+     ...
+2025-03-24 16:14:38,929 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-24 16:14:40,326 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-24 16:14:40,328 - WARNING - Python-dotenv could not parse statement starting at line 6
+2025-03-24 16:14:40,328 - WARNING - Python-dotenv could not parse statement starting at line 7
+2025-03-24 16:14:40,328 - WARNING - Python-dotenv could not parse statement starting at line 8
+2025-03-24 16:14:40,616 - INFO - Executing query: 
+    SELECT 
+        category,
+        SUM(total_reviews) as total_reviews,
+        SAFE_DIVIDE(SUM(...
+2025-03-24 16:14:42,554 - INFO - Executing query: 
+    SELECT 
+        r.category,
+        SUM(r.total_reviews) as total_reviews,
+        SAFE_DIVIDE(...
+2025-03-24 16:15:23,759 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-24 22:01:37,560 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-24 22:01:38,905 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-24 22:01:38,909 - WARNING - Python-dotenv could not parse statement starting at line 6
+2025-03-24 22:01:38,909 - WARNING - Python-dotenv could not parse statement starting at line 7
+2025-03-24 22:01:38,909 - WARNING - Python-dotenv could not parse statement starting at line 8
+2025-03-24 22:01:55,971 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-24 22:01:55,975 - INFO - Executing query: 
+    SELECT 
+        SUM(total_sales) AS total_revenue,
+        SUM(total_orders) AS total_orders,
+ ...
+2025-03-24 22:01:59,117 - INFO - Executing query: 
+    WITH ranked_months AS (
+        SELECT 
+            month,
+            total_sales,
+           ...
+2025-03-24 22:02:00,853 - INFO - Executing query: 
+    SELECT 
+        month,
+        total_sales,
+        total_orders
+    FROM `brazilian-ecom.t6.Ag...
+2025-03-24 22:02:02,861 - INFO - Executing query: 
+    SELECT 
+        category,
+        SUM(total_sales) AS total_sales,
+        SUM(total_orders) AS...
+2025-03-24 22:02:04,448 - INFO - Executing query: 
+    SELECT 
+        customer_state,
+        SUM(total_sales) AS total_sales,
+        SUM(total_orde...
+2025-03-24 22:02:06,177 - INFO - Executing query: 
+    SELECT 
+        seller_id,
+        seller_state,
+        SUM(total_sales) AS total_sales,
+     ...
+2025-03-24 22:02:07,746 - INFO - Executing query: 
+    SELECT 
+        seller_state,
+        SUM(total_sales) AS total_sales,
+        COUNT(DISTINCT s...
+2025-03-24 22:02:09,366 - INFO - Executing query: 
+    SELECT 
+        seller_id,
+        seller_state,
+        SUM(total_sales) AS total_sales,
+     ...
+2025-03-24 22:02:10,958 - INFO - Executing query: 
+    SELECT 
+        category,
+        SUM(total_reviews) as total_reviews,
+        SAFE_DIVIDE(SUM(...
+2025-03-24 22:02:12,546 - INFO - Executing query: 
+    SELECT 
+        r.category,
+        SUM(r.total_reviews) as total_reviews,
+        SAFE_DIVIDE(...
+2025-03-24 22:07:14,457 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-24 23:07:46,260 - INFO - Executing query: 
+    SELECT 
+        SUM(total_sales) AS total_revenue,
+        SUM(total_orders) AS total_orders,
+ ...
+2025-03-24 23:07:48,371 - INFO - Executing query: 
+    WITH ranked_months AS (
+        SELECT 
+            month,
+            total_sales,
+           ...
+2025-03-24 23:07:51,728 - INFO - Executing query: 
+    SELECT 
+        month,
+        total_sales,
+        total_orders
+    FROM `brazilian-ecom.t6.Ag...
+2025-03-24 23:07:53,390 - INFO - Executing query: 
+    SELECT 
+        category,
+        SUM(total_sales) AS total_sales,
+        SUM(total_orders) AS...
+2025-03-24 23:07:55,207 - INFO - Executing query: 
+    SELECT 
+        customer_state,
+        SUM(total_sales) AS total_sales,
+        SUM(total_orde...
+2025-03-24 23:07:56,854 - INFO - Executing query: 
+    SELECT 
+        seller_id,
+        seller_state,
+        SUM(total_sales) AS total_sales,
+     ...
+2025-03-24 23:07:58,414 - INFO - Executing query: 
+    SELECT 
+        seller_state,
+        SUM(total_sales) AS total_sales,
+        COUNT(DISTINCT s...
+2025-03-24 23:07:59,977 - INFO - Executing query: 
+    SELECT 
+        seller_id,
+        seller_state,
+        SUM(total_sales) AS total_sales,
+     ...
+2025-03-24 23:08:01,587 - INFO - Executing query: 
+    SELECT 
+        category,
+        SUM(total_reviews) as total_reviews,
+        SAFE_DIVIDE(SUM(...
+2025-03-24 23:08:03,118 - INFO - Executing query: 
+    SELECT 
+        r.category,
+        SUM(r.total_reviews) as total_reviews,
+        SAFE_DIVIDE(...
+2025-03-25 09:32:30,657 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-25 09:32:32,126 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-25 09:32:32,129 - WARNING - Python-dotenv could not parse statement starting at line 6
+2025-03-25 09:32:32,129 - WARNING - Python-dotenv could not parse statement starting at line 7
+2025-03-25 09:32:32,130 - WARNING - Python-dotenv could not parse statement starting at line 8
+2025-03-25 09:33:12,010 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable
+2025-03-25 09:33:12,016 - INFO - Executing query: 
+    SELECT 
+        SUM(total_sales) AS total_revenue,
+        SUM(total_orders) AS total_orders,
+ ...
+2025-03-25 09:33:14,291 - INFO - Executing query: 
+    WITH ranked_months AS (
+        SELECT 
+            month,
+            total_sales,
+           ...
+2025-03-25 09:33:15,926 - INFO - Executing query: 
+    SELECT 
+        month,
+        total_sales,
+        total_orders
+    FROM `brazilian-ecom.t6.Ag...
+2025-03-25 09:33:17,544 - INFO - Executing query: 
+    SELECT 
+        category,
+        SUM(total_sales) AS total_sales,
+        SUM(total_orders) AS...
+2025-03-25 09:33:19,103 - INFO - Executing query: 
+    SELECT 
+        customer_state,
+        SUM(total_sales) AS total_sales,
+        SUM(total_orde...
+2025-03-25 09:33:20,620 - INFO - Executing query: 
+    SELECT 
+        seller_id,
+        seller_state,
+        SUM(total_sales) AS total_sales,
+     ...
+2025-03-25 09:33:22,108 - INFO - Executing query: 
+    SELECT 
+        seller_state,
+        SUM(total_sales) AS total_sales,
+        COUNT(DISTINCT s...
+2025-03-25 09:33:23,652 - INFO - Executing query: 
+    SELECT 
+        seller_id,
+        seller_state,
+        SUM(total_sales) AS total_sales,
+     ...
+2025-03-25 09:33:25,125 - INFO - Executing query: 
+    SELECT 
+        category,
+        SUM(total_reviews) as total_reviews,
+        SAFE_DIVIDE(SUM(...
+2025-03-25 09:33:26,973 - INFO - Executing query: 
+    SELECT 
+        r.category,
+        SUM(r.total_reviews) as total_reviews,
+        SAFE_DIVIDE(...

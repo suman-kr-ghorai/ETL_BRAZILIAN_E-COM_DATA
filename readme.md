@@ -19,14 +19,22 @@ This project is an end-to-end *ETL pipeline and dashboard* for analyzing *Brazil
 
 ```bash
 .
-├── main.py                    # Streamlit app (manual + automated ETL)
+├── ETL.py                    # Streamlit app (manual + automated ETL)
 ├── utils/
 │   ├── aggregate_utils.py     # Creates aggregation tables
 │   ├── bigquery_upload_utils.py # Uploads fact/dim tables to BigQuery
 │   ├── load_datamart_utils.py # Builds data mart tables
 │   ├── schema_utils.py        # Builds star schema from merged data
 │   └── ... (merge, clean, fetch helpers)
-├── data/                      # Contains local CSVs
+├── data/                      # Contains CSVs extracted from kaggle
 ├── app.log                    # Execution log file
 ├── requirements.txt           # Python dependencies
-└── .env.example               # GCP credentials/config template
+├── .env.example               # GCP credentials/config template
+├── visualizations             #stores graphs
+├── reports                    # generated pdf report for mailing
+├── requirements.txt
+├── pages/
+       ├──  Aggregate-Insights.py   #insights from aggreagate tables
+       ├── DataMart-Insights.py
+       ├── Kpi-And-Conclusion.py
+
